@@ -1,4 +1,4 @@
-# DEF
+# Deployment Framework
 Automated application deployment to all stages of deployment pipeline. Deploy anything, anywhere, anytime!
 
 Authors: Augustin Šulc (augustin.sulc at baud.cz), Filip Vondrášek (filip.vondrasek at baud.cz)
