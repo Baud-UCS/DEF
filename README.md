@@ -7,6 +7,6 @@ GitHub URL: https://github.com/Baud-UCS/DEF
 
 Issue tracker: https://github.com/Baud-UCS/DEF/issues
 
-Project URL: TBD
+Project URL: http://def.baud.cz
 
 Mailing list: TBD
