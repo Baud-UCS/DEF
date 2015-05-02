@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <MvcBuildViews>true</MvcBuildViews>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -268,7 +269,22 @@
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
   </Target> -->
+  <Target Name="AfterBuild">
+  </Target>
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <PropertyGroup>
+    <_EnableCleanOnBuildForMvcViews Condition=" '$(_EnableCleanOnBuildForMvcViews)'=='' ">true</_EnableCleanOnBuildForMvcViews>
+  </PropertyGroup>
+  <Target Name="CleanupForBuildMvcViews" Condition=" '$(_EnableCleanOnBuildForMvcViews)'=='true' and '$(MVCBuildViews)'=='true' " BeforeTargets="AfterBuild">
+    <ItemGroup>
+      <_TempWebConfigToDelete Include="$(BaseIntermediateOutputPath)**\Package\**\*" />
+      <_TempWebConfigToDelete Include="$(BaseIntermediateOutputPath)**\TransformWebConfig\**\*" />
+      <_TempWebConfigToDelete Include="$(BaseIntermediateOutputPath)**\CSAutoParameterize\**\*" />
+      <_TempWebConfigToDelete Include="$(BaseIntermediateOutputPath)**\TempPE\**\*" />
+    </ItemGroup>
+    <Delete Files="@(_TempWebConfigToDelete)" />
+  </Target>
 </Project>
