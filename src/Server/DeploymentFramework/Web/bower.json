@@ -1,0 +1,25 @@
+{
+  "name": "DEF",
+  "version": "0.0.0",
+  "description": "Deployment Framework",
+  "authors": [
+    "Augustin Sulc",
+    "Filip Vondrasek"
+  ],
+  "license": "BSD",
+  "homepage": "def.baud.cz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-validation": "~1.13.1",
+    "jquery-validation-unobtrusive": "~3.2.2",
+    "modernizr": "~2.8.3",
+    "bootstrap": "~3.3.4"
+  }
+}

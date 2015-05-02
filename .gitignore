@@ -183,4 +183,7 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 # Include Tools
-!tools/**
+!tools/
+
+#bower packages
+bower_components/
