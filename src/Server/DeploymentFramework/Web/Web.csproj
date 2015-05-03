@@ -250,7 +250,11 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <Exec Command="attrib +h $(WebProjectOutputDir)\node_modules" />
+    <Exec Command="attrib +h $(WebProjectOutputDir)\bower_components" />
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+    <Exec Command="attrib -h $(WebProjectOutputDir)\node_modules" />
+    <Exec Command="attrib -h $(WebProjectOutputDir)\bower_components" />
   </Target>
   <ProjectExtensions>
     <VisualStudio>
