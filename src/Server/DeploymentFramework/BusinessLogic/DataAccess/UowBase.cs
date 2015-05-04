@@ -16,18 +16,16 @@ namespace Baud.Deployment.BusinessLogic.DataAccess
         protected ICurrentUserProvider CurrentUserProvider { get; private set; }
         protected IDateTimeProvider DateTimeProvider { get; private set; }
 
-        public UowBase(IRepositoryProvider<TDbContext> repositoryProvider, ICurrentUserProvider currentUserProvider, IDateTimeProvider dateTimeProvider)
+        public UowBase(IDbContextProvider<TDbContext> contextProvider, IRepositoryProvider<TDbContext> repositoryProvider, ICurrentUserProvider currentUserProvider, IDateTimeProvider dateTimeProvider)
         {
             CurrentUserProvider = currentUserProvider;
             DateTimeProvider = dateTimeProvider;
 
-            Context = CreateDbContext();
+            Context = contextProvider.CreateContext();
 
             repositoryProvider.DbContext = Context;
             RepositoryProvider = repositoryProvider;
         }
-
-        protected abstract TDbContext CreateDbContext();
 
         protected virtual T GetRepository<T>()
         {

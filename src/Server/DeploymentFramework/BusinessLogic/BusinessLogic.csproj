@@ -50,19 +50,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ICurrentUserProvider.cs" />
+    <Compile Include="DataAccess\BusinessUow.cs" />
+    <Compile Include="DataAccess\Contracts\IDbContextProvider.cs" />
+    <Compile Include="DataAccess\Contracts\IBusinessUow.cs" />
     <Compile Include="DataAccess\Contracts\IDateTimeProvider.cs" />
     <Compile Include="DataAccess\Contracts\IDbContext.cs" />
     <Compile Include="DataAccess\Contracts\IRepositoryProvider.cs" />
     <Compile Include="DataAccess\Contracts\IUow.cs" />
+    <Compile Include="DataAccess\Contracts\IBusinessContext.cs" />
     <Compile Include="DataAccess\RepositoryBase.cs" />
     <Compile Include="DataAccess\RepositoryProviderBase.cs" />
     <Compile Include="DataAccess\UowBase.cs" />
+    <Compile Include="Domain\Configuration\Contracts\IProjectsRepository.cs" />
+    <Compile Include="Domain\Configuration\Entities\Project.cs" />
+    <Compile Include="Domain\Configuration\ProjectsRepository.cs" />
+    <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\RealDateTimeProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

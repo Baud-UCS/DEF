@@ -7,8 +7,8 @@
     <ProjectGuid>{CF688A0B-6653-4CDD-91A0-E868013852C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Baud.Deployment.Scheduler</RootNamespace>
-    <AssemblyName>Scheduler</AssemblyName>
+    <RootNamespace>Baud.Deployment.Controller</RootNamespace>
+    <AssemblyName>Controller</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

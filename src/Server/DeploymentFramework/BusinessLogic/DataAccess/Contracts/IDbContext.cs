@@ -11,10 +11,6 @@ namespace Baud.Deployment.BusinessLogic.DataAccess.Contracts
 {
     public interface IDbContext : IDisposable
     {
-        IDbSet<TEntity> GetDbSet<TEntity>() where TEntity : class;
-
-        bool IsAttached<TEntity>(TEntity entity) where TEntity : class;
-
         void AttachAsModified<TEntity>(TEntity entity) where TEntity : class;
 
         void AttachAsModified<TEntity>(TEntity entity, params System.Linq.Expressions.Expression<Func<TEntity, object>>[] modifiedProperties) where TEntity : class;
