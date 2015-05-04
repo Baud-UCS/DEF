@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Baud.Deployment.BusinessLogic.Contracts;
 using Microsoft.AspNet.Identity;
 
 namespace Baud.Deployment.Web.Framework.Security
 {
-    public class CurrentUserProvider
+    public class CurrentUserProvider : ICurrentUserProvider
     {
         private const int NotAuthenticatedUserID = 0;
 
