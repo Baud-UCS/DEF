@@ -12,4 +12,6 @@ Project URL: http://def.baud.cz
 
 Gitter Chat: [![Join the chat at https://gitter.im/Baud-UCS/DEF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Baud-UCS/DEF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+Build status: ![Build status](https://ci.appveyor.com/api/projects/status/2367n7imraeyslrr?svg=true)
+
 Mailing list: TBD
