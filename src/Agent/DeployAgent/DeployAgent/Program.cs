@@ -13,7 +13,7 @@ namespace Baud.Deployment.DeployAgent
         {
             HostFactory.Run(x =>
             {
-                x.Service<AgentService>();
+                x.Service<AgentService>(() => new AgentService(new Configuration.MockConfigurationProvider()));
             });
         }
     }

@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Baud Deployment Agent")]
-[assembly: AssemblyDescription("Deploy agent")]
+[assembly: AssemblyTitle("Baud Deployment Logic")]
+[assembly: AssemblyDescription("Deploy agent logic")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Baud spol. s r. o.")]
 [assembly: AssemblyProduct("DEF")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1b66fe47-8755-4fa3-b95f-b5d063087fc4")]
+[assembly: Guid("31dd685f-1517-4fca-8c11-b5c1daf486fa")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,4 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyInformationalVersion("1.0.0.0")]

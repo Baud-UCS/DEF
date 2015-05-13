@@ -3,20 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Baud.Deployment.DeployAgent.Configuration;
+using Microsoft.Owin.Hosting;
 using Topshelf;
 
 namespace Baud.Deployment.DeployAgent
 {
     public class AgentService : ServiceControl
     {
+        private readonly IConfigurationProvider _configuration;
+        private IDisposable _owinHost;
+
+        public AgentService(IConfigurationProvider configuration)
+        {
+            _configuration = configuration;
+        }
+
         public bool Start(HostControl hostControl)
         {
-            throw new NotImplementedException();
+            string baseAddress = _configuration.ApiUrl;
+
+            _owinHost = WebApp.Start<OwinStartup>(url: baseAddress);
+            return true;
         }
 
         public bool Stop(HostControl hostControl)
         {
-            throw new NotImplementedException();
+            _owinHost.Dispose();
+            return true;
         }
     }
 }
