@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Baud.Deployment.DeployAgent.Configuration;
+using Baud.Deployment.DeployLogic.Contracts;
 using Microsoft.Owin.Hosting;
 using Topshelf;
 
