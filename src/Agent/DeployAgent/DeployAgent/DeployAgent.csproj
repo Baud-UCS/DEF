@@ -86,6 +86,7 @@
     <Compile Include="Api\ConfigurationController.cs" />
     <Compile Include="Api\DeployController.cs" />
     <Compile Include="Api\LogsController.cs" />
+    <Compile Include="Api\MemoryDataStreamProvider.cs" />
     <Compile Include="Api\SiteController.cs" />
     <Compile Include="Configuration\MockConfigurationProvider.cs" />
     <Compile Include="OwinStartup.cs" />

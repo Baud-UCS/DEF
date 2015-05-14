@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IConfigurationProvider.cs" />
+    <Compile Include="Contracts\IDeployService.cs" />
     <Compile Include="Contracts\IScriptService.cs" />
     <Compile Include="Contracts\ISitesService.cs" />
     <Compile Include="NuGetHelpers\SiteProjectSystem.cs" />

@@ -10,7 +10,7 @@ using NuGet;
 
 namespace Baud.Deployment.DeployLogic
 {
-    public class NuGetDeployService
+    public class NuGetDeployService : IDeployService
     {
         private const string TransformFilesExtension = ".pp";
         private const string ContentDirectoryName = "content";
