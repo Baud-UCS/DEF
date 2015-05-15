@@ -72,9 +72,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BiggySharedSettingsServiceTests.cs" />
     <Compile Include="NuGetDeployServiceTests.cs" />
     <Compile Include="NuGetHelpers\SiteProjectSystemTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BiggySitesServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeployLogic\DeployLogic.csproj">

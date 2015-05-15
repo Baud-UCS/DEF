@@ -10,10 +10,10 @@ namespace Baud.Deployment.DeployLogic.NuGetHelpers
     public class SiteProjectSystem : IProjectSystem
     {
         private IFileSystem _fileSystem;
-        private IDictionary<string, string> _siteParameters;
-        private IDictionary<string, string> _sharedParameters;
+        private IReadOnlyDictionary<string, string> _siteParameters;
+        private IReadOnlyDictionary<string, string> _sharedParameters;
 
-        public SiteProjectSystem(IFileSystem fileSystem, IDictionary<string, string> siteParameters, IDictionary<string, string> sharedParameters)
+        public SiteProjectSystem(IFileSystem fileSystem, IReadOnlyDictionary<string, string> siteParameters, IReadOnlyDictionary<string, string> sharedParameters)
         {
             _fileSystem = fileSystem;
             _siteParameters = siteParameters;

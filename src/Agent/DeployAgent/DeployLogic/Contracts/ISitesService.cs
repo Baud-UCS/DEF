@@ -8,8 +8,8 @@ namespace Baud.Deployment.DeployLogic.Contracts
 {
     public interface ISitesService
     {
-        IDictionary<string, string> GetSharedParameters();
+        Models.Deployment CreateDeployment(string siteID, Models.PackageInfo packageInfo, Guid deploymentID);
 
-        IDictionary<string, string> GetSiteParameters(string siteID);
+        IReadOnlyDictionary<string, string> GetSiteParameters(string siteID);
     }
 }

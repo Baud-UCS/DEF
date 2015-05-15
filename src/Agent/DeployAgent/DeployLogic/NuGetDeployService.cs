@@ -24,29 +24,34 @@ namespace Baud.Deployment.DeployLogic
         private readonly IConfigurationProvider _configuration;
         private readonly IScriptService _script;
         private readonly ISitesService _sites;
+        private readonly ISharedSettingsService _sharedSettings;
 
-        public NuGetDeployService(IConfigurationProvider configuration, ISitesService sites, IScriptService script)
-            : this(siteID => new PhysicalFileSystem(Path.Combine(configuration.PackagesRootPath, siteID)), configuration, sites, script)
+        public NuGetDeployService(IConfigurationProvider configuration, ISharedSettingsService sharedSettings, ISitesService sites, IScriptService script)
+            : this(siteID => new PhysicalFileSystem(Path.Combine(configuration.PackagesRootPath, siteID)), configuration, sharedSettings, sites, script)
         {
         }
 
-        internal NuGetDeployService(Func<string, IFileSystem> fileSystemFactory, IConfigurationProvider configuration, ISitesService sites, IScriptService script)
+        internal NuGetDeployService(Func<string, IFileSystem> fileSystemFactory, IConfigurationProvider configuration, ISharedSettingsService sharedSettings, ISitesService sites, IScriptService script)
         {
             _fileSystemFactory = fileSystemFactory;
             _configuration = configuration;
+            _sharedSettings = sharedSettings;
             _sites = sites;
             _script = script;
         }
 
-        public void DeployPackage(string siteID, Stream packageStream)
+        public void DeployPackage(string siteID, Guid deploymentID, Stream packageStream)
         {
             var package = new ZipPackage(packageStream);
 
-            DeployPackage(siteID, package);
+            DeployPackage(siteID, deploymentID, package);
         }
 
-        internal void DeployPackage(string siteID, NuGet.IPackage package)
+        internal void DeployPackage(string siteID, Guid deploymentID, NuGet.IPackage package)
         {
+            var packageInfo = new Models.PackageInfo { ID = package.Id, Version = package.Version.ToString(), Name = package.Title };
+            var deployment = _sites.CreateDeployment(siteID, packageInfo, deploymentID);
+
             var packageManager = CreatePackageManager(siteID);
 
             RemovePackage(packageManager, package);
@@ -108,7 +113,7 @@ namespace Baud.Deployment.DeployLogic
         private IProjectSystem CreateSiteProjectSystem(IFileSystem fileSystem, string siteID)
         {
             var siteParameters = _sites.GetSiteParameters(siteID);
-            var sharedParameters = _sites.GetSharedParameters();
+            var sharedParameters = _sharedSettings.GetSharedParameters();
 
             return new NuGetHelpers.SiteProjectSystem(fileSystem, siteParameters, sharedParameters);
         }
@@ -139,6 +144,13 @@ namespace Baud.Deployment.DeployLogic
 
             var packageRootPath = manager.PathResolver.GetInstallPath(package);
             return Path.Combine(packageRootPath, script.Path);
+        }
+
+        private void LogDeploymentProgress(Models.Deployment deployment, Models.DeploymentState state, Models.LogSeverity severity, string message)
+        {
+            // TODO start event to notify oother loggers
+            // TODO log to standard log
+            // TODO save to SiteService
         }
     }
 }

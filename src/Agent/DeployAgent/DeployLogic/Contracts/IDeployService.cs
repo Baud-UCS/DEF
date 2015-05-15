@@ -8,6 +8,6 @@ namespace Baud.Deployment.DeployLogic.Contracts
 {
     public interface IDeployService
     {
-        void DeployPackage(string siteID, System.IO.Stream packageStream);
+        void DeployPackage(string siteID, Guid deploymentID, System.IO.Stream packageStream);
     }
 }

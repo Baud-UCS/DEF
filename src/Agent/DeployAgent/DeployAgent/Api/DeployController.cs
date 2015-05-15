@@ -20,7 +20,9 @@ namespace Baud.Deployment.DeployAgent.Api
         {
             // TODO inject through dependecy injection
             var configuration = new Configuration.MockConfigurationProvider();
-            _deployService = new NuGetDeployService(configuration, null, new PowershellScriptService(configuration));
+            var sharedSettings = new BiggySharedSettingsService();
+            var sites = new BiggySitesService();
+            _deployService = new NuGetDeployService(configuration, sharedSettings, sites, new PowershellScriptService(configuration));
         }
 
         public async Task Post(string site)
@@ -35,7 +37,9 @@ namespace Baud.Deployment.DeployAgent.Api
                 var streamProvider = new MemoryDataStreamProvider(packageStream);
                 await Request.Content.ReadAsMultipartAsync(streamProvider);
 
-                _deployService.DeployPackage(site, packageStream);
+                var deploymentID = Guid.NewGuid();
+
+                _deployService.DeployPackage(site, deploymentID, packageStream);
             }
         }
     }

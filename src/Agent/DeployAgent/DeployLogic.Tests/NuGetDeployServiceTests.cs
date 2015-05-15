@@ -22,15 +22,17 @@ namespace Baud.Deployment.DeployLogic.Tests
 
             var sites = Substitute.For<ISitesService>();
             sites.GetSiteParameters("TestSite").Returns(new Dictionary<string, string>());
-            sites.GetSharedParameters().Returns(new Dictionary<string, string>());
+
+            var shared = Substitute.For<ISharedSettingsService>();
+            shared.GetSharedParameters().Returns(new Dictionary<string, string>());
 
             var script = Substitute.For<IScriptService>();
 
-            var deployService = new NuGetDeployService(configuration, sites, script);
+            var deployService = new NuGetDeployService(configuration, shared, sites, script);
 
             using (var packageStream = File.OpenRead(@"C:\Temp\DEF\Baud.Deploy.HOS-RS-3.3.0.15118.4.nupkg"))
             {
-                deployService.DeployPackage("TestSite", packageStream);
+                deployService.DeployPackage("TestSite", new Guid(), packageStream);
             }
         }
 
@@ -42,15 +44,17 @@ namespace Baud.Deployment.DeployLogic.Tests
 
             var sites = Substitute.For<ISitesService>();
             sites.GetSiteParameters("Shared").Returns(new Dictionary<string, string>());
-            sites.GetSharedParameters().Returns(new Dictionary<string, string>());
+
+            var shared = Substitute.For<ISharedSettingsService>();
+            shared.GetSharedParameters().Returns(new Dictionary<string, string>());
 
             var script = Substitute.For<IScriptService>();
 
-            var deployService = new NuGetDeployService(configuration, sites, script);
+            var deployService = new NuGetDeployService(configuration, shared, sites, script);
 
             using (var packageStream = File.OpenRead(@"C:\Temp\DEF\DEF.DeployScripts.0.1.0.nupkg"))
             {
-                deployService.DeployPackage("Shared", packageStream);
+                deployService.DeployPackage("Shared", new Guid(), packageStream);
             }
         }
     }
