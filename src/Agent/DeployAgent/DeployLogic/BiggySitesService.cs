@@ -53,6 +53,7 @@ namespace Baud.Deployment.DeployLogic
             {
                 ID = deploymentID,
                 SiteID = site.ID,
+                PackageID = package.ID,
                 Date = DateTime.Now,
                 State = Models.DeploymentState.Pending
             };
@@ -60,6 +61,26 @@ namespace Baud.Deployment.DeployLogic
             _sites.Update(site);
 
             return deployment;
+        }
+
+        public void LogDeploymentProgress(string siteID, string packageID, Guid deploymentID, Models.DeploymentState state, int logLevel, Models.LogSeverity severity, string text)
+        {
+            var site = _sites.First(x => x.ID == siteID);
+            var package = site.InstalledPackages.First(x => x.ID == packageID);
+            var deployment = package.Deployments.First(x => x.ID == deploymentID);
+
+            deployment.State = state;
+
+            var log = new Models.DeploymentLog
+            {
+                Level = logLevel,
+                Timestamp = DateTime.Now,
+                Severity = severity,
+                Text = text
+            };
+            deployment.Logs.Add(log);
+
+            _sites.Update(site);
         }
 
         private void CheckUniqueDeploymentID(Guid deploymentID)

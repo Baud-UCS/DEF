@@ -70,6 +70,7 @@
     <Compile Include="Contracts\IScriptService.cs" />
     <Compile Include="Contracts\ISharedSettingsService.cs" />
     <Compile Include="Contracts\ISitesService.cs" />
+    <Compile Include="DeployScriptException.cs" />
     <Compile Include="Models\Deployment.cs" />
     <Compile Include="Models\DeploymentLog.cs" />
     <Compile Include="Models\DeploymentState.cs" />

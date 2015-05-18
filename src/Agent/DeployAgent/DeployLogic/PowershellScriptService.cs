@@ -17,9 +17,10 @@ namespace Baud.Deployment.DeployLogic
             _powershell = configuration.PowershellPath;
         }
 
-        public int Run(string scriptFilePath, string parameter, out string standardOutput, out string standardError)
+        public int Run(string workingDirectory, string scriptFilePath, string parameter, out string standardOutput, out string standardError)
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.WorkingDirectory = workingDirectory;
             startInfo.FileName = _powershell;
             startInfo.Arguments = string.Format(@"& '{0}' '{1}'", scriptFilePath, parameter);
             startInfo.RedirectStandardOutput = true;

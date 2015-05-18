@@ -11,5 +11,7 @@ namespace Baud.Deployment.DeployLogic.Contracts
         Models.Deployment CreateDeployment(string siteID, Models.PackageInfo packageInfo, Guid deploymentID);
 
         IReadOnlyDictionary<string, string> GetSiteParameters(string siteID);
+
+        void LogDeploymentProgress(string siteID, string packageID, Guid deploymentID, Models.DeploymentState state, int logLevel, Models.LogSeverity severity, string text);
     }
 }

@@ -8,6 +8,6 @@ namespace Baud.Deployment.DeployLogic.Contracts
 {
     public interface IScriptService
     {
-        int Run(string scriptFilePath, string parameter, out string standardOutput, out string standardError);
+        int Run(string workingDirectory, string scriptFilePath, string parameter, out string standardOutput, out string standardError);
     }
 }

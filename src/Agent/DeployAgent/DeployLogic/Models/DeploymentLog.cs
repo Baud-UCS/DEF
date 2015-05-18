@@ -8,8 +8,8 @@ namespace Baud.Deployment.DeployLogic.Models
 {
     public class DeploymentLog
     {
-        public int ID { get; set; }
         public DateTime Timestamp { get; set; }
+        public int Level { get; set; }
         public LogSeverity Severity { get; set; }
         public string Text { get; set; }
     }
