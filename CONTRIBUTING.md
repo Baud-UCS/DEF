@@ -6,11 +6,11 @@ Fork, then clone the repo:
 
     git clone git@github.com:your-username/DEF.git
 	
-To follow our (mandatory) coding rules, you will need to have [Microsoft Visual Studio 2013] installed with these plugins:
+To follow our (mandatory) coding rules, you will need to have [Microsoft Visual Studio 2013] with [StyleCop] plugin installed:
 
 [Microsoft Visual Studio 2013]: https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx
 
-* TBD
+[StyleCop]: https://stylecop.codeplex.com
 
 Server code can be found in
 
@@ -29,6 +29,9 @@ At this point you're waiting on us.
 Some things that will increase the chance that your pull request is accepted:
 
 * Write tests.
-* Follow our style guide (TBD).
+* Follow our StyleCop rules.
 * Write a good commit message.
 
+If you are unsure about something, make sure you've read our README file and don't hesitate to ask in our [Gitter Chat]!
+
+[Gitter Chat]: https://gitter.im/Baud-UCS/DEF
