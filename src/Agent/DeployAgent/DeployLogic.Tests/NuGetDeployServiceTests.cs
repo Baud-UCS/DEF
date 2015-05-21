@@ -14,7 +14,7 @@ namespace Baud.Deployment.DeployLogic.Tests
     [TestClass]
     public class NuGetDeployServiceTests
     {
-        //[TestMethod]
+        ////[TestMethod]
         public void _Debug_DeployPackage()
         {
             var configuration = Substitute.For<IConfigurationProvider>();
@@ -36,7 +36,7 @@ namespace Baud.Deployment.DeployLogic.Tests
             }
         }
 
-        //[TestMethod]
+        ////[TestMethod]
         public void _Debug_InstallDeployScripts()
         {
             var configuration = Substitute.For<IConfigurationProvider>();

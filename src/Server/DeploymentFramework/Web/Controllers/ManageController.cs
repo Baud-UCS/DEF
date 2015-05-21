@@ -50,7 +50,6 @@ namespace Baud.Deployment.Web.Controllers
             }
         }
 
-        //
         // GET: /Manage/Index
         public virtual async Task<ActionResult> Index(ManageMessageId? message)
         {
@@ -75,7 +74,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(model);
         }
 
-        //
         // POST: /Manage/RemoveLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -99,14 +97,12 @@ namespace Baud.Deployment.Web.Controllers
             return RedirectToAction("ManageLogins", new { Message = message });
         }
 
-        //
         // GET: /Manage/AddPhoneNumber
         public virtual ActionResult AddPhoneNumber()
         {
             return View();
         }
 
-        //
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -131,7 +127,6 @@ namespace Baud.Deployment.Web.Controllers
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
 
-        //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -146,7 +141,6 @@ namespace Baud.Deployment.Web.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        //
         // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -161,7 +155,6 @@ namespace Baud.Deployment.Web.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        //
         // GET: /Manage/VerifyPhoneNumber
         public virtual async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
         {
@@ -171,7 +164,6 @@ namespace Baud.Deployment.Web.Controllers
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
 
-        //
         // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -197,7 +189,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(model);
         }
 
-        //
         // GET: /Manage/RemovePhoneNumber
         public virtual async Task<ActionResult> RemovePhoneNumber()
         {
@@ -214,14 +205,12 @@ namespace Baud.Deployment.Web.Controllers
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
 
-        //
         // GET: /Manage/ChangePassword
         public virtual ActionResult ChangePassword()
         {
             return View();
         }
 
-        //
         // POST: /Manage/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -245,14 +234,12 @@ namespace Baud.Deployment.Web.Controllers
             return View(model);
         }
 
-        //
         // GET: /Manage/SetPassword
         public virtual ActionResult SetPassword()
         {
             return View();
         }
 
-        //
         // POST: /Manage/SetPassword
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -277,7 +264,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(model);
         }
 
-        //
         // GET: /Manage/ManageLogins
         public virtual async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
@@ -300,7 +286,6 @@ namespace Baud.Deployment.Web.Controllers
             });
         }
 
-        //
         // POST: /Manage/LinkLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -310,7 +295,6 @@ namespace Baud.Deployment.Web.Controllers
             return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
         }
 
-        //
         // GET: /Manage/LinkLoginCallback
         public virtual async Task<ActionResult> LinkLoginCallback()
         {

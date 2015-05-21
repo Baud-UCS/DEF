@@ -16,8 +16,7 @@ namespace Baud.Deployment.DeployAgent
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{site}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                defaults: new { id = RouteParameter.Optional });
 
             appBuilder.UseWebApi(config);
         }

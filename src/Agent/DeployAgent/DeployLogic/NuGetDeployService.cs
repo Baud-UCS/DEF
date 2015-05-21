@@ -210,9 +210,9 @@ namespace Baud.Deployment.DeployLogic
 
         private void LogDeploymentProgress(Models.Deployment deployment, Models.DeploymentState state, int logLevel, Models.LogSeverity severity, string message)
         {
-            // TODO publish event to notify other loggers (i.e., SignalR real time logger)
+            //// TODO publish event to notify other loggers (i.e., SignalR real time logger)
 
-            // TODO log to standard log?
+            //// TODO log to standard log?
 
             _sites.LogDeploymentProgress(deployment.SiteID, deployment.PackageID, deployment.ID, state, logLevel, severity, message);
         }

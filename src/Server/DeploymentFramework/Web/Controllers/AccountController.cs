@@ -52,7 +52,6 @@ namespace Baud.Deployment.Web.Controllers
             }
         }
 
-        //
         // GET: /Account/Login
         [AllowAnonymous]
         public virtual ActionResult Login(string returnUrl)
@@ -61,7 +60,6 @@ namespace Baud.Deployment.Web.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -94,7 +92,6 @@ namespace Baud.Deployment.Web.Controllers
             }
         }
 
-        //
         // GET: /Account/VerifyCode
         [AllowAnonymous]
         public virtual async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
@@ -107,7 +104,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
@@ -139,7 +135,6 @@ namespace Baud.Deployment.Web.Controllers
             }
         }
 
-        //
         // GET: /Account/Register
         [AllowAnonymous]
         public virtual ActionResult Register()
@@ -147,7 +142,6 @@ namespace Baud.Deployment.Web.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -164,9 +158,9 @@ namespace Baud.Deployment.Web.Controllers
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    //// string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    //// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -177,7 +171,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(model);
         }
 
-        //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
         public virtual async Task<ActionResult> ConfirmEmail(string userId, string code)
@@ -190,7 +183,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
-        //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
         public virtual ActionResult ForgotPassword()
@@ -198,7 +190,6 @@ namespace Baud.Deployment.Web.Controllers
             return View();
         }
 
-        //
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
@@ -226,7 +217,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(model);
         }
 
-        //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
         public virtual ActionResult ForgotPasswordConfirmation()
@@ -234,7 +224,6 @@ namespace Baud.Deployment.Web.Controllers
             return View();
         }
 
-        //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
         public virtual ActionResult ResetPassword(string code)
@@ -242,7 +231,6 @@ namespace Baud.Deployment.Web.Controllers
             return code == null ? View("Error") : View();
         }
 
-        //
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
@@ -268,7 +256,6 @@ namespace Baud.Deployment.Web.Controllers
             return View();
         }
 
-        //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
         public virtual ActionResult ResetPasswordConfirmation()
@@ -276,7 +263,6 @@ namespace Baud.Deployment.Web.Controllers
             return View();
         }
 
-        //
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
@@ -287,7 +273,6 @@ namespace Baud.Deployment.Web.Controllers
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
-        //
         // GET: /Account/SendCode
         [AllowAnonymous]
         public virtual async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
@@ -302,7 +287,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/SendCode
         [HttpPost]
         [AllowAnonymous]
@@ -322,7 +306,6 @@ namespace Baud.Deployment.Web.Controllers
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
-        //
         // GET: /Account/ExternalLoginCallback
         [AllowAnonymous]
         public virtual async Task<ActionResult> ExternalLoginCallback(string returnUrl)
@@ -356,7 +339,6 @@ namespace Baud.Deployment.Web.Controllers
             }
         }
 
-        //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
@@ -394,7 +376,6 @@ namespace Baud.Deployment.Web.Controllers
             return View(model);
         }
 
-        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -404,7 +385,6 @@ namespace Baud.Deployment.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
         public virtual ActionResult ExternalLoginFailure()

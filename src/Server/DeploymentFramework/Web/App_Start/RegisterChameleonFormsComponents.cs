@@ -1,6 +1,6 @@
-using ChameleonForms.ModelBinders;
 using System;
 using System.Web.Mvc;
+using ChameleonForms.ModelBinders;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Baud.Deployment.Web.App_Start.RegisterChameleonFormsComponents), "Start")]
  

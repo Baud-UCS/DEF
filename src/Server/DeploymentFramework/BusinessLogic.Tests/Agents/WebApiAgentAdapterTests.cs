@@ -8,7 +8,7 @@ namespace Baud.Deployment.BusinessLogic.Tests.Agents
     [TestClass]
     public class WebApiAgentAdapterTests
     {
-        //[TestMethod]
+        ////[TestMethod]
         public void _Debug_DeployPackage()
         {
             var adapter = new WebApiAgentAdapter("http://localhost:9000/api/");
