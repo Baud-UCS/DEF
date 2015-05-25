@@ -414,9 +414,6 @@ namespace Baud.Deployment.Web.Controllers
 
         #region Helpers
 
-        // Used for XSRF protection when adding external logins
-        private const string XsrfKey = "XsrfId";
-
         private IAuthenticationManager AuthenticationManager
         {
             get
@@ -444,6 +441,9 @@ namespace Baud.Deployment.Web.Controllers
 
         internal class ChallengeResult : HttpUnauthorizedResult
         {
+            // Used for XSRF protection when adding external logins
+            private const string XsrfKey = "XsrfId";
+
             public ChallengeResult(string provider, string redirectUri)
                 : this(provider, redirectUri, null)
             {

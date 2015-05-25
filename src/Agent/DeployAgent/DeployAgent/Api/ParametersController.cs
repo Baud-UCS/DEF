@@ -12,7 +12,7 @@ namespace Baud.Deployment.DeployAgent.Api
 {
     public class ParametersController : ApiController
     {
-        public readonly ISharedSettingsService _settingsService;
+        private readonly ISharedSettingsService _settingsService;
 
         // TODO inject through dependecy injection
         public ParametersController()
