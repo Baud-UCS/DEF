@@ -40,14 +40,14 @@ namespace Baud.Deployment.DeployLogic
             _script = script;
         }
 
-        public void DeployPackage(string siteID, Guid deploymentID, Stream packageStream)
+        public Models.Deployment DeployPackage(string siteID, Guid deploymentID, Stream packageStream)
         {
             var package = new ZipPackage(packageStream);
 
-            DeployPackage(siteID, deploymentID, package);
+            return DeployPackage(siteID, deploymentID, package);
         }
 
-        internal void DeployPackage(string siteID, Guid deploymentID, NuGet.IPackage package)
+        internal Models.Deployment DeployPackage(string siteID, Guid deploymentID, NuGet.IPackage package)
         {
             var packageInfo = new Models.PackageInfo { ID = package.Id, Version = package.Version.ToString(), Name = package.Title };
             var deployment = _sites.CreateDeployment(siteID, packageInfo, deploymentID);
@@ -74,6 +74,8 @@ namespace Baud.Deployment.DeployLogic
             {
                 LogDeploymentProgress(deployment, Models.DeploymentState.Failure, 1, Models.LogSeverity.Error, "Deployment failed: " + ex.ToString());
             }
+
+            return deployment;
         }
 
         private void RemovePackage(Models.Deployment currentDeployment, IPackageManager manager, IPackage package)

@@ -16,16 +16,22 @@ namespace Baud.Deployment.DeployAgent.Api
     {
         private readonly IDeployService _deployService;
 
+        // TODO inject through dependecy injection
         public DeployController()
         {
-            // TODO inject through dependecy injection
             var configuration = new Configuration.MockConfigurationProvider();
             var sharedSettings = new BiggySharedSettingsService();
             var sites = new BiggySitesService();
             _deployService = new NuGetDeployService(configuration, sharedSettings, sites, new PowershellScriptService(configuration));
         }
 
-        public async Task Post(string site)
+        public DeployController(IDeployService deployService)
+        {
+            _deployService = deployService;
+        }
+
+        [Route("api/deploy/{site}")]
+        public async Task<Baud.Deployment.DeployLogic.Models.Deployment> Post(string site)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
@@ -39,7 +45,7 @@ namespace Baud.Deployment.DeployAgent.Api
 
                 var deploymentID = Guid.NewGuid();
 
-                _deployService.DeployPackage(site, deploymentID, packageStream);
+                return _deployService.DeployPackage(site, deploymentID, packageStream);
             }
         }
     }

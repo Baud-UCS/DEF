@@ -12,11 +12,18 @@ namespace Baud.Deployment.DeployAgent
     {
         public void Configuration(IAppBuilder appBuilder)
         {
+            Configuration(appBuilder, null);
+        }
+
+        internal void Configuration(IAppBuilder appBuilder, Action<HttpConfiguration> additionalConfiguration)
+        {
             HttpConfiguration config = new HttpConfiguration();
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{site}/{id}",
-                defaults: new { id = RouteParameter.Optional });
+            config.MapHttpAttributeRoutes();
+
+            if (additionalConfiguration != null)
+            {
+                additionalConfiguration(config);
+            }
 
             appBuilder.UseWebApi(config);
         }

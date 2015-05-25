@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeployLogic", "DeployLogic\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeployLogic.Tests", "DeployLogic.Tests\DeployLogic.Tests.csproj", "{660A9EDE-E5BD-417E-A183-9652782E7BC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeployAgent.Tests", "DeployAgent.Tests\DeployAgent.Tests.csproj", "{B2E0A78A-E346-4FC6-B8B1-D60C27737247}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{660A9EDE-E5BD-417E-A183-9652782E7BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{660A9EDE-E5BD-417E-A183-9652782E7BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{660A9EDE-E5BD-417E-A183-9652782E7BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E0A78A-E346-4FC6-B8B1-D60C27737247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E0A78A-E346-4FC6-B8B1-D60C27737247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E0A78A-E346-4FC6-B8B1-D60C27737247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E0A78A-E346-4FC6-B8B1-D60C27737247}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

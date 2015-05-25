@@ -11,6 +11,7 @@ using Biggy.Extensions;
 
 namespace Baud.Deployment.DeployLogic
 {
+    // because of possible concurrency, the service should be used as singleton
     public class BiggySitesService : ISitesService, IBiggySitesServiceTesting
     {
         private readonly BiggyList<Models.Site> _sites;
@@ -41,6 +42,22 @@ namespace Baud.Deployment.DeployLogic
             }
 
             return new ReadOnlyDictionary<string, string>(site.Parameters);
+        }
+
+        public void SetSiteParameter(string siteID, string key, string value)
+        {
+            var site = GetOrCreateSite(siteID);
+            site.Parameters[key] = value;
+
+            _sites.Update(site);
+        }
+
+        public void RemoveSiteParameter(string siteID, string key)
+        {
+            var site = GetOrCreateSite(siteID);
+            site.Parameters.Remove(key);
+
+            _sites.Update(site);
         }
 
         public Models.Deployment CreateDeployment(string siteID, Models.PackageInfo packageInfo, Guid deploymentID)
@@ -101,6 +118,7 @@ namespace Baud.Deployment.DeployLogic
 
             if (site == null)
             {
+                // TODO lock
                 site = new Models.Site
                 {
                     ID = siteID
@@ -117,6 +135,7 @@ namespace Baud.Deployment.DeployLogic
 
             if (package == null)
             {
+                // TODO lock
                 package = new Models.Package
                 {
                     ID = packageInfo.ID,
