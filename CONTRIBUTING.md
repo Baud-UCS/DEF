@@ -6,7 +6,7 @@ Fork, then clone the repo:
 
     git clone git@github.com:your-username/DEF.git
 	
-To follow our (mandatory) coding rules, you will need to have [Microsoft Visual Studio 2013] with [StyleCop] plugin installed:
+To follow our (mandatory) coding rules, you will need to have [Microsoft Visual Studio 2013] with [StyleCop] plugin installed. StyleCop template is already included in src folder.
 
 [Microsoft Visual Studio 2013]: https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx
 
