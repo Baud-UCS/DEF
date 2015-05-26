@@ -279,6 +279,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PackagesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Controllers\ServersController.cs" />
     <Compile Include="Framework\Data\EntityFrameworkContextProvider.cs" />
     <Compile Include="Framework\Data\UnityRepositoryProvider.cs" />
     <Compile Include="Framework\Extensions.cs" />
@@ -364,6 +368,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Servers\Index.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Packages\Index.cshtml" />
+    <Content Include="Views\Security\Users.cshtml" />
+    <Content Include="Views\Security\GroupRoles.cshtml" />
+    <Content Include="Views\Security\Roles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
