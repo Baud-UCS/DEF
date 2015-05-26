@@ -9,6 +9,7 @@ using Baud.Deployment.DeployLogic.Contracts;
 
 namespace Baud.Deployment.DeployAgent.Api
 {
+    [RoutePrefix("api/sites/{site}/parameters")]
     public class SiteParametersController : ApiController
     {
         private readonly ISitesService _sites;
@@ -24,7 +25,7 @@ namespace Baud.Deployment.DeployAgent.Api
             _sites = sites;
         }
 
-        [Route("api/sites/{site}/parameters")]
+        [Route("")]
         public IReadOnlyDictionary<string, string> Get(string site)
         {
             try
@@ -39,7 +40,7 @@ namespace Baud.Deployment.DeployAgent.Api
         }
 
         [HttpGet]
-        [Route("api/sites/{site}/parameters/{key}")]
+        [Route("{key}")]
         public string GetSingle(string site, string key)
         {
             try
@@ -62,7 +63,7 @@ namespace Baud.Deployment.DeployAgent.Api
             }
         }
 
-        [Route("api/sites/{site}/parameters")]
+        [Route("")]
         public IHttpActionResult Post(string site, IDictionary<string, string> values)
         {
             foreach (var item in values)
@@ -73,7 +74,7 @@ namespace Baud.Deployment.DeployAgent.Api
             return Ok();
         }
 
-        [Route("api/sites/{site}/parameters/{key}")]
+        [Route("{key}")]
         public IHttpActionResult Put(string site, string key, [FromBody]string value)
         {
             _sites.SetSiteParameter(site, key, value);
@@ -81,7 +82,7 @@ namespace Baud.Deployment.DeployAgent.Api
             return Ok();
         }
 
-        [Route("api/sites/{site}/parameters/{key}")]
+        [Route("{key}")]
         public IHttpActionResult Delete(string site, string key)
         {
             _sites.RemoveSiteParameter(site, key);

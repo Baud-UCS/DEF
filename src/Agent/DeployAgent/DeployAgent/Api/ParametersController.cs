@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Baud.Deployment.DeployAgent.Api
 {
+    [RoutePrefix("api/parameters")]
     public class ParametersController : ApiController
     {
         private readonly ISharedSettingsService _settingsService;
@@ -25,14 +26,14 @@ namespace Baud.Deployment.DeployAgent.Api
             _settingsService = settingsService;
         }
 
-        [Route("api/parameters")]
+        [Route("")]
         public IReadOnlyDictionary<string, string> Get()
         {
             return _settingsService.GetSharedParameters();
         }
 
         [HttpGet]
-        [Route("api/parameters/{key}")]
+        [Route("{key}")]
         public string GetSingle(string key)
         {
             string value;
@@ -46,7 +47,7 @@ namespace Baud.Deployment.DeployAgent.Api
             }
         }
 
-        [Route("api/parameters")]
+        [Route("")]
         public IHttpActionResult Post(IDictionary<string, string> values)
         {
             foreach (var item in values)
@@ -57,7 +58,7 @@ namespace Baud.Deployment.DeployAgent.Api
             return Ok();
         }
 
-        [Route("api/parameters/{key}")]
+        [Route("{key}")]
         public IHttpActionResult Put(string key, [FromBody]string value)
         {
             _settingsService.SetSharedParameter(key, value);
@@ -65,7 +66,7 @@ namespace Baud.Deployment.DeployAgent.Api
             return Ok();
         }
 
-        [Route("api/parameters/{key}")]
+        [Route("{key}")]
         public IHttpActionResult Delete(string key)
         {
             _settingsService.RemoveSharedParameter(key);
