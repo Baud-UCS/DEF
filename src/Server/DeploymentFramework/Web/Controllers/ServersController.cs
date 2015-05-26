@@ -21,6 +21,7 @@ namespace Baud.Deployment.Web.Controllers
         }
 
         // GET: Servers/Create
+        [ValidateAntiForgeryToken]
         public ActionResult Create()
         {
             return View();
@@ -28,6 +29,7 @@ namespace Baud.Deployment.Web.Controllers
 
         // POST: Servers/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(FormCollection collection)
         {
             try
@@ -43,6 +45,7 @@ namespace Baud.Deployment.Web.Controllers
         }
 
         // GET: Servers/Edit/5
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id)
         {
             return View();
@@ -50,6 +53,7 @@ namespace Baud.Deployment.Web.Controllers
 
         // POST: Servers/Edit/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
@@ -65,6 +69,7 @@ namespace Baud.Deployment.Web.Controllers
         }
 
         // GET: Servers/Delete/5
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
             return View();
@@ -72,6 +77,7 @@ namespace Baud.Deployment.Web.Controllers
 
         // POST: Servers/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
