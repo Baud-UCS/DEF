@@ -91,7 +91,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Api\SiteParametersControllerTests.cs" />
-    <Compile Include="Api\ParametersControllerTests.cs" />
+    <Compile Include="Api\SharedParametersControllerTests.cs" />
     <Compile Include="Helpers\ApiTestContext.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

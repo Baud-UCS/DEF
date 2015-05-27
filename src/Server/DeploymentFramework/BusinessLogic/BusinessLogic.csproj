@@ -53,6 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agents\Models\Deployment.cs" />
+    <Compile Include="Agents\Models\DeploymentLog.cs" />
+    <Compile Include="Agents\Models\DeploymentState.cs" />
+    <Compile Include="Agents\Models\LogSeverity.cs" />
     <Compile Include="Agents\WebApiAgentAdapter.cs" />
     <Compile Include="Contracts\IAgentAdapter.cs" />
     <Compile Include="Contracts\ICurrentUserProvider.cs" />

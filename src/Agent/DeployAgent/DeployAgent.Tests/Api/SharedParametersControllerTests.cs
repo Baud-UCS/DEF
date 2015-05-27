@@ -13,7 +13,7 @@ using NSubstitute;
 namespace Baud.Deployment.DeployAgent.Tests.Api
 {
     [TestClass]
-    public class ParametersControllerTests
+    public class SharedParametersControllerTests
     {
         [TestMethod]
         public async Task Get_ReturnsParametersFromSharedSettingsService()

@@ -52,9 +52,9 @@ namespace Baud.Deployment.DeployAgent.Tests.Helpers
 
             public object GetService(Type serviceType)
             {
-                if (serviceType == typeof(Baud.Deployment.DeployAgent.Api.ParametersController))
+                if (serviceType == typeof(Baud.Deployment.DeployAgent.Api.SharedParametersController))
                 {
-                    return new Baud.Deployment.DeployAgent.Api.ParametersController(_settingsService);
+                    return new Baud.Deployment.DeployAgent.Api.SharedParametersController(_settingsService);
                 }
                 if (serviceType == typeof(Baud.Deployment.DeployAgent.Api.SiteParametersController))
                 {

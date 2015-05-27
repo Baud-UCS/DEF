@@ -11,17 +11,17 @@ using Newtonsoft.Json.Linq;
 namespace Baud.Deployment.DeployAgent.Api
 {
     [RoutePrefix("api/parameters")]
-    public class ParametersController : ApiController
+    public class SharedParametersController : ApiController
     {
         private readonly ISharedSettingsService _settingsService;
 
         // TODO inject through dependecy injection
-        public ParametersController()
+        public SharedParametersController()
         {
             _settingsService = new BiggySharedSettingsService();
         }
 
-        public ParametersController(ISharedSettingsService settingsService)
+        public SharedParametersController(ISharedSettingsService settingsService)
         {
             _settingsService = settingsService;
         }

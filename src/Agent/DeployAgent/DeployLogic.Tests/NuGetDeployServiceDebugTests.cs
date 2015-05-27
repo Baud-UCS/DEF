@@ -12,7 +12,7 @@ using NSubstitute;
 namespace Baud.Deployment.DeployLogic.Tests
 {
     [TestClass]
-    public class NuGetDeployServiceTests
+    public class NuGetDeployServiceDebugTests
     {
         ////[TestMethod]
         public void _Debug_DeployPackage()

@@ -13,6 +13,9 @@ namespace Baud.Deployment.Web.Controllers
     [Authorize]
     public partial class ManageController : Controller
     {
+        // Used for XSRF protection when adding external logins
+        private const string XsrfKey = "XsrfId";
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -319,9 +322,6 @@ namespace Baud.Deployment.Web.Controllers
         }
 
         #region Helpers
-
-        // Used for XSRF protection when adding external logins
-        private const string XsrfKey = "XsrfId";
 
         private IAuthenticationManager AuthenticationManager
         {
