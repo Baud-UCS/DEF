@@ -18,7 +18,7 @@ namespace Baud.Deployment.BusinessLogic.Agents
             _baseUrl = baseUrl;
         }
 
-        public async Task<DeployLogic.Models.Deployment> DeplyPackageAsync(string siteID, byte[] package)
+        public async Task<DeployLogic.Models.Deployment> DeployPackageAsync(string siteID, byte[] package)
         {
             var request = new RestRequest(Urls.Deploy, Method.POST);
             request.AddUrlSegment(UrlSegments.Site, siteID);

@@ -12,12 +12,12 @@ namespace Baud.Deployment.BusinessLogic.Tests.Agents
     public class WebApiAgentAdapterDebugTests
     {
         ////[TestMethod]
-        public async Task _Debug_DeplyPackageAsync()
+        public async Task _Debug_DeployPackageAsync()
         {
             var adapter = CreateAdapter();
 
             var package = File.ReadAllBytes(@"C:\Temp\DEF\Baud.Deploy.HOS-RS-3.3.0.15118.4.nupkg");
-            var result = await adapter.DeplyPackageAsync("ControllerSite", package);
+            var result = await adapter.DeployPackageAsync("ControllerSite", package);
 
             result.Should().NotBeNull();
         }

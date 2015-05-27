@@ -8,7 +8,7 @@ namespace Baud.Deployment.BusinessLogic.Contracts
 {
     public interface IAgentAdapter
     {
-        Task<DeployLogic.Models.Deployment> DeplyPackageAsync(string siteID, byte[] package);
+        Task<DeployLogic.Models.Deployment> DeployPackageAsync(string siteID, byte[] package);
 
         Task<IDictionary<string, string>> GetSharedParameters();
 
