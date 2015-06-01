@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
 
-namespace Baud.Deployment.Database
+namespace Baud.Deployment.Database.Security
 {
-    public class SecurityContext : ContextBase
+    public class SecurityDbContext : ContextBase
     {
+        public SecurityDbContext()
+            : base("name=Entities")
+        {
+        }
+
+        public IDbSet<User> Users { get; set; }
+
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Role>()

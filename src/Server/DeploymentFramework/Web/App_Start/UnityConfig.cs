@@ -3,9 +3,10 @@ using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
 using Baud.Deployment.BusinessLogic.Contracts;
-using Baud.Deployment.BusinessLogic.DataAccess;
-using Baud.Deployment.BusinessLogic.DataAccess.Contracts;
+using Baud.Deployment.BusinessLogic.Domain;
 using Baud.Deployment.BusinessLogic.Providers;
+using Baud.Deployment.Database;
+using Baud.Deployment.Database.Contracts;
 using Baud.Deployment.Web.Framework.Data;
 using Baud.Deployment.Web.Framework.Security;
 using Microsoft.Practices.Unity;
@@ -25,24 +26,27 @@ namespace Baud.Deployment.Web
 
         private static void RegisterTypes(UnityContainer container)
         {
-            var businessLogicAssembly = typeof(BusinessUow).Assembly;
+            var businessLogicAssembly = typeof(IUow).Assembly;
+            var databaseAssembly = typeof(ContextBase).Assembly;
             var webAssembly = typeof(MvcApplication).Assembly;
 
-            RegisterUowTypes(container, businessLogicAssembly);
+            RegisterDataAccessTypes(container, businessLogicAssembly, databaseAssembly);
             RegisterServices(container);
             RegisterProviders(container);
         }
 
-        private static void RegisterUowTypes(UnityContainer container, params Assembly[] assemblies)
+        private static void RegisterDataAccessTypes(UnityContainer container, params Assembly[] assemblies)
         {
             container.RegisterTypes(
-                AllClasses.FromAssemblies(assemblies).Where(t => t.Name.EndsWith("Repository")),
+                AllClasses.FromAssemblies(assemblies).Where(t => !t.IsAbstract && t.Name.EndsWith("Repository")),
                 WithMappings.FromMatchingInterface);
 
-            container.RegisterType<IDbContextProvider<IBusinessContext>, EntityFrameworkContextProvider>(new ContainerControlledLifetimeManager());
+            container.RegisterTypes(
+                AllClasses.FromAssemblies(assemblies).Where(t => !t.IsAbstract && t.Name.EndsWith("Uow")),
+                WithMappings.FromMatchingInterface);
 
-            container.RegisterType<IRepositoryProvider<IBusinessContext>, UnityRepositoryProvider>();
-            container.RegisterType<IBusinessUow, BusinessUow>();
+            container.RegisterType(typeof(IRepositoryProvider<>), typeof(UnityRepositoryProvider<>));
+            container.RegisterType(typeof(IDbContextProvider<>), typeof(ReflectionDbContextProvider<>));
         }
 
         private static void RegisterServices(UnityContainer container)

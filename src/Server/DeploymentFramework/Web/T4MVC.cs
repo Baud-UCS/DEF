@@ -26,14 +26,27 @@ using Baud.Deployment.Web.Framework.Security;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    static readonly SecurityClass s_Security = new SecurityClass();
+    public static SecurityClass SecurityArea { get { return s_Security; } }
     public static Baud.Deployment.Web.Controllers.AccountController Account = new Baud.Deployment.Web.Controllers.T4MVC_AccountController();
     public static Baud.Deployment.Web.Controllers.HomeController Home = new Baud.Deployment.Web.Controllers.T4MVC_HomeController();
     public static Baud.Deployment.Web.Controllers.ManageController Manage = new Baud.Deployment.Web.Controllers.T4MVC_ManageController();
+    public static Baud.Deployment.Web.Controllers.PackagesController Packages = new Baud.Deployment.Web.Controllers.T4MVC_PackagesController();
+    public static Baud.Deployment.Web.Controllers.ProductsController Products = new Baud.Deployment.Web.Controllers.T4MVC_ProductsController();
+    public static Baud.Deployment.Web.Controllers.ServersController Servers = new Baud.Deployment.Web.Controllers.T4MVC_ServersController();
+    public static T4MVC.SecurityController Security = new T4MVC.SecurityController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
 namespace T4MVC
 {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public class SecurityClass
+    {
+        public readonly string Name = "Security";
+        public Baud.Deployment.Web.Areas.Security.Controllers.UsersController Users = new Baud.Deployment.Web.Areas.Security.Controllers.T4MVC_UsersController();
+        public T4MVC.Security.SharedController Shared = new T4MVC.Security.SharedController();
+    }
 }
 
 namespace T4MVC
@@ -47,7 +60,7 @@ namespace T4MVC
 }
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult, IHasRequiredContextRight
+internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult, IRequiresPermission
 {
     public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
     {
@@ -58,7 +71,7 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     public string Controller { get; set; }
     public string Action { get; set; }
     public string Protocol { get; set; }
-    public string RequiredContextRight { get; set; }
+    public string RequiredPermission { get; set; }
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 

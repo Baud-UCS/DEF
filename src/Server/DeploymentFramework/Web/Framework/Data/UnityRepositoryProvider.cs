@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Baud.Deployment.BusinessLogic.DataAccess;
-using Baud.Deployment.BusinessLogic.DataAccess.Contracts;
+using Baud.Deployment.Database;
 using Microsoft.Practices.Unity;
 
 namespace Baud.Deployment.Web.Framework.Data
 {
-    public class UnityRepositoryProvider : RepositoryProviderBase<IBusinessContext>
+    public class UnityRepositoryProvider<TContext> : RepositoryProviderBase<TContext>
     {
         private readonly IUnityContainer _container;
 
@@ -17,7 +16,7 @@ namespace Baud.Deployment.Web.Framework.Data
             _container = container;
         }
 
-        protected override T CreateRepository<T>(IBusinessContext context)
+        protected override T CreateRepository<T>(TContext context)
         {
             var repository = _container.Resolve<T>(new ParameterOverride("context", context));
             return repository;

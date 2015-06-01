@@ -4,11 +4,22 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Baud.Deployment.Database.Contracts;
 
 namespace Baud.Deployment.Database
 {
-    public class ContextBase : DbContext
+    public abstract class ContextBase : DbContext, IDbContext
     {
+        public ContextBase()
+            : base()
+        {
+        }
+
+        public ContextBase(string nameOrConnectionString)
+            : base(nameOrConnectionString)
+        {
+        }
+
         public void AttachAsModified<TEntity>(TEntity entity) where TEntity : class
         {
             var dbEntityEntry = this.Entry(entity);

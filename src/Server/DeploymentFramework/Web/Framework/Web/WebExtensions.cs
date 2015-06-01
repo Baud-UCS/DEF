@@ -67,10 +67,10 @@ namespace Baud.Deployment.Web.Framework.Web
 
         private static bool IsActionAllowed(HttpContextBase httpContext, ActionResult action)
         {
-            var navigationResult = action as IHasRequiredContextRight;
+            var navigationResult = action as IRequiresPermission;
             if (navigationResult != null)
             {
-                return navigationResult.RequiredContextRight == null || httpContext.User.HasContextRight(navigationResult.RequiredContextRight);
+                return navigationResult.RequiredPermission == null || httpContext.User.HasPermission(navigationResult.RequiredPermission);
             }
             else
             {

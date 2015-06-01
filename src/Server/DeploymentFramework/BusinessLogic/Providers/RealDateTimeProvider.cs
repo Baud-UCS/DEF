@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Baud.Deployment.BusinessLogic.DataAccess.Contracts;
+using Baud.Deployment.BusinessLogic.Contracts;
 
 namespace Baud.Deployment.BusinessLogic.Providers
 {

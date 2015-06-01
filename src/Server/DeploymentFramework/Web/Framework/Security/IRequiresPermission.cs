@@ -5,8 +5,8 @@ using System.Web;
 
 namespace Baud.Deployment.Web.Framework.Security
 {
-    public interface IHasRequiredContextRight
+    public interface IRequiresPermission
     {
-        string RequiredContextRight { get; }
+        string RequiredPermission { get; }
     }
 }

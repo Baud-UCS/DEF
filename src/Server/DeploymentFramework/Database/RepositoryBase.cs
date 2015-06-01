@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baud.Deployment.BusinessLogic.DataAccess
+namespace Baud.Deployment.Database
 {
     public abstract class RepositoryBase<TDbContext>
     {

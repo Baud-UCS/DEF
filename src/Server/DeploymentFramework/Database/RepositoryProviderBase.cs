@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Baud.Deployment.BusinessLogic.DataAccess.Contracts;
+using Baud.Deployment.Database.Contracts;
 
-namespace Baud.Deployment.BusinessLogic.DataAccess
+namespace Baud.Deployment.Database
 {
     public abstract class RepositoryProviderBase<TDbContext> : IRepositoryProvider<TDbContext>
     {
@@ -18,7 +18,7 @@ namespace Baud.Deployment.BusinessLogic.DataAccess
             RepositoriesCache = new Dictionary<Type, object>();
         }
 
-        public T GetCustomRepository<T>()
+        public T GetRepository<T>()
         {
             object cachedRepository;
             if (RepositoriesCache.TryGetValue(typeof(T), out cachedRepository))

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baud.Deployment.BusinessLogic.DataAccess.Contracts
+namespace Baud.Deployment.BusinessLogic.Contracts
 {
     public interface IDateTimeProvider
     {

@@ -9,18 +9,18 @@ namespace Baud.Deployment.Web.Framework.Security
 {
     public static class ClaimsSecurity
     {
-        public const string ContextRightClaimName = "http://schemas.baud.cz/2014/08/claims/contextright";
+        public const string PermissionClaimName = "http://schemas.baud.cz/2014/08/claims/permission";
 
-        public static bool HasContextRight(this ClaimsPrincipal principal, string contextRight)
+        public static bool HasPermission(this ClaimsPrincipal principal, string permission)
         {
-            return principal.HasClaim(ContextRightClaimName, contextRight);
+            return principal.HasClaim(PermissionClaimName, permission);
         }
 
-        public static bool HasContextRight(this IPrincipal userPrincipal, string contextRight)
+        public static bool HasPermission(this IPrincipal userPrincipal, string permission)
         {
             var principal = userPrincipal as System.Security.Claims.ClaimsPrincipal;
 
-            return principal != null && principal.HasContextRight(contextRight);
+            return principal != null && principal.HasPermission(permission);
         }
     }
 }

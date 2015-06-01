@@ -284,17 +284,20 @@
     <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ServersController.cs" />
-    <Compile Include="Framework\Data\EntityFrameworkContextProvider.cs" />
+    <Compile Include="Framework\Data\ReflectionDbContextProvider.cs" />
     <Compile Include="Framework\Data\UnityRepositoryProvider.cs" />
     <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\Security\DatabaseUserStore.cs" />
+    <Compile Include="Framework\Security\IPermissionProvider.cs" />
+    <Compile Include="Framework\Security\Permissions.cs" />
+    <Compile Include="Framework\Security\StaticPermissionsProvider.cs" />
     <Compile Include="Framework\Web\PagingData.cs" />
     <Compile Include="Framework\Web\SortingDirection.cs" />
     <Compile Include="Framework\Navigation\SecurityTrimmedSiteMapNodeVisibilityProvider.cs" />
     <Compile Include="Framework\Security\ClaimsSecurity.cs" />
     <Compile Include="Framework\Security\CurrentUserProvider.cs" />
-    <Compile Include="Framework\Security\IHasRequiredContextRight.cs" />
-    <Compile Include="Framework\Security\RequireContextRightAttribute.cs" />
+    <Compile Include="Framework\Security\IRequiresPermission.cs" />
+    <Compile Include="Framework\Security\RequirePermissionAttribute.cs" />
     <Compile Include="Framework\Web\SimpleHtmlAttributes.cs" />
     <Compile Include="Framework\Web\WebExtensions.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -310,7 +313,25 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="PackagesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Security.UsersController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServersController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -377,7 +398,6 @@
     <Content Include="Views\Security\Roles.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
     <Folder Include="Areas\Security\Views\Users\" />

@@ -5,15 +5,14 @@ namespace Baud.Deployment.Database.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Baud.Deployment.Database.BusinessContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Baud.Deployment.Database.Security.SecurityDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "Baud.Deployment.Database.BusinessContext";
         }
 
-        protected override void Seed(Baud.Deployment.Database.BusinessContext context)
+        protected override void Seed(Baud.Deployment.Database.Security.SecurityDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

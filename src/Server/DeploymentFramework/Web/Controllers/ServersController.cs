@@ -6,23 +6,23 @@ using System.Web.Mvc;
 
 namespace Baud.Deployment.Web.Controllers
 {
-    public class ServersController : Controller
+    public partial class ServersController : Controller
     {
         // GET: Servers
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }
 
         // GET: Servers/Details/5
-        public ActionResult Details(int id)
+        public virtual ActionResult Details(int id)
         {
             return View();
         }
 
         // GET: Servers/Create
         [ValidateAntiForgeryToken]
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return View();
         }
@@ -30,7 +30,7 @@ namespace Baud.Deployment.Web.Controllers
         // POST: Servers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(FormCollection collection)
+        public virtual ActionResult Create(FormCollection collection)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace Baud.Deployment.Web.Controllers
 
         // GET: Servers/Edit/5
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id)
+        public virtual ActionResult Edit(int id)
         {
             return View();
         }
@@ -54,7 +54,7 @@ namespace Baud.Deployment.Web.Controllers
         // POST: Servers/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, FormCollection collection)
+        public virtual ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace Baud.Deployment.Web.Controllers
 
         // GET: Servers/Delete/5
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public virtual ActionResult Delete(int id)
         {
             return View();
         }
@@ -78,7 +78,7 @@ namespace Baud.Deployment.Web.Controllers
         // POST: Servers/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, FormCollection collection)
+        public virtual ActionResult Delete(int id, FormCollection collection)
         {
             try
             {

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baud.Deployment.BusinessLogic.DataAccess.Contracts
+namespace Baud.Deployment.Database.Contracts
 {
     public interface IRepositoryProvider<TDbContext>
     {
         TDbContext DbContext { get; set; }
 
-        T GetCustomRepository<T>();
+        T GetRepository<T>();
     }
 }

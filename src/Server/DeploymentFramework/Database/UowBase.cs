@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Baud.Deployment.BusinessLogic.Contracts;
-using Baud.Deployment.BusinessLogic.DataAccess.Contracts;
+using Baud.Deployment.BusinessLogic.Domain;
+using Baud.Deployment.Database.Contracts;
 
-namespace Baud.Deployment.BusinessLogic.DataAccess
+namespace Baud.Deployment.Database
 {
     public abstract class UowBase<TDbContext> : IUow where TDbContext : IDbContext
     {
@@ -29,7 +30,7 @@ namespace Baud.Deployment.BusinessLogic.DataAccess
 
         protected virtual T GetRepository<T>()
         {
-            return RepositoryProvider.GetCustomRepository<T>();
+            return RepositoryProvider.GetRepository<T>();
         }
 
         public virtual void Commit()

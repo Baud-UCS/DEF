@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Baud.Deployment.Web.Controllers
 {
-    public class PackagesController : Controller
+    public partial class PackagesController : Controller
     {
         // GET: Packages
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }
