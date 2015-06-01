@@ -276,16 +276,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Areas\Security\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\ServersController.cs" />
     <Compile Include="Framework\Data\EntityFrameworkContextProvider.cs" />
     <Compile Include="Framework\Data\UnityRepositoryProvider.cs" />
     <Compile Include="Framework\Extensions.cs" />
+    <Compile Include="Framework\Security\DatabaseUserStore.cs" />
     <Compile Include="Framework\Web\PagingData.cs" />
     <Compile Include="Framework\Web\SortingDirection.cs" />
     <Compile Include="Framework\Navigation\SecurityTrimmedSiteMapNodeVisibilityProvider.cs" />
@@ -333,6 +335,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.chameleon.js" />
     <Content Include="Scripts\modernizer-min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Areas\Security\Views\web.config" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -375,6 +378,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Security\Models\" />
+    <Folder Include="Areas\Security\Views\Shared\" />
+    <Folder Include="Areas\Security\Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

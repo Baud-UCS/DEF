@@ -1,13 +1,21 @@
 ﻿@model MvcSiteMapProvider.Web.Html.Models.MenuHelperModel
 @using System.Web.Mvc.Html
 @using MvcSiteMapProvider.Web.Html.Models
-
 <ul id="menu" class="nav navbar-nav">
-    @foreach (var node in Model.Nodes) { 
-        <li>@Html.DisplayFor(m => node) 
-            @if (node.Children.Any()) {
+    @foreach (var node in Model.Nodes)
+    {
+        if (node.Children.Any())
+        {
+            <li class="dropdown">
+                @Html.DisplayFor(m => node)
                 @Html.DisplayFor(m => node.Children)
-            }
-        </li>
+            </li>
+        }
+        else
+        {
+            <li>
+                @Html.DisplayFor(m => node)
+            </li>
+        }
     }
 </ul>
