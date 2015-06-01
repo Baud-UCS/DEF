@@ -75,6 +75,11 @@
     <Compile Include="Domain\Configuration\Entities\Project.cs" />
     <Compile Include="Domain\Configuration\ProjectsRepository.cs" />
     <Compile Include="Domain\EntityBase.cs" />
+    <Compile Include="Domain\Security\Entities\Position.cs" />
+    <Compile Include="Domain\Security\Entities\Role.cs" />
+    <Compile Include="Domain\Security\Entities\RolePositionLink.cs" />
+    <Compile Include="Domain\Security\Entities\User.cs" />
+    <Compile Include="Domain\Security\Entities\UserPositionLink.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\RealDateTimeProvider.cs" />
   </ItemGroup>

@@ -50,7 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessContext.cs" />
+    <Compile Include="ContextBase.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
