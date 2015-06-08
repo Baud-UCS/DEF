@@ -14,7 +14,9 @@ var config = {
     jquerysrc: [
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/jquery-validation/dist/jquery.validate.min.js',
-        'bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'
+        'bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js',
+        'Scripts/jquery.validate.unobtrusive.chameleon.js',
+        'Scripts/jquery.validate.unobtrusive.bootstrap.js'
     ],
     jquerybundle: 'Scripts/jquery-bundle.min.js',
 

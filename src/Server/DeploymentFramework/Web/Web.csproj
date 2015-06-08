@@ -367,6 +367,7 @@
     <Content Include="package.json" />
     <Content Include="Scripts\bootstrap-bundle.min.js" />
     <Content Include="Scripts\jquery-bundle.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.chameleon.js" />
     <Content Include="Scripts\modernizer-min.js" />
     <Content Include="Scripts\_references.js" />
