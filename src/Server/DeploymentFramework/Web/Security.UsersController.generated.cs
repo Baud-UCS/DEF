@@ -27,9 +27,6 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
     public partial class UsersController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public UsersController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected UsersController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -58,9 +55,27 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Index()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Detail()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Detail);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Edit()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public UsersController Actions { get { return MVC.SecurityArea.Users; } }
+        public UsersController Actions { get { return MVC.Security.Users; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "Security";
         [GeneratedCode("T4MVC", "2.0")]
@@ -75,12 +90,16 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string Detail = "Detail";
+            public readonly string Edit = "Edit";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string Detail = "Detail";
+            public const string Edit = "Edit";
         }
 
 
@@ -94,8 +113,12 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Detail = "Detail";
+                public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
+            public readonly string Detail = "~/Areas/Security/Views/Users/Detail.cshtml";
+            public readonly string Edit = "~/Areas/Security/Views/Users/Edit.cshtml";
             public readonly string Index = "~/Areas/Security/Views/Users/Index.cshtml";
         }
     }
@@ -106,13 +129,52 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
         public T4MVC_UsersController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Baud.Deployment.Web.Areas.Security.Models.Users.IndexFilter filter, Baud.Deployment.Web.Framework.Web.PagingData paging);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ActionResult Index(Baud.Deployment.Web.Areas.Security.Models.Users.IndexFilter filter, Baud.Deployment.Web.Framework.Web.PagingData paging)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "filter", filter);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "paging", paging);
+            IndexOverride(callInfo, filter, paging);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DetailOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Detail(short id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Detail);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            DetailOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Edit(short id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            EditOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id, System.Web.Mvc.FormCollection form);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Edit(short id, System.Web.Mvc.FormCollection form)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
+            EditOverride(callInfo, id, form);
             return callInfo;
         }
 

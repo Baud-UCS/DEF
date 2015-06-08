@@ -174,6 +174,10 @@
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -269,7 +273,6 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RegisterChameleonFormsComponents.cs" />
@@ -277,6 +280,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Security\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Security\Models\Users\IndexFilter.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -291,6 +295,18 @@
     <Compile Include="Framework\Security\IPermissionProvider.cs" />
     <Compile Include="Framework\Security\Permissions.cs" />
     <Compile Include="Framework\Security\StaticPermissionsProvider.cs" />
+    <Compile Include="Framework\Web\Layout\CustomFieldGenerator.cs" />
+    <Compile Include="Framework\Web\Layout\CustomFieldGeneratorBase.cs" />
+    <Compile Include="Framework\Web\Layout\CustomForm.cs" />
+    <Compile Include="Framework\Web\Layout\ReadOnlyFormTemplate.cs" />
+    <Compile Include="Framework\Web\Layout\CustomFormTemplate.cs" />
+    <Compile Include="Framework\Web\Layout\Handlers\DisplayFieldHandler.cs" />
+    <Compile Include="Framework\Web\Layout\Handlers\SearchBoxHandler.cs" />
+    <Compile Include="Framework\Web\Layout\Handlers\SelectListHandler.cs" />
+    <Compile Include="Framework\Web\Layout\Handlers\TextOnlyFieldHandler.cs" />
+    <Compile Include="Framework\Web\Layout\LayoutExtensions.cs" />
+    <Compile Include="Framework\Web\Layout\ReadOnlyFieldGenerator.cs" />
+    <Compile Include="Framework\Web\Layout\ReadOnlyForm.cs" />
     <Compile Include="Framework\Web\PagingData.cs" />
     <Compile Include="Framework\Web\SortingDirection.cs" />
     <Compile Include="Framework\Navigation\SecurityTrimmedSiteMapNodeVisibilityProvider.cs" />
@@ -326,9 +342,6 @@
     <Compile Include="Security.UsersController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecurityController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="ServersController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -345,6 +358,7 @@
   <ItemGroup>
     <Content Include="Content\dist\css\app.css" />
     <Content Include="Content\dist\css\app.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -356,7 +370,13 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.chameleon.js" />
     <Content Include="Scripts\modernizer-min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Areas\Security\Views\web.config" />
+    <Content Include="Areas\Security\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Security\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Security\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Security\Views\Users\Detail.cshtml" />
+    <Content Include="Areas\Security\Views\Users\Edit.cshtml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -393,14 +413,9 @@
     <Content Include="Views\Servers\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
-    <Content Include="Views\Security\Users.cshtml" />
-    <Content Include="Views\Security\GroupRoles.cshtml" />
-    <Content Include="Views\Security\Roles.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
-    <Folder Include="Areas\Security\Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

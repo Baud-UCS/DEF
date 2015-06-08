@@ -100,7 +100,7 @@ namespace Baud.Deployment.Web.Framework.Web
 
         public static HtmlTag SortingLink<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression)
         {
-            string displayText = ModelMetadata.FromLambdaExpression(expression, html.ViewData).DisplayName;
+            string displayText = ModelMetadata.FromLambdaExpression(expression, html.ViewData).DisplayName ?? expression.GetPropertyName();
             string sortPropertyName = expression.GetPropertyName();
 
             return html.SortingLink(displayText, sortPropertyName);
@@ -108,7 +108,7 @@ namespace Baud.Deployment.Web.Framework.Web
 
         public static MvcHtmlString SortingLink<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, ActionResult result)
         {
-            string displayText = ModelMetadata.FromLambdaExpression(expression, html.ViewData).DisplayName;
+            string displayText = ModelMetadata.FromLambdaExpression(expression, html.ViewData).DisplayName ?? expression.GetPropertyName();
             string sortPropertyName = expression.GetPropertyName();
 
             return html.ActionLink(displayText, result.AddRouteValue(PagingData.SortColumnPropertyName, sortPropertyName));

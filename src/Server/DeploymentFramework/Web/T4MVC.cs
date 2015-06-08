@@ -27,14 +27,13 @@ using Baud.Deployment.Web.Framework.Security;
 public static partial class MVC
 {
     static readonly SecurityClass s_Security = new SecurityClass();
-    public static SecurityClass SecurityArea { get { return s_Security; } }
+    public static SecurityClass Security { get { return s_Security; } }
     public static Baud.Deployment.Web.Controllers.AccountController Account = new Baud.Deployment.Web.Controllers.T4MVC_AccountController();
     public static Baud.Deployment.Web.Controllers.HomeController Home = new Baud.Deployment.Web.Controllers.T4MVC_HomeController();
     public static Baud.Deployment.Web.Controllers.ManageController Manage = new Baud.Deployment.Web.Controllers.T4MVC_ManageController();
     public static Baud.Deployment.Web.Controllers.PackagesController Packages = new Baud.Deployment.Web.Controllers.T4MVC_PackagesController();
     public static Baud.Deployment.Web.Controllers.ProductsController Products = new Baud.Deployment.Web.Controllers.T4MVC_ProductsController();
     public static Baud.Deployment.Web.Controllers.ServersController Servers = new Baud.Deployment.Web.Controllers.T4MVC_ServersController();
-    public static T4MVC.SecurityController Security = new T4MVC.SecurityController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -112,7 +111,8 @@ namespace Links
         
         }
     
-        public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
+        public static readonly string PagedList_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PagedList.min.css") ? Url("PagedList.min.css") : Url("PagedList.css");
+                public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
                 }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

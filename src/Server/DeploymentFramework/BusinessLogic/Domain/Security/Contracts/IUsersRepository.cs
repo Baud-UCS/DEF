@@ -10,5 +10,9 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Contracts
     public interface IUsersRepository
     {
         IQueryable<User> GetUsers();
+
+        User GetUserDetail(short id);
+
+        void UpdateUser(short id, User user);
     }
 }

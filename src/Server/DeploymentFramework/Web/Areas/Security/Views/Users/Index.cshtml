@@ -1,0 +1,61 @@
+﻿@model PagedList.PagedList<Baud.Deployment.BusinessLogic.Domain.Security.Entities.User>
+@using PagedList.Mvc
+@{
+    var filter = (Baud.Deployment.Web.Areas.Security.Models.Users.IndexFilter)ViewBag.Filter;
+    ViewBag.Title = "Users";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="well">
+    @using (var f = Html.BeginCustomForm(method: FormMethod.Get))
+    {
+        using (var s = f.BeginSection("Filter"))
+        {
+            @s.FieldFor(m => filter.Name)
+            @s.FieldFor(m => filter.IsActive)
+        }
+
+        using (var s = f.BeginNavigation())
+        {
+            @s.Submit("Filter")
+        }
+    }
+</div>
+
+@if (Model.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.SortingLink(m => m[0].Login)</th>
+                <th>@Html.SortingLink(m => m[0].FirstName)</th>
+                <th>@Html.SortingLink(m => m[0].LastName)</th>
+                <th>@Html.SortingLink(m => m[0].Email)</th>
+                <th>@Html.SortingLink(m => m[0].ActiveFrom)</th>
+                <th>@Html.SortingLink(m => m[0].ActiveTo)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Login</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.ActiveFrom</td>
+                    <td>@user.ActiveTo</td>
+                    <td>@Html.GuardedActionLink("Detail", MVC.Security.Users.Detail(user.ID))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.CurrentWithPageNumber(page), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+}
+else
+{
+    <p>No data</p>
+}

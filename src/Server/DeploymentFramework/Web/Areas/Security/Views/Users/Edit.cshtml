@@ -1,0 +1,25 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.User
+@{
+    ViewBag.Title = "User detail";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (var f = Html.BeginCustomForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Login)
+        @s.FieldFor(m => m.FirstName)
+        @s.FieldFor(m => m.LastName)
+        @s.FieldFor(m => m.Email)
+        @s.FieldFor(m => m.ActiveFrom)
+        @s.FieldFor(m => m.ActiveTo)
+        @s.FieldFor(m => m.Note)
+    }
+
+    using (var n = f.BeginNavigation())
+    {
+        @n.Submit("Save")
+    }
+}

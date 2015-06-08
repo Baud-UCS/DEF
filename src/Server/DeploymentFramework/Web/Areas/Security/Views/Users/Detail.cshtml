@@ -1,0 +1,22 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.User
+@{
+    ViewBag.Title = "User detail";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (var f = Html.BeginReadOnlyForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Login)
+        @s.FieldFor(m => m.FirstName)
+        @s.FieldFor(m => m.LastName)
+        @s.FieldFor(m => m.Email)
+        @s.FieldFor(m => m.ActiveFrom)
+        @s.FieldFor(m => m.ActiveTo)
+        @s.FieldFor(m => m.Note)
+    }
+}
+
+@Html.GuardedActionLink("Edit", MVC.Security.Users.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))

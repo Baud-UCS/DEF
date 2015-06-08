@@ -7,7 +7,7 @@ using System.Web;
 using Baud.Deployment.Web.Framework.Web;
 using PagedList;
 
-namespace Baud.Deployment.Web.Framework
+namespace Baud.Deployment.Web
 {
     public static class Extensions
     {

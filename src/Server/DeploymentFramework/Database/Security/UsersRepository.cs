@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Baud.Deployment.BusinessLogic.Domain.Security.Contracts;
 using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
+using Baud.Deployment.BusinessLogic.Domain.Security.Queries;
 
 namespace Baud.Deployment.Database.Security
 {
@@ -17,7 +18,25 @@ namespace Baud.Deployment.Database.Security
 
         public IQueryable<User> GetUsers()
         {
-            return Context.Users;
+            return Context.Users.OnlyNonSystem();
+        }
+
+        public User GetUserDetail(short id)
+        {
+            return Context.Users.FilterByID(id).FirstOrDefault();
+        }
+
+        public void UpdateUser(short id, User user)
+        {
+            user.ID = id;
+
+            Context.AttachAsModified(user,
+                x => x.FirstName,
+                x => x.LastName,
+                x => x.Email,
+                x => x.Note,
+                x => x.ActiveFrom,
+                x => x.ActiveTo);
         }
     }
 }
