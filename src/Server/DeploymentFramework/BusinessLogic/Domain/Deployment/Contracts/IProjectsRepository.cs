@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baud.Deployment.BusinessLogic.Domain.Configuration.Contracts
+namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Contracts
 {
     public interface IProjectsRepository
     {

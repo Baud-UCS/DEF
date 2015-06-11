@@ -1,11 +1,11 @@
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
+
 namespace Baud.Deployment.Database.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-    using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
-
     internal sealed class SecurityConfiguration : DbMigrationsConfiguration<Baud.Deployment.Database.Security.SecurityDbContext>
     {
         public SecurityConfiguration()

@@ -19,30 +19,21 @@ namespace Baud.Deployment.Database.Security
 
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Role>()
-                .ToTable("Role", "Security");
-            modelBuilder.Entity<Role>()
-                .HasMany(r => r.PositionLinks);
+            modelBuilder.Entity<Role>().ToTable("Role", "Security");
+            modelBuilder.Entity<Role>().HasMany(r => r.PositionLinks).WithRequired(x => x.Role);
 
-            modelBuilder.Entity<RolePositionLink>()
-                .ToTable("Role_Position", "Security")
+            modelBuilder.Entity<RolePositionLink>().ToTable("Role_Position", "Security")
                 .HasKey(x => new { x.RoleID, x.PositionID });
 
-            modelBuilder.Entity<Position>()
-                .ToTable("Position", "Security");
-            modelBuilder.Entity<Position>()
-                .HasMany(p => p.RoleLinks);
-            modelBuilder.Entity<Position>()
-                .HasMany(p => p.UserLinks);
+            modelBuilder.Entity<Position>().ToTable("Position", "Security");
+            modelBuilder.Entity<Position>().HasMany(p => p.RoleLinks).WithRequired(x => x.Position);
+            modelBuilder.Entity<Position>().HasMany(p => p.UserLinks).WithRequired(x => x.Position);
 
-            modelBuilder.Entity<UserPositionLink>()
-                .ToTable("User_Position", "Security")
+            modelBuilder.Entity<UserPositionLink>().ToTable("User_Position", "Security")
                 .HasKey(x => new { x.UserID, x.PositionID });
 
-            modelBuilder.Entity<User>()
-                .ToTable("User", "Security");
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.PositionLinks);
+            modelBuilder.Entity<User>().ToTable("User", "Security")
+                .HasMany(u => u.PositionLinks).WithRequired(x => x.User);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Baud.Deployment.DeployLogic.Contracts
 {
     public interface ISitesService
     {
-        Models.Deployment CreateDeployment(string siteID, Models.PackageInfo packageInfo, Guid deploymentID);
+        Models.Installation CreateInstallation(string siteID, Models.PackageInfo packageInfo, Guid installationID);
 
         IReadOnlyDictionary<string, string> GetSiteParameters(string siteID);
 
@@ -16,6 +16,6 @@ namespace Baud.Deployment.DeployLogic.Contracts
 
         void RemoveSiteParameter(string siteID, string key);
 
-        void LogDeploymentProgress(string siteID, string packageID, Guid deploymentID, Models.DeploymentState state, int logLevel, Models.LogSeverity severity, string text);
+        void LogInstallationProgress(string siteID, string packageID, Guid installationID, Models.InstallationState state, int logLevel, Models.LogSeverity severity, string text);
     }
 }

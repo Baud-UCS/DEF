@@ -31,7 +31,7 @@ namespace Baud.Deployment.DeployAgent.Api
         }
 
         [Route("api/deploy/{site}")]
-        public async Task<Baud.Deployment.DeployLogic.Models.Deployment> Post(string site)
+        public async Task<Baud.Deployment.DeployLogic.Models.Installation> Post(string site)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
@@ -43,9 +43,9 @@ namespace Baud.Deployment.DeployAgent.Api
                 var streamProvider = new MemoryDataStreamProvider(packageStream);
                 await Request.Content.ReadAsMultipartAsync(streamProvider);
 
-                var deploymentID = Guid.NewGuid();
+                var installationID = Guid.NewGuid();
 
-                return _deployService.DeployPackage(site, deploymentID, packageStream);
+                return _deployService.DeployPackage(site, installationID, packageStream);
             }
         }
     }

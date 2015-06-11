@@ -10,9 +10,15 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Entities
     public class User : EntityBase
     {
         public short ID { get; set; }
+
+        [Required]
+        [MaxLength(100)]
         public string Login { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        [Required]
+        [MaxLength(100)]
         public string Email { get; set; }
         public string PasswordHash { get; set; }
 

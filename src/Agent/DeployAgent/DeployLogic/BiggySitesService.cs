@@ -60,55 +60,55 @@ namespace Baud.Deployment.DeployLogic
             _sites.Update(site);
         }
 
-        public Models.Deployment CreateDeployment(string siteID, Models.PackageInfo packageInfo, Guid deploymentID)
+        public Models.Installation CreateInstallation(string siteID, Models.PackageInfo packageInfo, Guid installationID)
         {
-            CheckUniqueDeploymentID(deploymentID);
+            CheckUniqueInstallationID(installationID);
             var site = GetOrCreateSite(siteID);
             var package = GetOrCreatePackage(site, packageInfo);
 
-            var deployment = new Models.Deployment
+            var installation = new Models.Installation
             {
-                ID = deploymentID,
+                ID = installationID,
                 SiteID = site.ID,
                 PackageID = package.ID,
                 Date = DateTime.Now,
-                State = Models.DeploymentState.Pending
+                State = Models.InstallationState.Pending
             };
-            package.Deployments.Add(deployment);
+            package.Installations.Add(installation);
             _sites.Update(site);
 
-            return deployment;
+            return installation;
         }
 
-        public void LogDeploymentProgress(string siteID, string packageID, Guid deploymentID, Models.DeploymentState state, int logLevel, Models.LogSeverity severity, string text)
+        public void LogInstallationProgress(string siteID, string packageID, Guid installationID, Models.InstallationState state, int logLevel, Models.LogSeverity severity, string text)
         {
             var site = _sites.First(x => x.ID == siteID);
             var package = site.InstalledPackages.First(x => x.ID == packageID);
-            var deployment = package.Deployments.First(x => x.ID == deploymentID);
+            var installation = package.Installations.First(x => x.ID == installationID);
 
-            deployment.State = state;
+            installation.State = state;
 
-            var log = new Models.DeploymentLog
+            var log = new Models.InstallationLog
             {
                 Level = logLevel,
                 Timestamp = DateTime.Now,
                 Severity = severity,
                 Text = text
             };
-            deployment.Logs.Add(log);
+            installation.Logs.Add(log);
 
             _sites.Update(site);
         }
 
-        private void CheckUniqueDeploymentID(Guid deploymentID)
+        private void CheckUniqueInstallationID(Guid installationID)
         {
-            var existingDeployments = from s in _sites
-                                      from p in s.InstalledPackages
-                                      from d in p.Deployments
-                                      select d.ID;
-            if (existingDeployments.Contains(deploymentID))
+            var existinginstallations = from s in _sites
+                                        from p in s.InstalledPackages
+                                        from d in p.Installations
+                                        select d.ID;
+            if (existinginstallations.Contains(installationID))
             {
-                throw new InvalidOperationException(string.Format("There is already a deployment with ID '{0}'", deploymentID));
+                throw new InvalidOperationException(string.Format("There is already an installation with ID '{0}'", installationID));
             }
         }
 

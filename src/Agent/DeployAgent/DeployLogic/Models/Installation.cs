@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Baud.Deployment.DeployLogic.Models
 {
-    public class Deployment
+    public class Installation
     {
         public Guid ID { get; set; }
         public string SiteID { get; set; }
         public string PackageID { get; set; }
         public DateTime Date { get; set; }
 
-        public DeploymentState State { get; set; }
+        public InstallationState State { get; set; }
 
-        public IList<DeploymentLog> Logs { get; set; }
+        public IList<InstallationLog> Logs { get; set; }
 
-        public Deployment()
+        public Installation()
         {
-            Logs = new List<DeploymentLog>();
+            Logs = new List<InstallationLog>();
         }
     }
 }

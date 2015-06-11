@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baud.Deployment.DeployLogic.Models
+namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Enums
 {
-    public enum DeploymentState
+    public enum InstallationState : byte
     {
+        Waiting,
         Pending,
         Failure,
         Success

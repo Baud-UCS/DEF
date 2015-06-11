@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Baud.Deployment.DeployLogic.Models
 {
-    public class DeploymentLog
+    public class InstallationLog
     {
         public DateTime Timestamp { get; set; }
         public int Level { get; set; }

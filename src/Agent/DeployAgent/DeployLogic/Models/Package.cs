@@ -8,11 +8,11 @@ namespace Baud.Deployment.DeployLogic.Models
 {
     public class Package : PackageInfo
     {
-        public IList<Deployment> Deployments { get; set; }
+        public IList<Installation> Installations { get; set; }
 
         public Package()
         {
-            Deployments = new List<Deployment>();
+            Installations = new List<Installation>();
         }
     }
 }

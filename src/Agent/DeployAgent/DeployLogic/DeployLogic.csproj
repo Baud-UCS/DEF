@@ -71,9 +71,9 @@
     <Compile Include="Contracts\ISharedSettingsService.cs" />
     <Compile Include="Contracts\ISitesService.cs" />
     <Compile Include="DeployScriptException.cs" />
-    <Compile Include="Models\Deployment.cs" />
-    <Compile Include="Models\DeploymentLog.cs" />
-    <Compile Include="Models\DeploymentState.cs" />
+    <Compile Include="Models\Installation.cs" />
+    <Compile Include="Models\InstallationLog.cs" />
+    <Compile Include="Models\InstallationState.cs" />
     <Compile Include="Models\LogSeverity.cs" />
     <Compile Include="Models\Package.cs" />
     <Compile Include="Models\PackageInfo.cs" />

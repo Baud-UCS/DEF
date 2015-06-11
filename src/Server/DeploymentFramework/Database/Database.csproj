@@ -53,6 +53,8 @@
     <Compile Include="Contracts\IDbContext.cs" />
     <Compile Include="Contracts\IDbContextProvider.cs" />
     <Compile Include="Contracts\IRepositoryProvider.cs" />
+    <Compile Include="Deployment\DeploymentDbContext.cs" />
+    <Compile Include="Migrations\DeploymentConfiguration.cs" />
     <Compile Include="Migrations\SecurityConfiguration.cs" />
     <Compile Include="NonTrackingDbContextProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

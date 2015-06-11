@@ -10,5 +10,8 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Entities
     {
         public short UserID { get; set; }
         public short PositionID { get; set; }
+
+        public Position Position { get; set; }
+        public User User { get; set; }
     }
 }

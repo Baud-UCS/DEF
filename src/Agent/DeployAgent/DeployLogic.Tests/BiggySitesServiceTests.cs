@@ -22,22 +22,22 @@ namespace Baud.Deployment.DeployLogic.Tests
         }
 
         [TestMethod]
-        public void CreateDeployment_CreatesSite_IfNotExist()
+        public void CreateInstallation_CreatesSite_IfNotExist()
         {
             var service = CreateCleanService();
             var serviceHelper = (IBiggySitesServiceTesting)service;
 
-            var sitesBeforeDeployment = serviceHelper.ListSites().ToList();
-            Assert.AreEqual(sitesBeforeDeployment.Count, 0);
+            var sitesBeforeInstallation = serviceHelper.ListSites().ToList();
+            Assert.AreEqual(sitesBeforeInstallation.Count, 0);
 
-            service.CreateDeployment("TestSite", new Models.PackageInfo(), new Guid());
+            service.CreateInstallation("TestSite", new Models.PackageInfo(), new Guid());
 
-            var sitesAfterDeployment = serviceHelper.ListSites().ToList();
-            sitesAfterDeployment.Should().ContainSingle("TestSite");
+            var sitesAfterInstallation = serviceHelper.ListSites().ToList();
+            sitesAfterInstallation.Should().ContainSingle("TestSite");
         }
 
         [TestMethod]
-        public void CreateDeployment_Throws_IfDeploymentIDAlreadyExistis_InAnotherSite()
+        public void CreateInstallation_Throws_IfInstallationIDAlreadyExistis_InAnotherSite()
         {
             var service = CreateCleanService();
             var serviceHelper = (IBiggySitesServiceTesting)service;
@@ -51,9 +51,9 @@ namespace Baud.Deployment.DeployLogic.Tests
                     {
                         ID = "AnotherPackage",
                         Version = "1.0",
-                        Deployments = new List<Models.Deployment>
+                        Installations = new List<Models.Installation>
                         {
-                            new Models.Deployment
+                            new Models.Installation
                             {
                                 ID = new Guid(ConflictingGuid)
                             }
@@ -63,13 +63,13 @@ namespace Baud.Deployment.DeployLogic.Tests
             };
             serviceHelper.AddSite(existingSite);
 
-            Action action = () => service.CreateDeployment("TestSite", new Models.PackageInfo { ID = "TestPackage", Version = "1.0" }, new Guid(ConflictingGuid));
+            Action action = () => service.CreateInstallation("TestSite", new Models.PackageInfo { ID = "TestPackage", Version = "1.0" }, new Guid(ConflictingGuid));
 
             action.ShouldThrow<InvalidOperationException>();
         }
 
         [TestMethod]
-        public void CreateDeployment_Throws_IfDeploymentIDAlreadyExistis_InAnotherPackage()
+        public void CreateInstallation_Throws_IfInstallationIDAlreadyExistis_InAnotherPackage()
         {
             var service = CreateCleanService();
             var serviceHelper = (IBiggySitesServiceTesting)service;
@@ -83,9 +83,9 @@ namespace Baud.Deployment.DeployLogic.Tests
                     {
                         ID = "AnotherPackage",
                         Version = "1.0",
-                        Deployments = new List<Models.Deployment>
+                        Installations = new List<Models.Installation>
                         {
-                            new Models.Deployment
+                            new Models.Installation
                             {
                                 ID = new Guid(ConflictingGuid)
                             }
@@ -95,13 +95,13 @@ namespace Baud.Deployment.DeployLogic.Tests
             };
             serviceHelper.AddSite(existingSite);
 
-            Action action = () => service.CreateDeployment("TestSite", new Models.PackageInfo { ID = "TestPackage", Version = "1.0" }, new Guid(ConflictingGuid));
+            Action action = () => service.CreateInstallation("TestSite", new Models.PackageInfo { ID = "TestPackage", Version = "1.0" }, new Guid(ConflictingGuid));
 
             action.ShouldThrow<InvalidOperationException>();
         }
 
         [TestMethod]
-        public void CreateDeployment_Throws_IfDeploymentIDAlreadyExistis_InTheSamePackage()
+        public void CreateInstallation_Throws_IfInstallationIDAlreadyExistis_InTheSamePackage()
         {
             var service = CreateCleanService();
             var serviceHelper = (IBiggySitesServiceTesting)service;
@@ -115,9 +115,9 @@ namespace Baud.Deployment.DeployLogic.Tests
                     {
                         ID = "TestPackage",
                         Version = "1.0",
-                        Deployments = new List<Models.Deployment>
+                        Installations = new List<Models.Installation>
                         {
-                            new Models.Deployment
+                            new Models.Installation
                             {
                                 ID = new Guid(ConflictingGuid)
                             }
@@ -127,7 +127,7 @@ namespace Baud.Deployment.DeployLogic.Tests
             };
             serviceHelper.AddSite(existingSite);
 
-            Action action = () => service.CreateDeployment("TestSite", new Models.PackageInfo { ID = "TestPackage", Version = "1.0" }, new Guid(ConflictingGuid));
+            Action action = () => service.CreateInstallation("TestSite", new Models.PackageInfo { ID = "TestPackage", Version = "1.0" }, new Guid(ConflictingGuid));
 
             action.ShouldThrow<InvalidOperationException>();
         }
