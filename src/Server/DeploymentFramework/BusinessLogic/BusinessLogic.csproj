@@ -61,6 +61,8 @@
     <Compile Include="Contracts\IAgentAdapter.cs" />
     <Compile Include="Contracts\ICurrentUserProvider.cs" />
     <Compile Include="Contracts\IDateTimeProvider.cs" />
+    <Compile Include="Domain\Deployment\Contracts\IDeploymentUow.cs" />
+    <Compile Include="Domain\Deployment\Contracts\IInstallationsRepository.cs" />
     <Compile Include="Domain\Deployment\Contracts\IProjectsRepository.cs" />
     <Compile Include="Domain\Deployment\Entities\Application.cs" />
     <Compile Include="Domain\Deployment\Entities\Installation.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Domain\Deployment\Entities\ServerSite.cs" />
     <Compile Include="Domain\Deployment\Enums\InstallationState.cs" />
     <Compile Include="Domain\Deployment\Enums\LogSeverity.cs" />
+    <Compile Include="Domain\Deployment\Queries\InstallationQueries.cs" />
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IUow.cs" />
     <Compile Include="Domain\Security\Contracts\ISecurityUow.cs" />
