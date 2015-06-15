@@ -187,3 +187,9 @@ FakesAssemblies/
 
 #bower packages
 bower_components/
+
+#log files
+**/Web/Logs/
+
+!**/Web/Views/Packages/**
+DeployPackages/

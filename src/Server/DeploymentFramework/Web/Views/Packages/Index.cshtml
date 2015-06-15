@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Packages";
+}
+
+<h2>
+    Packages
+</h2>
+
+<p>
+    You can upload packages to <i>@Helpers.GetPushUrl(Request.Url, Request.ApplicationPath)</i>
+</p>
+<p>
+    You are running NuGet.Server v@(typeof(NuGet.Server.DataServices.Package).Assembly.GetName().Version)
+</p>
