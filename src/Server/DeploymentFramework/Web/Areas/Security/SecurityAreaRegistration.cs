@@ -17,8 +17,7 @@ namespace Baud.Deployment.Web.Areas.Security
             context.MapRoute(
                 "Security_default",
                 "Security/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+                new { action = "Index", id = UrlParameter.Optional });
         }
     }
 }

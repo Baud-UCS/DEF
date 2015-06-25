@@ -18,14 +18,14 @@ namespace Baud.Deployment.BusinessLogic.Agents
             _baseUrl = baseUrl;
         }
 
-        public async Task<DeployLogic.Models.Deployment> DeployPackageAsync(string siteID, byte[] package)
+        public async Task<Agents.Models.Deployment> DeployPackageAsync(string siteID, byte[] package)
         {
             var request = new RestRequest(Urls.Deploy, Method.POST);
             request.AddUrlSegment(UrlSegments.Site, siteID);
             request.AddFile(Parameters.Package, package, "package.nupkg");
 
             var client = CreateClient();
-            var response = await client.ExecuteTaskAsync<DeployLogic.Models.Deployment>(request);
+            var response = await client.ExecuteTaskAsync<Agents.Models.Deployment>(request);
 
             return response.Data;
         }

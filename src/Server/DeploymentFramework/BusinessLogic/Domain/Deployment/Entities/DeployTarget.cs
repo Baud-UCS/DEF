@@ -11,7 +11,6 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Entities
         public int ID { get; set; }
         public int ApplicationID { get; set; }
         public int EnvironmentID { get; set; }
-        public int ServerID { get; set; }
         public int SiteID { get; set; }
 
         public string Note { get; set; }
@@ -19,7 +18,7 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Entities
 
         public Environment Environment { get; set; }
         public Application Application { get; set; }
-        public Server Server { get; set; }
+        public ServerSite Site { get; set; }
 
         public List<Installation> Installations { get; set; }
     }

@@ -36,9 +36,9 @@ namespace Baud.Deployment.Web.Framework.Web.Layout.Handlers
         {
             return FieldGenerator.HtmlHelper.HiddenFor(FieldGenerator.FieldProperty, fieldConfiguration.HtmlAttributes);
 
-            //return new HtmlString(string.Concat(
-            //    FieldGenerator.HtmlHelper.Hidden(selectedTextProperty),
-            //    FieldGenerator.HtmlHelper.HiddenFor(FieldGenerator.FieldProperty, fieldConfiguration.HtmlAttributes)));
+            ////return new HtmlString(string.Concat(
+            ////    FieldGenerator.HtmlHelper.Hidden(selectedTextProperty),
+            ////    FieldGenerator.HtmlHelper.HiddenFor(FieldGenerator.FieldProperty, fieldConfiguration.HtmlAttributes)));
         }
 
         public override ChameleonForms.Enums.FieldDisplayType GetDisplayType(IReadonlyFieldConfiguration fieldConfiguration)

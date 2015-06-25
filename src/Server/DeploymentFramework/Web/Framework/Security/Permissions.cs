@@ -14,7 +14,6 @@ namespace Baud.Deployment.Web.Framework.Security
             public const string UserRead = ModulePrefix + "User.Read";
             public const string UserSave = ModulePrefix + "User.Save";
             public const string UserManagePositions = ModulePrefix + "User.ManagePositions";
-
         }
     }
 }

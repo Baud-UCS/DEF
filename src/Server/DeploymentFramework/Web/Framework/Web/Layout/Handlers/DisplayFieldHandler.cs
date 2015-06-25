@@ -24,11 +24,11 @@ namespace Baud.Deployment.Web.Framework.Web.Layout.Handlers
         {
             var value = FieldGenerator.GetValue();
 
-            //var valueAsEnum = value as Enum;
-            //if (valueAsEnum != null)
-            //{
-            //    return new HtmlString(valueAsEnum.GetDescription());
-            //}
+            ////var valueAsEnum = value as Enum;
+            ////if (valueAsEnum != null)
+            ////{
+            ////    return new HtmlString(valueAsEnum.GetDescription());
+            ////}
 
             return value != null ? new HtmlString(value.ToString()) : null;
 

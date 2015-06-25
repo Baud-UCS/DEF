@@ -48,12 +48,12 @@ namespace Baud.Deployment.Database.Deployment
             modelBuilder.Entity<InstallationLog>().ToTable("InstallationLog", "Deployment");
 
             modelBuilder.Entity<Server>().ToTable("Server", "Deployment");
-            modelBuilder.Entity<Server>().HasMany(x => x.DeployTargets).WithRequired(x => x.Server);
             modelBuilder.Entity<Server>().HasMany(x => x.Sites).WithRequired(x => x.Server);
             modelBuilder.Entity<Server>().HasMany(x => x.Parameters).WithRequired(x => x.Server);
 
-            modelBuilder.Entity<ServerSite>().ToTable("ServerSite", "Deployment")
-                .HasMany(x => x.Parameters).WithOptional(x => x.Site);
+            modelBuilder.Entity<ServerSite>().ToTable("ServerSite", "Deployment");
+            modelBuilder.Entity<ServerSite>().HasMany(x => x.DeployTargets).WithRequired(x => x.Site);
+            modelBuilder.Entity<ServerSite>().HasMany(x => x.Parameters).WithOptional(x => x.Site);
 
             modelBuilder.Entity<ServerParameter>().ToTable("ServerParameter", "Deployment");
         }

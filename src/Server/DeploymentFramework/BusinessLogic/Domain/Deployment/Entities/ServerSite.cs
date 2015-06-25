@@ -20,6 +20,7 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Entities
 
         public Server Server { get; set; }
 
+        public List<DeployTarget> DeployTargets { get; set; }
         public List<ServerParameter> Parameters { get; set; }
     }
 }

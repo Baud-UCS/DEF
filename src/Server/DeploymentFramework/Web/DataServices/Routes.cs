@@ -9,13 +9,17 @@ using RouteMagic;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Baud.Deployment.Web.NuGetRoutes), "Start")]
 
-namespace Baud.Deployment.Web {
-    public static class NuGetRoutes {
-        public static void Start() {
+namespace Baud.Deployment.Web
+{
+    public static class NuGetRoutes
+    {
+        public static void Start()
+        {
             MapRoutes(RouteTable.Routes);
         }
 
-        private static void MapRoutes(RouteCollection routes) {
+        private static void MapRoutes(RouteCollection routes)
+        {
             // The default route is http://{root}/nuget/Packages
             var factory = new DataServiceHostFactory();
             var serviceRoute = new ServiceRoute("nuget", factory, typeof(Packages));
@@ -24,7 +28,8 @@ namespace Baud.Deployment.Web {
             routes.Add("nuget", serviceRoute);
         }
 
-        private static PackageService CreatePackageService() {
+        private static PackageService CreatePackageService()
+        {
             return NinjectBootstrapper.Kernel.Get<PackageService>();
         }
     }

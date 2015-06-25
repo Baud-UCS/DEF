@@ -48,14 +48,14 @@ namespace Baud.Deployment.Database.Migrations
                 new Application { ID = 3, ProjectID = 1, PackageId = "Baud.DEF.Demo.Reports", Name = "Reports", Description = "SSRS reports", Priority = 30, Created = now });
 
             context.DeployTargets.AddOrUpdate(
-                new DeployTarget { ID = 1, ApplicationID = 1, EnvironmentID = 1, ServerID = 1, SiteID = 2, Url = "http://intranet.dev", Created = now },
-                new DeployTarget { ID = 2, ApplicationID = 1, EnvironmentID = 2, ServerID = 2, SiteID = 3, Url = "http://intranet.test", Created = now },
-                new DeployTarget { ID = 3, ApplicationID = 1, EnvironmentID = 3, ServerID = 3, SiteID = 4, Url = "http://intranet", Created = now },
-                new DeployTarget { ID = 4, ApplicationID = 2, EnvironmentID = 1, ServerID = 1, SiteID = 2, Created = now },
-                new DeployTarget { ID = 5, ApplicationID = 2, EnvironmentID = 2, ServerID = 2, SiteID = 3, Created = now },
-                new DeployTarget { ID = 6, ApplicationID = 2, EnvironmentID = 3, ServerID = 4, SiteID = 5, Created = now },
-                new DeployTarget { ID = 7, ApplicationID = 3, EnvironmentID = 2, ServerID = 2, SiteID = 3, Created = now },
-                new DeployTarget { ID = 8, ApplicationID = 3, EnvironmentID = 3, ServerID = 5, SiteID = 6, Created = now });
+                new DeployTarget { ID = 1, ApplicationID = 1, EnvironmentID = 1, SiteID = 2, Url = "http://intranet.dev", Created = now },
+                new DeployTarget { ID = 2, ApplicationID = 1, EnvironmentID = 2, SiteID = 3, Url = "http://intranet.test", Created = now },
+                new DeployTarget { ID = 3, ApplicationID = 1, EnvironmentID = 3, SiteID = 4, Url = "http://intranet", Created = now },
+                new DeployTarget { ID = 4, ApplicationID = 2, EnvironmentID = 1, SiteID = 2, Created = now },
+                new DeployTarget { ID = 5, ApplicationID = 2, EnvironmentID = 2, SiteID = 3, Created = now },
+                new DeployTarget { ID = 6, ApplicationID = 2, EnvironmentID = 3, SiteID = 5, Created = now },
+                new DeployTarget { ID = 7, ApplicationID = 3, EnvironmentID = 2, SiteID = 3, Created = now },
+                new DeployTarget { ID = 8, ApplicationID = 3, EnvironmentID = 3, SiteID = 6, Created = now });
         }
     }
 }

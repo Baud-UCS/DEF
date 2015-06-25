@@ -313,7 +313,6 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ServersController.cs" />
     <Compile Include="DataServices\Routes.cs" />
-    <Compile Include="Framework\Data\ReflectionDbContextProvider.cs" />
     <Compile Include="Framework\Data\UnityRepositoryProvider.cs" />
     <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\Security\DatabaseUserStore.cs" />
@@ -361,6 +360,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\NuGetDeployPackagesProvider.cs" />
     <Compile Include="Security.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -392,7 +392,6 @@
     <Content Include="gulpfile.js" />
     <Content Include="bower.json" />
     <Content Include="package.json" />
-    <Content Include="NuGetRepository\Readme.txt" />
     <Content Include="Scripts\bootstrap-bundle.min.js" />
     <Content Include="Scripts\jquery-bundle.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.js" />

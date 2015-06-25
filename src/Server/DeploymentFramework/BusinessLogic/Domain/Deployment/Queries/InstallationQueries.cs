@@ -19,5 +19,10 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Queries
         {
             return query.Where(x => x.Planned <= date);
         }
+
+        public static IQueryable<Installation> FilterByID(this IQueryable<Installation> query, int installationID)
+        {
+            return query.Where(x => x.ID == installationID);
+        }
     }
 }

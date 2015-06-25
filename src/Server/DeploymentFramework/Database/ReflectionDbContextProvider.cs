@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
-using Baud.Deployment.Database;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Baud.Deployment.Web.Framework.Data
+namespace Baud.Deployment.Database
 {
-    public class ReflectionDbContextProvider<TDbContext> : NonTrackingDbContextProvider<TDbContext> where TDbContext : DbContext
+    public class ReflectionDbContextProvider<TDbContext> : NoChangeTrackingDbContextProvider<TDbContext> where TDbContext : DbContext
     {
         protected override TDbContext CreateContextInner()
         {

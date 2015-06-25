@@ -10,5 +10,13 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Contracts
     public interface IInstallationsRepository
     {
         IQueryable<Installation> GetWaitingInstallations();
+
+        void MarkInstallationPending(int installationID);
+
+        void MarkInstallationSuccessfull(int installationID, Guid agentDeploymentID, DateTime deployed);
+
+        void MarkInstallationFailed(int installationID, Guid? agentDeploymentID, DateTime deployed);
+
+        void AddInstallationLog(int installationID, InstallationLog log);
     }
 }

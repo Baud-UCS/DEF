@@ -8,7 +8,7 @@ using Baud.Deployment.Database.Contracts;
 
 namespace Baud.Deployment.Database
 {
-    public abstract class NonTrackingDbContextProvider<TDbContext> : IDbContextProvider<TDbContext> where TDbContext : DbContext
+    public abstract class NoChangeTrackingDbContextProvider<TDbContext> : IDbContextProvider<TDbContext> where TDbContext : DbContext
     {
         public TDbContext CreateContext()
         {

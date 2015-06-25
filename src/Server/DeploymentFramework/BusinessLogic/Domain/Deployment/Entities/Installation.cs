@@ -16,7 +16,12 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Entities
         [MaxLength(100)]
         public string PackageVersion { get; set; }
 
+        [Required]
+        public string PackageFilePath { get; set; }
+
         public DateTime Planned { get; set; }
+
+        public DateTime? Started { get; set; }
         public DateTime? Deployed { get; set; }
         public Guid? AgentDeploymentId { get; set; }
 
