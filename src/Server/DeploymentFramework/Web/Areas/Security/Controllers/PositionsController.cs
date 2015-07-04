@@ -18,7 +18,7 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             _securityUow = securityUow;
         }
 
-        public ActionResult Index(IndexFilter filter, PagingData paging)
+        public virtual ActionResult Index(IndexFilter filter, PagingData paging)
         {
             paging.PageSize = 2; // only for testing
 

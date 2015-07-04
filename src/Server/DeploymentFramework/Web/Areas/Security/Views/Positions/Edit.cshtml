@@ -10,7 +10,7 @@
     using (var s = f.BeginSection())
     {
         @s.FieldFor(m => m.Name)
-        @s.FieldFor(m => m.IsActive)
+        @s.FieldFor(m => m.IsActive).AsDropDown()
     }
 
     using (var n = f.BeginNavigation())
