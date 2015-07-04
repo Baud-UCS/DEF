@@ -303,7 +303,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Areas\Security\Controllers\PositionsController.cs" />
+    <Compile Include="Areas\Security\Controllers\RolesController.cs" />
     <Compile Include="Areas\Security\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Security\Models\Positions\IndexFilter.cs" />
+    <Compile Include="Areas\Security\Models\Roles\IndexFilter.cs" />
     <Compile Include="Areas\Security\Models\Users\IndexFilter.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -405,6 +409,12 @@
     <Content Include="Areas\Security\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Security\Views\Users\Detail.cshtml" />
     <Content Include="Areas\Security\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Security\Views\Roles\Detail.cshtml" />
+    <Content Include="Areas\Security\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\Security\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Security\Views\Positions\Index.cshtml" />
+    <Content Include="Areas\Security\Views\Positions\Detail.cshtml" />
+    <Content Include="Areas\Security\Views\Positions\Edit.cshtml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

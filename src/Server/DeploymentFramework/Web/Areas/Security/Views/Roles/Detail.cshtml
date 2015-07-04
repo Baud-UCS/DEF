@@ -1,0 +1,17 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.Role
+@{
+    ViewBag.Title = "Role detail";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (var f = Html.BeginReadOnlyForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Name)
+        @s.FieldFor(m => m.IsActive)
+    }
+}
+
+@Html.GuardedActionLink("Edit", MVC.Security.Roles.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))

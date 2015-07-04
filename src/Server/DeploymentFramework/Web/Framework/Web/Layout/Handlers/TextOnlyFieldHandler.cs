@@ -18,10 +18,10 @@ namespace Baud.Deployment.Web.Framework.Web.Layout.Handlers
         {
         }
 
-        //public override IHtmlString GenerateFieldHtml(ChameleonForms.Component.Config.IReadonlyFieldConfiguration fieldConfiguration)
-        //{
-        //    var text = base.GenerateFieldHtml(fieldConfiguration);
-        //    return Original.OriginalDetailFormTemplateHelpers.FieldContent(text);
-        //}
+        ////public override IHtmlString GenerateFieldHtml(ChameleonForms.Component.Config.IReadonlyFieldConfiguration fieldConfiguration)
+        ////{
+        ////    var text = base.GenerateFieldHtml(fieldConfiguration);
+        ////    return Original.OriginalDetailFormTemplateHelpers.FieldContent(text);
+        ////}
     }
 }

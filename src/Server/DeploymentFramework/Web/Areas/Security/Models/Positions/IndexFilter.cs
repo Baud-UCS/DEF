@@ -5,18 +5,18 @@ using System.Web;
 using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
 using Baud.Deployment.BusinessLogic.Domain.Security.Queries;
 
-namespace Baud.Deployment.Web.Areas.Security.Models.Users
+namespace Baud.Deployment.Web.Areas.Security.Models.Positions
 {
     public class IndexFilter
     {
         public string Name { get; set; }
         public bool? IsActive { get; set; }
 
-        public IQueryable<User> Apply(IQueryable<User> source)
+        public IQueryable<Position> Apply(IQueryable<Position> source)
         {
-            IQueryable<User> query = source.OrderBy(x => x.Login);
+            IQueryable<Position> query = source.OrderBy(x => x.Name);
 
-            query = query.Filter(Name, x => x.FirstName.Contains(Name) || x.LastName.Contains(Name));
+            query = query.Filter(Name, x => x.Name.Contains(Name));
 
             if (IsActive == true)
             {

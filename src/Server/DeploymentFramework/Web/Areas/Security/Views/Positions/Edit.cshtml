@@ -1,0 +1,20 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.Position
+@{
+    ViewBag.Title = "Position detail";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (var f = Html.BeginCustomForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Name)
+        @s.FieldFor(m => m.IsActive)
+    }
+
+    using (var n = f.BeginNavigation())
+    {
+        @n.Submit("Save")
+    }
+}

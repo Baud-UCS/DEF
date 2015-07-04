@@ -82,6 +82,8 @@
     <Compile Include="Domain\Deployment\Queries\InstallationQueries.cs" />
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IUow.cs" />
+    <Compile Include="Domain\Security\Contracts\IPositionsRepository.cs" />
+    <Compile Include="Domain\Security\Contracts\IRolesRepository.cs" />
     <Compile Include="Domain\Security\Contracts\ISecurityUow.cs" />
     <Compile Include="Domain\Security\Contracts\IUsersRepository.cs" />
     <Compile Include="Domain\Security\Entities\Position.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="Domain\Security\Entities\RolePositionLink.cs" />
     <Compile Include="Domain\Security\Entities\User.cs" />
     <Compile Include="Domain\Security\Entities\UserPositionLink.cs" />
+    <Compile Include="Domain\Security\Queries\PositionQueries.cs" />
+    <Compile Include="Domain\Security\Queries\RoleQueries.cs" />
     <Compile Include="Domain\Security\Queries\UserQueries.cs" />
     <Compile Include="Providers\SimpleCurrentUserProvider.cs" />
     <Compile Include="Providers\WebApiAgentAdapterProvider.cs" />
