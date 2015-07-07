@@ -63,7 +63,7 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
                 return View(position);
             }
         }
-        // TODO: T4 template for Actions
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public virtual ActionResult Edit(short id, FormCollection form)
