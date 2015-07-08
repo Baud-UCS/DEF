@@ -159,6 +159,9 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
   <data name="Packages" xml:space="preserve">
     <value>Packages</value>
   </data>

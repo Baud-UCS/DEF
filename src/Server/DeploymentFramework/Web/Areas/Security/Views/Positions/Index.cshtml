@@ -1,9 +1,9 @@
 ﻿@model PagedList.PagedList<Baud.Deployment.BusinessLogic.Domain.Security.Entities.Position>
-@using StringResources
 @using PagedList.Mvc
+@using StringResources
 @{
     var filter = (Baud.Deployment.Web.Areas.Security.Models.Positions.IndexFilter)ViewBag.Filter;
-    ViewBag.Title = "Positions";
+    ViewBag.Title = @StringResources.Positions;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -40,7 +40,7 @@
                 <tr>
                     <td>@position.Name</td>
                     <td>@position.IsActive</td>
-                    <td>@Html.GuardedActionLink("Detail", MVC.Security.Positions.Detail(position.ID))</td>
+                    <td>@Html.GuardedActionLink(@StringResources.Detail, MVC.Security.Positions.Detail(position.ID))</td>
                 </tr>
             }
         </tbody>
@@ -50,5 +50,5 @@
 }
 else
 {
-    <p>No data</p>
+    <p>@StringResources.NoData</p>
 }

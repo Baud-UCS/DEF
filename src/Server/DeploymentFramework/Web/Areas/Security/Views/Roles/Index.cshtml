@@ -40,7 +40,7 @@
                 <tr>
                     <td>@role.Name</td>
                     <td>@role.IsActive</td>
-                    <td>@Html.GuardedActionLink("Detail", MVC.Security.Roles.Detail(role.ID))</td>
+                    <td>@Html.GuardedActionLink(@StringResources.Detail, MVC.Security.Roles.Detail(role.ID))</td>
                 </tr>
             }
         </tbody>
@@ -50,5 +50,5 @@
 }
 else
 {
-    <p>No data</p>
+    <p>@StringResources.NoData</p>
 }
