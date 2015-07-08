@@ -1,6 +1,8 @@
 ﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.Position
+@using StringResources
+
 @{
-    ViewBag.Title = "Position detail";
+    ViewBag.Title = @StringResources.PositionDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -14,4 +16,4 @@
     }
 }
 
-@Html.GuardedActionLink("Edit", MVC.Security.Positions.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(@StringResources.Edit, MVC.Security.Positions.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActiveFrom" xml:space="preserve">
+    <value>Aktivní od</value>
+  </data>
+  <data name="ActiveTo" xml:space="preserve">
+    <value>Aktivní do</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Zpět na seznam</value>
   </data>
@@ -128,6 +134,9 @@
   </data>
   <data name="Filter" xml:space="preserve">
     <value>Filtr</value>
+  </data>
+  <data name="Filter_Submit" xml:space="preserve">
+    <value>Odfiltrovat</value>
   </data>
   <data name="FirstName" xml:space="preserve">
     <value>Křestní jméno</value>
@@ -144,11 +153,20 @@
   <data name="Name" xml:space="preserve">
     <value>Název</value>
   </data>
+  <data name="Neither_Filter" xml:space="preserve">
+    <value>Nezáleží</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Ne</value>
+  </data>
   <data name="Packages" xml:space="preserve">
     <value>Balíčky</value>
   </data>
   <data name="PackagesUploadInfo" xml:space="preserve">
     <value>Balíčky můžete nahrát na </value>
+  </data>
+  <data name="PositionDetail" xml:space="preserve">
+    <value>Detail pozice</value>
   </data>
   <data name="Positions" xml:space="preserve">
     <value>Pozice</value>
@@ -156,11 +174,17 @@
   <data name="Products" xml:space="preserve">
     <value>Produkty</value>
   </data>
+  <data name="RoleDetail" xml:space="preserve">
+    <value>Detail role</value>
+  </data>
   <data name="Roles" xml:space="preserve">
     <value>Role</value>
   </data>
   <data name="RunningNugetServer" xml:space="preserve">
     <value>Používáte NuGet.Server</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Uložit</value>
   </data>
   <data name="Security" xml:space="preserve">
     <value>Bezpečnost</value>
@@ -168,7 +192,13 @@
   <data name="Servers" xml:space="preserve">
     <value>Servery</value>
   </data>
+  <data name="UserDetail" xml:space="preserve">
+    <value>Detail uživatele</value>
+  </data>
   <data name="Users" xml:space="preserve">
     <value>Uživatelé</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ano</value>
   </data>
 </root>

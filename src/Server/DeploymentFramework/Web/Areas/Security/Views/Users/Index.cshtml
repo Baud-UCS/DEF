@@ -1,8 +1,9 @@
 ﻿@model PagedList.PagedList<Baud.Deployment.BusinessLogic.Domain.Security.Entities.User>
 @using PagedList.Mvc
+@using StringResources
 @{
     var filter = (Baud.Deployment.Web.Areas.Security.Models.Users.IndexFilter)ViewBag.Filter;
-    ViewBag.Title = "Users";
+    ViewBag.Title = @StringResources.Users;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -10,15 +11,15 @@
 <div class="well">
     @using (var f = Html.BeginCustomForm(method: FormMethod.Get))
     {
-        using (var s = f.BeginSection("Filter"))
+        using (var s = f.BeginSection(@StringResources.Filter))
         {
             @s.FieldFor(m => filter.Name)
-            @s.FieldFor(m => filter.IsActive)
+            @s.FieldFor(m => filter.IsActive).WithTrueAs(@StringResources.Yes).WithFalseAs(@StringResources.No).WithNoneAs(@StringResources.Neither_Filter)
         }
 
         using (var s = f.BeginNavigation())
         {
-            @s.Submit("Filter")
+            @s.Submit(@StringResources.Filter_Submit)
         }
     }
 </div>

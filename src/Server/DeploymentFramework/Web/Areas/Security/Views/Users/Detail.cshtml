@@ -1,6 +1,8 @@
 ﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.User
+@using StringResources
+
 @{
-    ViewBag.Title = "User detail";
+    ViewBag.Title = @StringResources.UserDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -19,4 +21,4 @@
     }
 }
 
-@Html.GuardedActionLink("Edit", MVC.Security.Users.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(@StringResources.Edit, MVC.Security.Users.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))

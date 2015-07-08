@@ -1,6 +1,8 @@
 ﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.User
+@using StringResources
+
 @{
-    ViewBag.Title = "User detail";
+    ViewBag.Title = @StringResources.UserDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -20,6 +22,6 @@
 
     using (var n = f.BeginNavigation())
     {
-        @n.Submit("Save")
+        @n.Submit(@StringResources.Save)
     }
 }

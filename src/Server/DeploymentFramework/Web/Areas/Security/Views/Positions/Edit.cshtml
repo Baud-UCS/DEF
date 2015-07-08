@@ -1,6 +1,8 @@
 ﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.Position
+@using StringResources
+
 @{
-    ViewBag.Title = "Position detail";
+    ViewBag.Title = @StringResources.PositionDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -10,11 +12,11 @@
     using (var s = f.BeginSection())
     {
         @s.FieldFor(m => m.Name)
-        @s.FieldFor(m => m.IsActive).AsDropDown()
+        @s.FieldFor(m => m.IsActive).AsDropDown().WithTrueAs(@StringResources.Yes).WithFalseAs(@StringResources.No)
     }
 
     using (var n = f.BeginNavigation())
     {
-        @n.Submit("Save")
+        @n.Submit(@StringResources.Save)
     }
 }

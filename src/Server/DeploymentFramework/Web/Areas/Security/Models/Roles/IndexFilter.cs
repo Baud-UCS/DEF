@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
@@ -9,7 +10,12 @@ namespace Baud.Deployment.Web.Areas.Security.Models.Roles
 {
     public class IndexFilter
     {
+        [Display(Name = "Name",
+            ResourceType = typeof(StringResources.StringResources))]
         public string Name { get; set; }
+
+        [Display(Name = "IsActive",
+            ResourceType = typeof(StringResources.StringResources))]
         public bool? IsActive { get; set; }
 
         public IQueryable<Role> Apply(IQueryable<Role> source)

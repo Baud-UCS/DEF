@@ -13,7 +13,12 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Entities
 
         [Required]
         [MaxLength(100)]
+        [Display(Name = "Name",
+            ResourceType = typeof(StringResources.StringResources))]
         public string Name { get; set; }
+
+        [Display(Name = "IsActive",
+            ResourceType = typeof(StringResources.StringResources))]
         public bool IsActive { get; set; }
 
         public List<UserPositionLink> UserLinks { get; set; }
