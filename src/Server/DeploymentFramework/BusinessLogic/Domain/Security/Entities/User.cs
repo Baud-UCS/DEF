@@ -14,7 +14,11 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Entities
         [Required]
         [MaxLength(100)]
         public string Login { get; set; }
+        [Display(Name="FirstName",
+            ResourceType=typeof(StringResources.StringResources))]
         public string FirstName { get; set; }
+        [Display(Name = "LastName",
+            ResourceType = typeof(StringResources.StringResources))]
         public string LastName { get; set; }
 
         [Required]
