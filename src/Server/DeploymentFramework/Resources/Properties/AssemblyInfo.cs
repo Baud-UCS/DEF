@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Baud Deployment String Resources")]
-[assembly: AssemblyDescription("Deployment string resources")]
+[assembly: AssemblyTitle("Baud Deployment Resources")]
+[assembly: AssemblyDescription("Deployment resources")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Baud spol. s r. o.")]
 [assembly: AssemblyProduct("DEF")]

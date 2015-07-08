@@ -106,9 +106,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StringResources\StringResources.csproj">
+    <ProjectReference Include="..\Resources\Resources.csproj">
       <Project>{ecd2647a-94cb-4534-82e2-2bbaa0e69ab3}</Project>
-      <Name>StringResources</Name>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

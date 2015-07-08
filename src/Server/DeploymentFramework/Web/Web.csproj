@@ -504,9 +504,9 @@
       <Project>{31da7d18-9e13-40ea-9d4a-f45635ae1124}</Project>
       <Name>Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StringResources\StringResources.csproj">
+    <ProjectReference Include="..\Resources\Resources.csproj">
       <Project>{ecd2647a-94cb-4534-82e2-2bbaa0e69ab3}</Project>
-      <Name>StringResources</Name>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
