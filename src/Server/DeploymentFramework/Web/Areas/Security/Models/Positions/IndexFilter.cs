@@ -11,12 +11,10 @@ namespace Baud.Deployment.Web.Areas.Security.Models.Positions
 {
     public class IndexFilter
     {
-        [Display(Name = "Name",
-            ResourceType = typeof(StringResources))]
+        [Display(Name = "Name", ResourceType = typeof(StringResources))]
         public string Name { get; set; }
 
-        [Display(Name = "IsActive",
-            ResourceType = typeof(StringResources))]
+        [Display(Name = "IsActive", ResourceType = typeof(StringResources))]
         public bool? IsActive { get; set; }
 
         public IQueryable<Position> Apply(IQueryable<Position> source)

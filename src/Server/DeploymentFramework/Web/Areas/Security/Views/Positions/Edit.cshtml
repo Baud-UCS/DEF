@@ -2,7 +2,7 @@
 @using Baud.Deployment.Resources
 
 @{
-    ViewBag.Title = @StringResources.PositionDetail;
+    ViewBag.Title = StringResources.PositionDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -12,11 +12,11 @@
     using (var s = f.BeginSection())
     {
         @s.FieldFor(m => m.Name)
-        @s.FieldFor(m => m.IsActive).AsDropDown().WithTrueAs(@StringResources.Yes).WithFalseAs(@StringResources.No)
+        @s.FieldFor(m => m.IsActive).AsDropDown().WithTrueAs(StringResources.Yes).WithFalseAs(StringResources.No)
     }
 
     using (var n = f.BeginNavigation())
     {
-        @n.Submit(@StringResources.Save)
+        @n.Submit(StringResources.Save)
     }
 }

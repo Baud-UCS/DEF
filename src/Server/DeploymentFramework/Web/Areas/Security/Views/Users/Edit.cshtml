@@ -2,7 +2,7 @@
 @using Baud.Deployment.Resources
 
 @{
-    ViewBag.Title = @StringResources.UserDetail;
+    ViewBag.Title = StringResources.UserDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -22,6 +22,6 @@
 
     using (var n = f.BeginNavigation())
     {
-        @n.Submit(@StringResources.Save)
+        @n.Submit(StringResources.Save)
     }
 }

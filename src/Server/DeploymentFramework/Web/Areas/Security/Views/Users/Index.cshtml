@@ -3,7 +3,7 @@
 @using Baud.Deployment.Resources
 @{
     var filter = (Baud.Deployment.Web.Areas.Security.Models.Users.IndexFilter)ViewBag.Filter;
-    ViewBag.Title = @StringResources.Users;
+    ViewBag.Title = StringResources.Users;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -11,15 +11,15 @@
 <div class="well">
     @using (var f = Html.BeginCustomForm(method: FormMethod.Get))
     {
-        using (var s = f.BeginSection(@StringResources.Filter))
+        using (var s = f.BeginSection(StringResources.Filter))
         {
             @s.FieldFor(m => filter.Name)
-            @s.FieldFor(m => filter.IsActive).WithTrueAs(@StringResources.Yes).WithFalseAs(@StringResources.No).WithNoneAs(@StringResources.Neither_Filter)
+            @s.FieldFor(m => filter.IsActive).WithTrueAs(StringResources.Yes).WithFalseAs(StringResources.No).WithNoneAs(StringResources.Neither_Filter)
         }
 
         using (var s = f.BeginNavigation())
         {
-            @s.Submit(@StringResources.Filter_Submit)
+            @s.Submit(StringResources.Filter_Submit)
         }
     }
 </div>
@@ -48,7 +48,7 @@
                     <td>@user.Email</td>
                     <td>@user.ActiveFrom</td>
                     <td>@user.ActiveTo</td>
-                    <td>@Html.GuardedActionLink(@StringResources.Detail, MVC.Security.Users.Detail(user.ID))</td>
+                    <td>@Html.GuardedActionLink(StringResources.Detail, MVC.Security.Users.Detail(user.ID))</td>
                 </tr>
             }
         </tbody>

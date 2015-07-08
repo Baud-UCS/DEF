@@ -15,11 +15,9 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Entities
         [Required]
         [MaxLength(100)]
         public string Login { get; set; }
-        [Display(Name = "FirstName",
-            ResourceType = typeof(StringResources))]
+        [Display(Name = "FirstName", ResourceType = typeof(StringResources))]
         public string FirstName { get; set; }
-        [Display(Name = "LastName",
-            ResourceType = typeof(StringResources))]
+        [Display(Name = "LastName", ResourceType = typeof(StringResources))]
         public string LastName { get; set; }
 
         [Required]
@@ -27,11 +25,9 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Entities
         public string Email { get; set; }
         public string PasswordHash { get; set; }
 
-        [Display(Name = "ActiveFrom",
-            ResourceType = typeof(StringResources))]
+        [Display(Name = "ActiveFrom", ResourceType = typeof(StringResources))]
         public DateTime ActiveFrom { get; set; }
-        [Display(Name = "ActiveTo",
-            ResourceType = typeof(StringResources))]
+        [Display(Name = "ActiveTo", ResourceType = typeof(StringResources))]
         public DateTime? ActiveTo { get; set; }
 
         [DataType(DataType.MultilineText)]

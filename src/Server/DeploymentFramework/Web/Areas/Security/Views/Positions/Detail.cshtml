@@ -2,7 +2,7 @@
 @using Baud.Deployment.Resources
 
 @{
-    ViewBag.Title = @StringResources.PositionDetail;
+    ViewBag.Title = StringResources.PositionDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -16,4 +16,4 @@
     }
 }
 
-@Html.GuardedActionLink(@StringResources.Edit, MVC.Security.Positions.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(StringResources.Edit, MVC.Security.Positions.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
