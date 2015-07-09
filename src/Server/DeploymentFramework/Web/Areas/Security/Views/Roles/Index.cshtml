@@ -40,7 +40,7 @@
             {
                 <tr>
                     <td>@role.Name</td>
-                    <td>@role.IsActive</td>
+                    <td>@Convert.ToBoolean(role.IsActive).ToString("YN")</td>
                     <td>@Html.GuardedActionLink(StringResources.EditName, MVC.Security.Roles.UpdateName(role.ID))</td>
                     @if (role.IsActive)
                     {

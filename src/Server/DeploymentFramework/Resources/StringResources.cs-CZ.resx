@@ -141,6 +141,9 @@
   <data name="Enable" xml:space="preserve">
     <value>Nastavit jako aktivní</value>
   </data>
+  <data name="False" xml:space="preserve">
+    <value>Ne</value>
+  </data>
   <data name="Filter" xml:space="preserve">
     <value>Filtr</value>
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servery</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Ano</value>
   </data>
   <data name="UserDetail" xml:space="preserve">
     <value>Detail uživatele</value>
