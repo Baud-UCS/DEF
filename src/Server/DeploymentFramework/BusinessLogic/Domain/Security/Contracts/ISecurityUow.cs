@@ -9,5 +9,9 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Contracts
     public interface ISecurityUow : IUow
     {
         IUsersRepository Users { get; }
+
+        IRolesRepository Roles { get; }
+
+        IPositionsRepository Positions { get; }
     }
 }

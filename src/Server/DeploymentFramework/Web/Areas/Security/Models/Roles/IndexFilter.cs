@@ -7,7 +7,7 @@ using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
 using Baud.Deployment.BusinessLogic.Domain.Security.Queries;
 using Baud.Deployment.Resources;
 
-namespace Baud.Deployment.Web.Areas.Security.Models.Users
+namespace Baud.Deployment.Web.Areas.Security.Models.Roles
 {
     public class IndexFilter
     {
@@ -17,11 +17,11 @@ namespace Baud.Deployment.Web.Areas.Security.Models.Users
         [Display(Name = "IsActive", ResourceType = typeof(StringResources))]
         public bool? IsActive { get; set; }
 
-        public IQueryable<User> Apply(IQueryable<User> source)
+        public IQueryable<Role> Apply(IQueryable<Role> source)
         {
-            IQueryable<User> query = source.OrderBy(x => x.Login);
+            IQueryable<Role> query = source.OrderBy(x => x.Name);
 
-            query = query.Filter(Name, x => x.FirstName.Contains(Name) || x.LastName.Contains(Name));
+            query = query.Filter(Name, x => x.Name.Contains(Name));
 
             if (IsActive == true)
             {

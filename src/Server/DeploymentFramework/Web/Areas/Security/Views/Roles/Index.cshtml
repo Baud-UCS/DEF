@@ -1,9 +1,9 @@
-﻿@model PagedList.PagedList<Baud.Deployment.BusinessLogic.Domain.Security.Entities.User>
+﻿@model PagedList.PagedList<Baud.Deployment.BusinessLogic.Domain.Security.Entities.Role>
 @using PagedList.Mvc
 @using Baud.Deployment.Resources
 @{
-    var filter = (Baud.Deployment.Web.Areas.Security.Models.Users.IndexFilter)ViewBag.Filter;
-    ViewBag.Title = StringResources.Users;
+    var filter = (Baud.Deployment.Web.Areas.Security.Models.Roles.IndexFilter)ViewBag.Filter;
+    ViewBag.Title = StringResources.Roles;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -29,26 +29,18 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>@Html.SortingLink(m => m[0].Login)</th>
-                <th>@Html.SortingLink(m => m[0].FirstName)</th>
-                <th>@Html.SortingLink(m => m[0].LastName)</th>
-                <th>@Html.SortingLink(m => m[0].Email)</th>
-                <th>@Html.SortingLink(m => m[0].ActiveFrom)</th>
-                <th>@Html.SortingLink(m => m[0].ActiveTo)</th>
+                <th>@Html.SortingLink(m => m[0].Name)</th>
+                <th>@Html.SortingLink(m => m[0].IsActive)</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in Model)
+            @foreach (var role in Model)
             {
                 <tr>
-                    <td>@user.Login</td>
-                    <td>@user.FirstName</td>
-                    <td>@user.LastName</td>
-                    <td>@user.Email</td>
-                    <td>@user.ActiveFrom</td>
-                    <td>@user.ActiveTo</td>
-                    <td>@Html.GuardedActionLink(StringResources.Detail, MVC.Security.Users.Detail(user.ID))</td>
+                    <td>@role.Name</td>
+                    <td>@role.IsActive</td>
+                    <td>@Html.GuardedActionLink(StringResources.Detail, MVC.Security.Roles.Detail(role.ID))</td>
                 </tr>
             }
         </tbody>

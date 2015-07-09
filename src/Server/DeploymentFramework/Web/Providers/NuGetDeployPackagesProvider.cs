@@ -72,9 +72,9 @@ namespace Baud.Deployment.Web.Providers
             return File.ReadAllBytes(packageFullPath);
         }
 
-        // TODO get package file name
+        //// TODO get package file name
 
-        // TODO list available updates
+        //// TODO list available updates
 
         private IPackageRepository GetRepository()
         {

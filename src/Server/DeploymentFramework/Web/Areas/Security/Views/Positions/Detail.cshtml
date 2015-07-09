@@ -1,0 +1,19 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.Position
+@using Baud.Deployment.Resources
+
+@{
+    ViewBag.Title = StringResources.PositionDetail;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (var f = Html.BeginReadOnlyForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Name)
+        @s.FieldFor(m => m.IsActive)
+    }
+}
+
+@Html.GuardedActionLink(StringResources.Edit, MVC.Security.Positions.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))

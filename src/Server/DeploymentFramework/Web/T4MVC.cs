@@ -43,6 +43,8 @@ namespace T4MVC
     public class SecurityClass
     {
         public readonly string Name = "Security";
+        public Baud.Deployment.Web.Areas.Security.Controllers.PositionsController Positions = new Baud.Deployment.Web.Areas.Security.Controllers.T4MVC_PositionsController();
+        public Baud.Deployment.Web.Areas.Security.Controllers.RolesController Roles = new Baud.Deployment.Web.Areas.Security.Controllers.T4MVC_RolesController();
         public Baud.Deployment.Web.Areas.Security.Controllers.UsersController Users = new Baud.Deployment.Web.Areas.Security.Controllers.T4MVC_UsersController();
         public T4MVC.Security.SharedController Shared = new T4MVC.Security.SharedController();
     }
@@ -86,6 +88,7 @@ namespace Links
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
         public static readonly string bootstrap_bundle_min_js = Url("bootstrap-bundle.min.js");
         public static readonly string jquery_bundle_min_js = Url("jquery-bundle.min.js");
+        public static readonly string jquery_validate_unobtrusive_bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.unobtrusive.bootstrap.min.js") ? Url("jquery.validate.unobtrusive.bootstrap.min.js") : Url("jquery.validate.unobtrusive.bootstrap.js");
         public static readonly string jquery_validate_unobtrusive_chameleon_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.unobtrusive.chameleon.min.js") ? Url("jquery.validate.unobtrusive.chameleon.min.js") : Url("jquery.validate.unobtrusive.chameleon.js");
         public static readonly string modernizer_min_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizer-min.min.js") ? Url("modernizer-min.min.js") : Url("modernizer-min.js");
     }
