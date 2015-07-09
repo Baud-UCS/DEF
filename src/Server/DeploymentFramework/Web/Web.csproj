@@ -426,11 +426,11 @@
     <Content Include="Areas\Security\Views\Users\Detail.cshtml" />
     <Content Include="Areas\Security\Views\Users\Edit.cshtml" />
     <Content Include="Areas\Security\Views\Roles\Detail.cshtml" />
-    <Content Include="Areas\Security\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\Security\Views\Roles\UpdateName.cshtml" />
     <Content Include="Areas\Security\Views\Roles\Index.cshtml" />
     <Content Include="Areas\Security\Views\Positions\Index.cshtml" />
     <Content Include="Areas\Security\Views\Positions\Detail.cshtml" />
-    <Content Include="Areas\Security\Views\Positions\Edit.cshtml" />
+    <Content Include="Areas\Security\Views\Positions\UpdateName.cshtml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

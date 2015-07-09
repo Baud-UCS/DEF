@@ -49,24 +49,7 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             }
         }
 
-        public virtual ActionResult Edit(short id)
-        {
-            using (var uow = _securityUow())
-            {
-                var position = uow.Positions.GetPositionDetail(id);
-
-                if (position == null)
-                {
-                    return HttpNotFound();
-                }
-
-                return View(position);
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public virtual ActionResult Edit(short id, FormCollection form)
+        public virtual ActionResult Disable(short id)
         {
             using (var uow = _securityUow())
             {
@@ -82,11 +65,76 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
                     return View(position);
                 }
 
-                uow.Positions.UpdatePosition(id, position);
+                uow.Positions.Disable(id);
                 uow.Commit();
 
                 // TODO add confirmation toast message
-                return RedirectToAction(Actions.Detail(id));
+                return RedirectToAction(Actions.Index());
+            }
+        }
+
+        public virtual ActionResult Enable(short id)
+        {
+            using (var uow = _securityUow())
+            {
+                var position = uow.Positions.GetPositionDetail(id);
+
+                if (position == null)
+                {
+                    return HttpNotFound();
+                }
+
+                if (!TryUpdateModel(position))
+                {
+                    return View(position);
+                }
+
+                uow.Positions.Enable(id);
+                uow.Commit();
+
+                // TODO add confirmation toast message
+                return RedirectToAction(Actions.Index());
+            }
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public virtual ActionResult UpdateName(short id, string name)
+        {
+            using (var uow = _securityUow())
+            {
+                var position = uow.Positions.GetPositionDetail(id);
+
+                if (position == null)
+                {
+                    return HttpNotFound();
+                }
+
+                if (!TryUpdateModel(position))
+                {
+                    return View(position);
+                }
+
+                uow.Positions.UpdateName(id, name);
+                uow.Commit();
+
+                // TODO add confirmation toast message
+                return RedirectToAction(Actions.Index());
+            }
+        }
+
+        public virtual ActionResult UpdateName(short id)
+        {
+            using (var uow = _securityUow())
+            {
+                var position = uow.Positions.GetPositionDetail(id);
+
+                if (position == null)
+                {
+                    return HttpNotFound();
+                }
+
+                return View(position);
             }
         }
     }

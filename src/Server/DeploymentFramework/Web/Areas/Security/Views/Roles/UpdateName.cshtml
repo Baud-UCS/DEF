@@ -12,7 +12,6 @@
     using (var s = f.BeginSection())
     {
         @s.FieldFor(m => m.Name)
-        @s.FieldFor(m => m.IsActive).AsDropDown().WithTrueAs(StringResources.Yes).WithFalseAs(StringResources.No)
     }
 
     using (var n = f.BeginNavigation())

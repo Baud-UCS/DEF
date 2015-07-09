@@ -26,13 +26,31 @@ namespace Baud.Deployment.Database.Security
             return Context.Positions.FilterByID(id).FirstOrDefault();
         }
 
-        public void UpdatePosition(short id, Position position)
+        public void Enable(short id)
         {
-            position.ID = id;
+            Position position = GetPositionDetail(id);
+            position.IsActive = true;
 
             Context.AttachAsModified(position,
-                x => x.Name,
                 x => x.IsActive);
+        }
+
+        public void Disable(short id)
+        {
+            Position position = GetPositionDetail(id);
+            position.IsActive = false;
+
+            Context.AttachAsModified(position,
+                x => x.IsActive);
+        }
+
+        public void UpdateName(short id, string name)
+        {
+            Position position = GetPositionDetail(id);
+            position.Name = name;
+
+            Context.AttachAsModified(position,
+                x => x.Name);
         }
     }
 }

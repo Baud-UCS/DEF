@@ -129,8 +129,17 @@
   <data name="Detail" xml:space="preserve">
     <value>Detail</value>
   </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="EditName" xml:space="preserve">
+    <value>Edit Name</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
   </data>
   <data name="Filter" xml:space="preserve">
     <value>Filter</value>

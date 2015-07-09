@@ -32,6 +32,7 @@
                 <th>@Html.SortingLink(m => m[0].Name)</th>
                 <th>@Html.SortingLink(m => m[0].IsActive)</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -40,7 +41,15 @@
                 <tr>
                     <td>@position.Name</td>
                     <td>@position.IsActive</td>
-                    <td>@Html.GuardedActionLink(StringResources.Detail, MVC.Security.Positions.Detail(position.ID))</td>
+                    <td>@Html.GuardedActionLink(StringResources.EditName, MVC.Security.Positions.UpdateName(position.ID))</td>
+                    @if (position.IsActive)
+                    {
+                        <td>@Html.GuardedActionLink(StringResources.Disable, MVC.Security.Positions.Disable(position.ID))</td>
+                    }
+                    else 
+                    {
+                        <td>@Html.GuardedActionLink(StringResources.Enable, MVC.Security.Positions.Enable(position.ID))</td>
+                    }
                 </tr>
             }
         </tbody>

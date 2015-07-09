@@ -69,9 +69,21 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Edit()
+        public virtual System.Web.Mvc.ActionResult Disable()
         {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Disable);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Enable()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Enable);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult UpdateName()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateName);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -91,7 +103,9 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
         {
             public readonly string Index = "Index";
             public readonly string Detail = "Detail";
-            public readonly string Edit = "Edit";
+            public readonly string Disable = "Disable";
+            public readonly string Enable = "Enable";
+            public readonly string UpdateName = "UpdateName";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -99,7 +113,9 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
         {
             public const string Index = "Index";
             public const string Detail = "Detail";
-            public const string Edit = "Edit";
+            public const string Disable = "Disable";
+            public const string Enable = "Enable";
+            public const string UpdateName = "UpdateName";
         }
 
 
@@ -114,12 +130,12 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Detail = "Detail";
-                public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
+                public readonly string UpdateName = "UpdateName";
             }
             public readonly string Detail = "~/Areas/Security/Views/Positions/Detail.cshtml";
-            public readonly string Edit = "~/Areas/Security/Views/Positions/Edit.cshtml";
             public readonly string Index = "~/Areas/Security/Views/Positions/Index.cshtml";
+            public readonly string UpdateName = "~/Areas/Security/Views/Positions/UpdateName.cshtml";
         }
     }
 
@@ -154,27 +170,51 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id);
+        partial void DisableOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Edit(short id)
+        public override System.Web.Mvc.ActionResult Disable(short id)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Disable);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            EditOverride(callInfo, id);
+            DisableOverride(callInfo, id);
             return callInfo;
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id, System.Web.Mvc.FormCollection form);
+        partial void EnableOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Edit(short id, System.Web.Mvc.FormCollection form)
+        public override System.Web.Mvc.ActionResult Enable(short id)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Enable);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
-            EditOverride(callInfo, id, form);
+            EnableOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UpdateNameOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id, string name);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UpdateName(short id, string name)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateName);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "name", name);
+            UpdateNameOverride(callInfo, id, name);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UpdateNameOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, short id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UpdateName(short id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateName);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            UpdateNameOverride(callInfo, id);
             return callInfo;
         }
 

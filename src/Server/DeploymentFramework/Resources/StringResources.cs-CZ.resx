@@ -129,8 +129,17 @@
   <data name="Detail" xml:space="preserve">
     <value>Detail</value>
   </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Nastavit jako neaktivní</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Upravit</value>
+  </data>
+  <data name="EditName" xml:space="preserve">
+    <value>Upravit název</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Nastavit jako aktivní</value>
   </data>
   <data name="Filter" xml:space="preserve">
     <value>Filtr</value>
