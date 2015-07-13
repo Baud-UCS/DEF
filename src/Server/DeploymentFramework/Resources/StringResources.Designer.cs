@@ -79,6 +79,15 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agent URL.
+        /// </summary>
+        public static string AgentURL {
+            get {
+                return ResourceManager.GetString("AgentURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back to list.
         /// </summary>
         public static string BackToList {
