@@ -13,6 +13,10 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Contracts
 
         Position GetPositionDetail(short id);
 
-        void UpdatePosition(short id, Position position);
+        void Enable(short id);
+
+        void Disable(short id);
+
+        void UpdateName(short id, string name);
     }
 }

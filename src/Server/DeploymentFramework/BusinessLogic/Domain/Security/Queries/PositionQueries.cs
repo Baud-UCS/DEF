@@ -16,12 +16,12 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Queries
 
         public static IQueryable<Position> OnlyActive(this IQueryable<Position> query)
         {
-            return query.Where(x => !x.IsActive);
+            return query.Where(x => x.IsActive);
         }
 
         public static IQueryable<Position> OnlyInactive(this IQueryable<Position> query)
         {
-            return query.Where(x => x.IsActive);
+            return query.Where(x => !x.IsActive);
         }
     }
 }

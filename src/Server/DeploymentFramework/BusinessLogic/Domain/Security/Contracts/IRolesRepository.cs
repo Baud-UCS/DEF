@@ -13,6 +13,10 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Contracts
 
         Role GetRoleDetail(short id);
 
-        void UpdateRole(short id, Role role);
+        void Enable(short id);
+
+        void Disable(short id);
+
+        void UpdateName(short id, string name);
     }
 }

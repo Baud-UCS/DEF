@@ -97,11 +97,47 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disable.
+        /// </summary>
+        public static string Disable {
+            get {
+                return ResourceManager.GetString("Disable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Name.
+        /// </summary>
+        public static string EditName {
+            get {
+                return ResourceManager.GetString("EditName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string Enable {
+            get {
+                return ResourceManager.GetString("Enable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string False {
+            get {
+                return ResourceManager.GetString("False", resourceCulture);
             }
         }
         
@@ -291,6 +327,15 @@ namespace Baud.Deployment.Resources {
         public static string Servers {
             get {
                 return ResourceManager.GetString("Servers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string True {
+            get {
+                return ResourceManager.GetString("True", resourceCulture);
             }
         }
         

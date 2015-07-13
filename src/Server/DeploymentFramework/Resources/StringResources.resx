@@ -129,8 +129,20 @@
   <data name="Detail" xml:space="preserve">
     <value>Detail</value>
   </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="EditName" xml:space="preserve">
+    <value>Edit Name</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="Filter" xml:space="preserve">
     <value>Filter</value>
@@ -194,6 +206,9 @@
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servers</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="UserDetail" xml:space="preserve">
     <value>User Detail</value>

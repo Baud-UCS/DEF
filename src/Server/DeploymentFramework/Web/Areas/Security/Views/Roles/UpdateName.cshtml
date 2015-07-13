@@ -7,13 +7,15 @@
 
 <h2>@ViewBag.Title</h2>
 
-@using (var f = Html.BeginReadOnlyForm())
+@using (var f = Html.BeginCustomForm())
 {
     using (var s = f.BeginSection())
     {
         @s.FieldFor(m => m.Name)
-        @s.FieldFor(m => m.IsActive)
+    }
+
+    using (var n = f.BeginNavigation())
+    {
+        @n.Submit(StringResources.Save)
     }
 }
-
-@Html.GuardedActionLink(StringResources.Edit, MVC.Security.Roles.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
