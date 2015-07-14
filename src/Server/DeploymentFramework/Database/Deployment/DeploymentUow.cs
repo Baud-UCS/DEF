@@ -21,6 +21,11 @@ namespace Baud.Deployment.Database.Deployment
             get { return GetRepository<IInstallationsRepository>(); }
         }
 
+        public IServersRepository Servers
+        {
+            get { return GetRepository<IServersRepository>(); }
+        }
+
         public DeploymentUow(IDbContextProvider<DeploymentDbContext> contextProvider, IRepositoryProvider<DeploymentDbContext> repositoryProvider, ICurrentUserProvider currentUserProvider, IDateTimeProvider dateTimeProvider)
             : base(contextProvider, repositoryProvider, currentUserProvider, dateTimeProvider)
         {

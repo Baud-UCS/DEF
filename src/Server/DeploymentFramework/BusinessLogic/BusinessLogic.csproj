@@ -67,6 +67,7 @@
     <Compile Include="Domain\Deployment\Contracts\IDeploymentUow.cs" />
     <Compile Include="Domain\Deployment\Contracts\IInstallationsRepository.cs" />
     <Compile Include="Domain\Deployment\Contracts\IProjectsRepository.cs" />
+    <Compile Include="Domain\Deployment\Contracts\IServersRepository.cs" />
     <Compile Include="Domain\Deployment\Entities\Application.cs" />
     <Compile Include="Domain\Deployment\Entities\Installation.cs" />
     <Compile Include="Domain\Deployment\Entities\InstallationLog.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Domain\Deployment\Enums\LogSeverity.cs" />
     <Compile Include="Domain\Deployment\Models\DeployPackageInfo.cs" />
     <Compile Include="Domain\Deployment\Queries\InstallationQueries.cs" />
+    <Compile Include="Domain\Deployment\Queries\ServerQueries.cs" />
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IUow.cs" />
     <Compile Include="Domain\Security\Contracts\IPositionsRepository.cs" />

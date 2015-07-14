@@ -22,13 +22,10 @@ using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
 using Baud.Deployment.Web.Framework.Security;
-namespace Baud.Deployment.Web.Controllers
+namespace Baud.Deployment.Web.Areas.Deployment.Controllers
 {
     public partial class ServersController
     {
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ServersController() { }
-
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected ServersController(Dummy d) { }
 
@@ -60,9 +57,15 @@ namespace Baud.Deployment.Web.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Details()
+        public virtual System.Web.Mvc.ActionResult Index()
         {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Detail()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Detail);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -70,17 +73,11 @@ namespace Baud.Deployment.Web.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
         }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Delete()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ServersController Actions { get { return MVC.Servers; } }
+        public ServersController Actions { get { return MVC.Deployment.Servers; } }
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Area = "";
+        public readonly string Area = "Deployment";
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Name = "Servers";
         [GeneratedCode("T4MVC", "2.0")]
@@ -93,20 +90,16 @@ namespace Baud.Deployment.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string Details = "Details";
-            public readonly string Create = "Create";
+            public readonly string Detail = "Detail";
             public readonly string Edit = "Edit";
-            public readonly string Delete = "Delete";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string Details = "Details";
-            public const string Create = "Create";
+            public const string Detail = "Detail";
             public const string Edit = "Edit";
-            public const string Delete = "Delete";
         }
 
 
@@ -120,60 +113,43 @@ namespace Baud.Deployment.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Detail = "Detail";
+                public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
-            public readonly string Index = "~/Views/Servers/Index.cshtml";
+            public readonly string Detail = "~/Areas/Deployment/Views/Servers/Detail.cshtml";
+            public readonly string Edit = "~/Areas/Deployment/Views/Servers/Edit.cshtml";
+            public readonly string Index = "~/Areas/Deployment/Views/Servers/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_ServersController : Baud.Deployment.Web.Controllers.ServersController
+    public partial class T4MVC_ServersController : Baud.Deployment.Web.Areas.Deployment.Controllers.ServersController
     {
         public T4MVC_ServersController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Baud.Deployment.Web.Areas.Deployment.Models.Servers.IndexFilter filter, Baud.Deployment.Web.Framework.Web.PagingData paging);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ActionResult Index(Baud.Deployment.Web.Areas.Deployment.Models.Servers.IndexFilter filter, Baud.Deployment.Web.Framework.Web.PagingData paging)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "filter", filter);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "paging", paging);
+            IndexOverride(callInfo, filter, paging);
             return callInfo;
         }
 
         [NonAction]
-        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void DetailOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Details(int id)
+        public override System.Web.Mvc.ActionResult Detail(int id)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Detail);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            DetailsOverride(callInfo, id);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Create()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
-            CreateOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Web.Mvc.FormCollection collection);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Create(System.Web.Mvc.FormCollection collection)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "collection", collection);
-            CreateOverride(callInfo, collection);
+            DetailOverride(callInfo, id);
             return callInfo;
         }
 
@@ -190,40 +166,15 @@ namespace Baud.Deployment.Web.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, System.Web.Mvc.FormCollection collection);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, System.Web.Mvc.FormCollection form);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Edit(int id, System.Web.Mvc.FormCollection collection)
+        public override System.Web.Mvc.ActionResult Edit(int id, System.Web.Mvc.FormCollection form)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "collection", collection);
-            EditOverride(callInfo, id, collection);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Delete(int id)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            DeleteOverride(callInfo, id);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, System.Web.Mvc.FormCollection collection);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Delete(int id, System.Web.Mvc.FormCollection collection)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "collection", collection);
-            DeleteOverride(callInfo, id, collection);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
+            EditOverride(callInfo, id, form);
             return callInfo;
         }
 

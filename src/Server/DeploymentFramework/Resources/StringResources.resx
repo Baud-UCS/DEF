@@ -123,8 +123,11 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Active to</value>
   </data>
-  <data name="AgentURL" xml:space="preserve">
+  <data name="AgentUrl" xml:space="preserve">
     <value>Agent URL</value>
+  </data>
+  <data name="BackToDetail" xml:space="preserve">
+    <value>Back to detail</value>
   </data>
   <data name="BackToList" xml:space="preserve">
     <value>Back to list</value>
@@ -139,7 +142,7 @@
     <value>Edit</value>
   </data>
   <data name="EditName" xml:space="preserve">
-    <value>Edit Name</value>
+    <value>Edit name</value>
   </data>
   <data name="Enable" xml:space="preserve">
     <value>Enable</value>
@@ -175,7 +178,7 @@
     <value>No</value>
   </data>
   <data name="NoData" xml:space="preserve">
-    <value>No Data</value>
+    <value>No data</value>
   </data>
   <data name="Packages" xml:space="preserve">
     <value>Packages</value>
@@ -184,7 +187,7 @@
     <value>You can upload packages to </value>
   </data>
   <data name="PositionDetail" xml:space="preserve">
-    <value>Position Detail</value>
+    <value>Position detail</value>
   </data>
   <data name="Positions" xml:space="preserve">
     <value>Positions</value>
@@ -193,7 +196,7 @@
     <value>Products</value>
   </data>
   <data name="RoleDetail" xml:space="preserve">
-    <value>Role Detail</value>
+    <value>Role detail</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Roles</value>
@@ -207,6 +210,12 @@
   <data name="Security" xml:space="preserve">
     <value>Security</value>
   </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="ServerDetail" xml:space="preserve">
+    <value>Server detail</value>
+  </data>
   <data name="Servers" xml:space="preserve">
     <value>Servers</value>
   </data>
@@ -214,7 +223,7 @@
     <value>Yes</value>
   </data>
   <data name="UserDetail" xml:space="preserve">
-    <value>User Detail</value>
+    <value>User detail</value>
   </data>
   <data name="Users" xml:space="preserve">
     <value>Users</value>

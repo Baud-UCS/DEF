@@ -14,7 +14,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Models.Servers
         [Display(Name = "Name", ResourceType = typeof(StringResources))]
         public string Name { get; set; }
 
-        [Display(Name = "AgentURL", ResourceType = typeof(StringResources))]
+        [Display(Name = "AgentUrl", ResourceType = typeof(StringResources))]
         public string AgentUrl { get; set; }
 
         public IQueryable<Server> Apply(IQueryable<Server> source)

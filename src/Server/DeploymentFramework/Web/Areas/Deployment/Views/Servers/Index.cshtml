@@ -1,0 +1,55 @@
+﻿@model PagedList.PagedList<Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.Server>
+@using PagedList.Mvc
+@using Baud.Deployment.Resources
+@{
+    var filter = (Baud.Deployment.Web.Areas.Deployment.Models.Servers.IndexFilter)ViewBag.Filter;
+    ViewBag.Title = StringResources.Servers;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="well">
+    @using (var f = Html.BeginCustomForm(method: FormMethod.Get))
+    {
+        using (var s = f.BeginSection(StringResources.Filter))
+        {
+            @s.FieldFor(m => filter.Name)
+            @s.FieldFor(m => filter.AgentUrl)
+        }
+
+        using (var s = f.BeginNavigation())
+        {
+            @s.Submit(StringResources.Filter_Submit)
+        }
+    }
+</div>
+
+@if (Model.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.SortingLink(m => m[0].Name)</th>
+                <th>@Html.SortingLink(m => m[0].AgentUrl)</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var server in Model)
+            {
+                <tr>
+                    <td>@server.Name</td>
+                    <td>@server.AgentUrl</td>
+                    <td>@Html.GuardedActionLink(StringResources.Detail, MVC.Deployment.Servers.Detail(server.ID))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.CurrentWithPageNumber(page), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+}
+else
+{
+    <p>@StringResources.NoData</p>
+}

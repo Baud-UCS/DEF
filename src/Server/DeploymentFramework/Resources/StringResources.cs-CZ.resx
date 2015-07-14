@@ -123,8 +123,11 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Aktivní do</value>
   </data>
-  <data name="AgentURL" xml:space="preserve">
+  <data name="AgentUrl" xml:space="preserve">
     <value>URL agenta</value>
+  </data>
+  <data name="BackToDetail" xml:space="preserve">
+    <value>Zpět na detail</value>
   </data>
   <data name="BackToList" xml:space="preserve">
     <value>Zpět na seznam</value>
@@ -206,6 +209,12 @@
   </data>
   <data name="Security" xml:space="preserve">
     <value>Bezpečnost</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="ServerDetail" xml:space="preserve">
+    <value>Detail serveru</value>
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servery</value>

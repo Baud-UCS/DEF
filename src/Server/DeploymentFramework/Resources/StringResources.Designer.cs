@@ -81,9 +81,18 @@ namespace Baud.Deployment.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Agent URL.
         /// </summary>
-        public static string AgentURL {
+        public static string AgentUrl {
             get {
-                return ResourceManager.GetString("AgentURL", resourceCulture);
+                return ResourceManager.GetString("AgentUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to detail.
+        /// </summary>
+        public static string BackToDetail {
+            get {
+                return ResourceManager.GetString("BackToDetail", resourceCulture);
             }
         }
         
@@ -124,7 +133,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit Name.
+        ///   Looks up a localized string similar to Edit name.
         /// </summary>
         public static string EditName {
             get {
@@ -232,7 +241,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No Data.
+        ///   Looks up a localized string similar to No data.
         /// </summary>
         public static string NoData {
             get {
@@ -259,7 +268,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Position Detail.
+        ///   Looks up a localized string similar to Position detail.
         /// </summary>
         public static string PositionDetail {
             get {
@@ -286,7 +295,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Role Detail.
+        ///   Looks up a localized string similar to Role detail.
         /// </summary>
         public static string RoleDetail {
             get {
@@ -331,6 +340,24 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Server.
+        /// </summary>
+        public static string Server {
+            get {
+                return ResourceManager.GetString("Server", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server detail.
+        /// </summary>
+        public static string ServerDetail {
+            get {
+                return ResourceManager.GetString("ServerDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Servers.
         /// </summary>
         public static string Servers {
@@ -349,7 +376,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Detail.
+        ///   Looks up a localized string similar to User detail.
         /// </summary>
         public static string UserDetail {
             get {

@@ -1,0 +1,20 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.Server
+@using Baud.Deployment.Resources
+
+@{
+    ViewBag.Title = StringResources.ServerDetail;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (var f = Html.BeginReadOnlyForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Name)
+        @s.FieldFor(m => m.AgentUrl)
+    }
+}
+
+@Html.GuardedActionLink(StringResources.BackToList, MVC.Deployment.Servers.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(StringResources.Edit, MVC.Deployment.Servers.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
