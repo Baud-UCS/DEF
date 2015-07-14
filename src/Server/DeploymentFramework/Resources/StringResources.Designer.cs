@@ -79,6 +79,15 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new server.
+        /// </summary>
+        public static string AddNewServer {
+            get {
+                return ResourceManager.GetString("AddNewServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent URL.
         /// </summary>
         public static string AgentUrl {
@@ -228,6 +237,15 @@ namespace Baud.Deployment.Resources {
         public static string Neither_Filter {
             get {
                 return ResourceManager.GetString("Neither_Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New server.
+        /// </summary>
+        public static string NewServer {
+            get {
+                return ResourceManager.GetString("NewServer", resourceCulture);
             }
         }
         

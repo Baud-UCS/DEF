@@ -24,6 +24,8 @@
     }
 </div>
 
+@Html.GuardedActionLink(StringResources.AddNewServer, MVC.Deployment.Servers.Add())
+
 @if (Model.Any())
 {
     <table class="table table-striped">
@@ -53,3 +55,4 @@ else
 {
     <p>@StringResources.NoData</p>
 }
+

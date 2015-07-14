@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Baud.Deployment.BusinessLogic.Domain.Deployment.Contracts;
+using Baud.Deployment.BusinessLogic.Domain.Deployment.Entities;
 using Baud.Deployment.Web.Areas.Deployment.Models.Servers;
 using Baud.Deployment.Web.Framework.Security;
 using Baud.Deployment.Web.Framework.Web;
@@ -89,6 +90,33 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
 
                 // TODO add confirmation toast message
                 return RedirectToAction(Actions.Detail(id));
+            }
+        }
+
+        public virtual ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual ActionResult Add(FormCollection form)
+        {
+            using (var uow = _deploymentUow())
+            {
+                var server = new Server
+                {
+                    Name = form.Get("Name"),
+                    AgentUrl = form.Get("AgentUrl"),
+                    Created = DateTime.Now,
+                    CreatedBy = -2
+                };
+
+                uow.Servers.AddServer(server);
+                uow.Commit();
+
+                // TODO add confirmation toast message
+                return RedirectToAction(Actions.Detail(server.ID));
             }
         }
     }

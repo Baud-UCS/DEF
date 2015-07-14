@@ -438,6 +438,7 @@
     <Content Include="Areas\Security\Views\Roles\Index.cshtml" />
     <Content Include="Areas\Security\Views\Positions\Index.cshtml" />
     <Content Include="Areas\Security\Views\Positions\UpdateName.cshtml" />
+    <Content Include="Areas\Deployment\Views\Servers\Add.cshtml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

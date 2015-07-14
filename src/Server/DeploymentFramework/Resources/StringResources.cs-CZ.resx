@@ -123,6 +123,9 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Aktivní do</value>
   </data>
+  <data name="AddNewServer" xml:space="preserve">
+    <value>Přidat nový server</value>
+  </data>
   <data name="AgentUrl" xml:space="preserve">
     <value>URL agenta</value>
   </data>
@@ -173,6 +176,9 @@
   </data>
   <data name="Neither_Filter" xml:space="preserve">
     <value>Nezáleží</value>
+  </data>
+  <data name="NewServer" xml:space="preserve">
+    <value>Nový server</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Ne</value>

@@ -94,17 +94,10 @@ namespace Links
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
         public static readonly string bootstrap_bundle_min_js = Url("bootstrap-bundle.min.js");
-        public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
-        public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
-        public static readonly string jquery_1_10_2_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.10.2.intellisense.min.js") ? Url("jquery-1.10.2.intellisense.min.js") : Url("jquery-1.10.2.intellisense.js");
-        public static readonly string jquery_1_10_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.10.2.min.js") ? Url("jquery-1.10.2.min.js") : Url("jquery-1.10.2.js");
-        public static readonly string jquery_1_10_2_min_js = Url("jquery-1.10.2.min.js");
-        public static readonly string jquery_1_10_2_min_map = Url("jquery-1.10.2.min.map");
         public static readonly string jquery_bundle_min_js = Url("jquery-bundle.min.js");
         public static readonly string jquery_validate_unobtrusive_bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.unobtrusive.bootstrap.min.js") ? Url("jquery.validate.unobtrusive.bootstrap.min.js") : Url("jquery.validate.unobtrusive.bootstrap.js");
         public static readonly string jquery_validate_unobtrusive_chameleon_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.unobtrusive.chameleon.min.js") ? Url("jquery.validate.unobtrusive.chameleon.min.js") : Url("jquery.validate.unobtrusive.chameleon.js");
         public static readonly string modernizer_min_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizer-min.min.js") ? Url("modernizer-min.min.js") : Url("modernizer-min.js");
-        public static readonly string modernizr_2_6_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.6.2.min.js") ? Url("modernizr-2.6.2.min.js") : Url("modernizr-2.6.2.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -112,8 +105,6 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
-                public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class dist {
             private const string URLPATH = "~/Content/dist";
