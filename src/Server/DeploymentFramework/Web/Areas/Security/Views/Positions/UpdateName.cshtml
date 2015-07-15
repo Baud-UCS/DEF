@@ -13,6 +13,8 @@
     {
         @s.FieldFor(m => m.Name)
     }
+    
+    @Html.GuardedActionLink(StringResources.BackToList, MVC.Security.Positions.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
 
     using (var n = f.BeginNavigation())
     {

@@ -14,6 +14,8 @@
         @s.FieldFor(m => m.Name)
     }
 
+    @Html.GuardedActionLink(StringResources.BackToList, MVC.Security.Roles.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
+
     using (var n = f.BeginNavigation())
     {
         @n.Submit(StringResources.Save)

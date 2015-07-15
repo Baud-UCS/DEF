@@ -21,4 +21,5 @@
     }
 }
 
+@Html.GuardedActionLink(StringResources.BackToList, MVC.Security.Users.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
 @Html.GuardedActionLink(StringResources.Edit, MVC.Security.Users.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
