@@ -127,18 +127,20 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         {
             using (var uow = _deploymentUow())
             {
+                // Two items (ID, Value) for each Parameter passed, hence / 2.
+                for (int i = 0; i < form.Count / 2; i++)
+                {
+                    var id = Int32.Parse(form.Get("Parameters[" + i + "].ID"));
+                    var value = form.Get("Parameters[" + i + "].Value");
+
+                    var parameter = uow.Servers.GetParameterByID(id);
+                    parameter.Value = value;
+
+                    uow.Servers.UpdateParameters(parameter);
+                }
+
+                uow.Commit();
                 var server = uow.Servers.GetServerDetail(serverID);
-
-                if (server == null)
-                {
-                    return HttpNotFound();
-                }
-
-                if (!TryUpdateModel(server))
-                {
-                    return View(server);
-                }
-
                 return View(server);
             }
         }

@@ -31,6 +31,11 @@ namespace Baud.Deployment.Database.Deployment
                 .FirstOrDefault();
         }
 
+        public ServerParameter GetParameterByID(int id)
+        {
+            return Context.ServerParameters.FirstOrDefault(x => x.ID == id);
+        }
+
         public void UpdateServer(int id, Server server)
         {
             server.ID = id;
@@ -43,6 +48,12 @@ namespace Baud.Deployment.Database.Deployment
         public Server AddServer(Server server)
         {
             return Context.Servers.Add(server);
+        }
+
+        public void UpdateParameters(ServerParameter parameter)
+        {
+            Context.AttachAsModified(parameter,
+                x => x.Value);
         }
     }
 }
