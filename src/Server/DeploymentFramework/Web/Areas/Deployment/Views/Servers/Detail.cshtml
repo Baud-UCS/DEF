@@ -45,7 +45,7 @@
     <div class="col-md-8">
         <div class="well">
             <h3>@StringResources.Parameters</h3>
-            @Html.GuardedActionLink(StringResources.EditParameters, MVC.Deployment.Servers.EditParameters(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default disabled"))
+            @Html.GuardedActionLink(StringResources.EditParameters, MVC.Deployment.Servers.EditParameters(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
             <dl>
                 @if (Model.Parameters.Any())
                 {

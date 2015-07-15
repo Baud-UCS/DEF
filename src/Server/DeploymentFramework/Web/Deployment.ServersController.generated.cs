@@ -216,18 +216,6 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         }
 
         [NonAction]
-        partial void EditParametersOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int serverID);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult EditParameters(int serverID)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditParameters);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "serverID", serverID);
-            EditParametersOverride(callInfo, serverID);
-            return callInfo;
-        }
-
-        [NonAction]
         partial void EditParametersOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int serverID, System.Web.Mvc.FormCollection form);
 
         [NonAction]
@@ -237,6 +225,18 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "serverID", serverID);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
             EditParametersOverride(callInfo, serverID, form);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditParametersOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int serverID);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult EditParameters(int serverID)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditParameters);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "serverID", serverID);
+            EditParametersOverride(callInfo, serverID);
             return callInfo;
         }
 

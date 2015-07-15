@@ -123,7 +123,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         // TODO Add a repository method, make this work
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult EditParameters(int serverID)
+        public virtual ActionResult EditParameters(int serverID, FormCollection form)
         {
             using (var uow = _deploymentUow())
             {
@@ -143,7 +143,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             }
         }
 
-        public virtual ActionResult EditParameters(int serverID, FormCollection form)
+        public virtual ActionResult EditParameters(int serverID)
         {
             using (var uow = _deploymentUow())
             {

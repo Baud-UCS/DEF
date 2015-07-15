@@ -246,6 +246,9 @@
   <data name="Users" xml:space="preserve">
     <value>Uživatelé</value>
   </data>
+  <data name="Value" xml:space="preserve">
+    <value>Hodnota</value>
+  </data>
   <data name="Yes" xml:space="preserve">
     <value>Ano</value>
   </data>

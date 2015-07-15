@@ -246,6 +246,9 @@
   <data name="Users" xml:space="preserve">
     <value>Users</value>
   </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
   </data>

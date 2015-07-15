@@ -1,6 +1,4 @@
-﻿<!-- TODO Finish -->
-
-@model Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.Server
+﻿@model Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.Server
 @using Baud.Deployment.Resources
 
 @{
@@ -8,14 +6,14 @@
 }
 
 <h2>@ViewBag.Title</h2>
-@foreach (var parameter in Model.Parameters)
+@using (var f = Html.BeginCustomForm())
 {
-    using (var f = Html.BeginCustomForm())
+    using (var s = f.BeginSection())
     {
-        using (var s = f.BeginSection())
+        for (int i = 0; i < Model.Parameters.Count(); i++)
         {
-            @*@s.FieldFor(parameter.Name)
-    @s.FieldFor(parameter.Value)*@
+            @s.FieldFor(m => Model.Parameters[i].Name).Readonly()
+            @s.FieldFor(m => Model.Parameters[i].Value)
         }
 
         using (var n = f.BeginNavigation())
