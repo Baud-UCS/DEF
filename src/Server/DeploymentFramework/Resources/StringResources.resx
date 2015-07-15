@@ -147,6 +147,9 @@
   <data name="EditName" xml:space="preserve">
     <value>Edit name</value>
   </data>
+  <data name="EditParameters" xml:space="preserve">
+    <value>Edit parameters</value>
+  </data>
   <data name="Enable" xml:space="preserve">
     <value>Enable</value>
   </data>
@@ -171,6 +174,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Last name</value>
   </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -191,6 +197,9 @@
   </data>
   <data name="PackagesUploadInfo" xml:space="preserve">
     <value>You can upload packages to </value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parameters</value>
   </data>
   <data name="PositionDetail" xml:space="preserve">
     <value>Position detail</value>
@@ -224,6 +233,9 @@
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servers</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Sites</value>
   </data>
   <data name="True" xml:space="preserve">
     <value>Yes</value>

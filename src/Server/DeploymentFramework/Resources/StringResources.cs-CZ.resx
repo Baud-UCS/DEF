@@ -147,6 +147,9 @@
   <data name="EditName" xml:space="preserve">
     <value>Upravit název</value>
   </data>
+  <data name="EditParameters" xml:space="preserve">
+    <value>Upravit parametry</value>
+  </data>
   <data name="Enable" xml:space="preserve">
     <value>Nastavit jako aktivní</value>
   </data>
@@ -171,6 +174,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Příjmení</value>
   </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logy</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Název</value>
   </data>
@@ -191,6 +197,9 @@
   </data>
   <data name="PackagesUploadInfo" xml:space="preserve">
     <value>Balíčky můžete nahrát na </value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parametry</value>
   </data>
   <data name="PositionDetail" xml:space="preserve">
     <value>Detail pozice</value>
@@ -224,6 +233,9 @@
   </data>
   <data name="Servers" xml:space="preserve">
     <value>Servery</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Umístění</value>
   </data>
   <data name="True" xml:space="preserve">
     <value>Ano</value>

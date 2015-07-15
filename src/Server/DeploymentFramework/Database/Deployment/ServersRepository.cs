@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,11 @@ namespace Baud.Deployment.Database.Deployment
 
         public Server GetServerDetail(int id)
         {
-            return Context.Servers.FilterByID(id).FirstOrDefault();
+            return Context.Servers
+                .FilterByID(id)
+                .Include(x => x.Sites)
+                .Include(x => x.Parameters)
+                .FirstOrDefault();
         }
 
         public void UpdateServer(int id, Server server)

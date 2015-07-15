@@ -119,5 +119,43 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
                 return RedirectToAction(Actions.Detail(server.ID));
             }
         }
+
+        // TODO Add a repository method, make this work
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual ActionResult EditParameters(int serverID)
+        {
+            using (var uow = _deploymentUow())
+            {
+                var server = uow.Servers.GetServerDetail(serverID);
+
+                if (server == null)
+                {
+                    return HttpNotFound();
+                }
+
+                if (!TryUpdateModel(server))
+                {
+                    return View(server);
+                }
+
+                return View(server);
+            }
+        }
+
+        public virtual ActionResult EditParameters(int serverID, FormCollection form)
+        {
+            using (var uow = _deploymentUow())
+            {
+                var server = uow.Servers.GetServerDetail(serverID);
+
+                if (server == null)
+                {
+                    return HttpNotFound();
+                }
+
+                return View(server);
+            }
+        }
     }
 }

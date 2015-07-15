@@ -73,6 +73,12 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult EditParameters()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditParameters);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ServersController Actions { get { return MVC.Deployment.Servers; } }
@@ -93,6 +99,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             public readonly string Detail = "Detail";
             public readonly string Edit = "Edit";
             public readonly string Add = "Add";
+            public readonly string EditParameters = "EditParameters";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -102,6 +109,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             public const string Detail = "Detail";
             public const string Edit = "Edit";
             public const string Add = "Add";
+            public const string EditParameters = "EditParameters";
         }
 
 
@@ -118,11 +126,13 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
                 public readonly string Add = "Add";
                 public readonly string Detail = "Detail";
                 public readonly string Edit = "Edit";
+                public readonly string EditParameters = "EditParameters";
                 public readonly string Index = "Index";
             }
             public readonly string Add = "~/Areas/Deployment/Views/Servers/Add.cshtml";
             public readonly string Detail = "~/Areas/Deployment/Views/Servers/Detail.cshtml";
             public readonly string Edit = "~/Areas/Deployment/Views/Servers/Edit.cshtml";
+            public readonly string EditParameters = "~/Areas/Deployment/Views/Servers/EditParameters.cshtml";
             public readonly string Index = "~/Areas/Deployment/Views/Servers/Index.cshtml";
         }
     }
@@ -202,6 +212,31 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
             AddOverride(callInfo, form);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditParametersOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int serverID);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult EditParameters(int serverID)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditParameters);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "serverID", serverID);
+            EditParametersOverride(callInfo, serverID);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditParametersOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int serverID, System.Web.Mvc.FormCollection form);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult EditParameters(int serverID, System.Web.Mvc.FormCollection form)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditParameters);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "serverID", serverID);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
+            EditParametersOverride(callInfo, serverID, form);
             return callInfo;
         }
 

@@ -14,7 +14,7 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Entities
 
         [Required]
         [MaxLength(100)]
-        [Display(Name="Server", ResourceType=typeof(StringResources))]
+        [Display(Name = "Server", ResourceType = typeof(StringResources))]
         public string Name { get; set; }
 
         [MaxLength(100)]
