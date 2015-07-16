@@ -129,11 +129,9 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Detail = "Detail";
                 public readonly string Index = "Index";
                 public readonly string UpdateName = "UpdateName";
             }
-            public readonly string Detail = "~/Areas/Security/Views/Roles/Detail.cshtml";
             public readonly string Index = "~/Areas/Security/Views/Roles/Index.cshtml";
             public readonly string UpdateName = "~/Areas/Security/Views/Roles/UpdateName.cshtml";
         }

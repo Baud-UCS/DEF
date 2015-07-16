@@ -38,5 +38,10 @@ namespace Baud.Deployment.Database.Security
                 x => x.ActiveFrom,
                 x => x.ActiveTo);
         }
+
+        public void AddUser(User user)
+        {
+            Context.Users.Add(user);
+        }
     }
 }

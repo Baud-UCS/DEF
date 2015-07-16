@@ -123,6 +123,9 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Active to</value>
   </data>
+  <data name="AddNewUser" xml:space="preserve">
+    <value>Add new user</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Back to list</value>
   </data>
