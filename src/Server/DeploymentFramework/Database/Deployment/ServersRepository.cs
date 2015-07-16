@@ -45,9 +45,9 @@ namespace Baud.Deployment.Database.Deployment
                 x => x.AgentUrl);
         }
 
-        public Server AddServer(Server server)
+        public void AddServer(Server server)
         {
-            return Context.Servers.Add(server);
+            Context.Servers.Add(server);
         }
 
         public void UpdateParameters(ServerParameter parameter)

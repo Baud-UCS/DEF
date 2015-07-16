@@ -104,13 +104,16 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         {
             using (var uow = _deploymentUow())
             {
-                var server = new Server
+                var server = new Server();
+
+                // TODO Fix
+                server.Created = DateTime.Now;
+                server.CreatedBy = -2;
+
+                if (!TryUpdateModel(server))
                 {
-                    Name = form.Get("Name"),
-                    AgentUrl = form.Get("AgentUrl"),
-                    Created = DateTime.Now,
-                    CreatedBy = -2
-                };
+                    return View();
+                }
 
                 uow.Servers.AddServer(server);
                 uow.Commit();
