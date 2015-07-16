@@ -150,6 +150,9 @@
   <data name="EditParameters" xml:space="preserve">
     <value>Edit parameters</value>
   </data>
+  <data name="EditParametersFor" xml:space="preserve">
+    <value>Edit parameters for</value>
+  </data>
   <data name="Enable" xml:space="preserve">
     <value>Enable</value>
   </data>

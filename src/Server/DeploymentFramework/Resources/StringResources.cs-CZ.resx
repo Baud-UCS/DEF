@@ -150,6 +150,9 @@
   <data name="EditParameters" xml:space="preserve">
     <value>Upravit parametry</value>
   </data>
+  <data name="EditParametersFor" xml:space="preserve">
+    <value>Upravit parametry pro</value>
+  </data>
   <data name="Enable" xml:space="preserve">
     <value>Nastavit jako aktivní</value>
   </data>

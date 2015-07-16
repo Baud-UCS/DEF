@@ -160,6 +160,15 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit parameters for.
+        /// </summary>
+        public static string EditParametersFor {
+            get {
+                return ResourceManager.GetString("EditParametersFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enable.
         /// </summary>
         public static string Enable {

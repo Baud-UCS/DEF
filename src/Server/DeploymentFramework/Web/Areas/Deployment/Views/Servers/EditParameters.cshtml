@@ -5,7 +5,7 @@
     ViewBag.Title = StringResources.EditParameters;
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>@StringResources.EditParametersFor @Model.Name</h2>
 @using (var f = Html.BeginCustomForm())
 {
     using (var s = f.BeginSection())
@@ -13,7 +13,14 @@
         for (int i = 0; i < Model.Parameters.Count(); i++)
         {
             @Html.HiddenFor(m => Model.Parameters[i].ID)
-            @s.FieldFor(m => Model.Parameters[i].Value).DisplayAsInputGroup().Prepend(Model.Parameters[i].Name).Label("")
+            <div class="row">
+                <div class="col-md-6">
+                    @s.FieldFor(m => Model.Parameters[i].Name).Readonly().HideRequiredHint()
+                </div>
+                <div class="col-md-6">
+                    @s.FieldFor(m => Model.Parameters[i].Value)
+                </div>
+            </div>
         }
 
         using (var n = f.BeginNavigation())

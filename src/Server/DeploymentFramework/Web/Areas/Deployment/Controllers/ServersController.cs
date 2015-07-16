@@ -23,7 +23,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         // GET: Deployment/Servers
         public virtual ActionResult Index(IndexFilter filter, PagingData paging)
         {
-            paging.PageSize = 2; // only for testing
+            paging.PageSize = 10; // only for testing
 
             ViewBag.Filter = filter;
 
@@ -127,8 +127,8 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         {
             using (var uow = _deploymentUow())
             {
-                // Two items (ID, Value) for each Parameter passed, hence / 2.
-                for (int i = 0; i < form.Count / 2; i++)
+                // Three items (ID, Name, Value) for each Parameter passed, hence / 3.
+                for (int i = 0; i < form.Count / 3; i++)
                 {
                     var id = Int32.Parse(form.Get("Parameters[" + i + "].ID"));
                     var value = form.Get("Parameters[" + i + "].Value");
