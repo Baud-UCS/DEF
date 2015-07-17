@@ -123,6 +123,15 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Aktivní do</value>
   </data>
+  <data name="AddNewServer" xml:space="preserve">
+    <value>Přidat nový server</value>
+  </data>
+  <data name="AgentUrl" xml:space="preserve">
+    <value>URL agenta</value>
+  </data>
+  <data name="BackToDetail" xml:space="preserve">
+    <value>Zpět na detail</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Zpět na seznam</value>
   </data>
@@ -137,6 +146,12 @@
   </data>
   <data name="EditName" xml:space="preserve">
     <value>Upravit název</value>
+  </data>
+  <data name="EditParameters" xml:space="preserve">
+    <value>Upravit parametry</value>
+  </data>
+  <data name="EditParametersFor" xml:space="preserve">
+    <value>Upravit parametry pro</value>
   </data>
   <data name="Enable" xml:space="preserve">
     <value>Nastavit jako aktivní</value>
@@ -162,11 +177,17 @@
   <data name="LastName" xml:space="preserve">
     <value>Příjmení</value>
   </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logy</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Název</value>
   </data>
   <data name="Neither_Filter" xml:space="preserve">
     <value>Nezáleží</value>
+  </data>
+  <data name="NewServer" xml:space="preserve">
+    <value>Nový server</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Ne</value>
@@ -179,6 +200,9 @@
   </data>
   <data name="PackagesUploadInfo" xml:space="preserve">
     <value>Balíčky můžete nahrát na </value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parametry</value>
   </data>
   <data name="PositionDetail" xml:space="preserve">
     <value>Detail pozice</value>
@@ -204,8 +228,17 @@
   <data name="Security" xml:space="preserve">
     <value>Bezpečnost</value>
   </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="ServerDetail" xml:space="preserve">
+    <value>Detail serveru</value>
+  </data>
   <data name="Servers" xml:space="preserve">
     <value>Servery</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Umístění</value>
   </data>
   <data name="True" xml:space="preserve">
     <value>Ano</value>
@@ -215,6 +248,9 @@
   </data>
   <data name="Users" xml:space="preserve">
     <value>Uživatelé</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Hodnota</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Ano</value>

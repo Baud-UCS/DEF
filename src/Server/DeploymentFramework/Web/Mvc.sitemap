@@ -4,9 +4,9 @@
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
   <mvcSiteMapNode title="$resources:Mvc.sitemap, Home" controller="Home" action="Index">
-    <mvcSiteMapNode title="$resources:Mvc.sitemap, Packages" controller="Packages" action="Index" />
-    <mvcSiteMapNode title="$resources:Mvc.sitemap, Products" controller="Products" action="Index" />
-    <mvcSiteMapNode title="$resources:Mvc.sitemap, Servers" controller="Servers" action="Index" />
+    <mvcSiteMapNode title="$resources:Mvc.sitemap, Packages" controller="Packages" action="Index" area="Deployment" />
+    <mvcSiteMapNode title="$resources:Mvc.sitemap, Products" controller="Products" action="Index" area="Deployment" />
+    <mvcSiteMapNode title="$resources:Mvc.sitemap, Servers" controller="Servers" action="Index" area="Deployment" />
     <mvcSiteMapNode title="$resources:Mvc.sitemap, Security" clickable="false">
       <mvcSiteMapNode title="$resources:Mvc.sitemap, Users" controller="Users" action="Index" area="Security" />
       <mvcSiteMapNode title="$resources:Mvc.sitemap, Positions" controller="Positions" action="Index" area="Security" />

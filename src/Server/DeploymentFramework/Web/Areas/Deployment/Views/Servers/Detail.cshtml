@@ -1,0 +1,61 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.Server
+@using Baud.Deployment.Resources
+
+@{
+    ViewBag.Title = StringResources.ServerDetail;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.GuardedActionLink(StringResources.BackToList, MVC.Deployment.Servers.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(StringResources.Edit, MVC.Deployment.Servers.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
+
+<br /><br />
+
+@using (var f = Html.BeginReadOnlyForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Name)
+        @s.FieldFor(m => m.AgentUrl)
+    }
+}
+
+<!-- SITES & CONFIGURATION -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="well">
+            <h3>@StringResources.Sites</h3>
+            <ul class="list-unstyled">
+                @if (Model.Sites.Any())
+                {
+                    foreach (var site in Model.Sites)
+                    {
+                        <li>@site.Key</li>
+                    }
+                }
+                else
+                {
+                    @StringResources.NoData
+                }
+
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="well">
+            <h3>@StringResources.Parameters</h3>
+            @Html.GuardedActionLink(StringResources.EditParameters, MVC.Deployment.Servers.EditParameters(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
+            <dl>
+                @if (Model.Parameters.Any())
+                {
+                    foreach (var parameter in Model.Parameters)
+                    {
+                        <dt>@parameter.Name</dt>
+                        <dd>@parameter.Value</dd>
+                    }
+                }
+            </dl>
+        </div>
+    </div>
+</div>

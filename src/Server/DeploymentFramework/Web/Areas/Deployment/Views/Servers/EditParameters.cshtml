@@ -1,0 +1,34 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.Server
+@using Baud.Deployment.Resources
+
+@{
+    ViewBag.Title = StringResources.EditParameters;
+}
+
+<h2>@StringResources.EditParametersFor @Model.Name</h2>
+@using (var f = Html.BeginCustomForm())
+{
+    using (var s = f.BeginSection())
+    {
+        for (int i = 0; i < Model.Parameters.Count(); i++)
+        {
+            @Html.HiddenFor(m => Model.Parameters[i].ID)
+            <div class="row">
+                <div class="col-md-6">
+                    @s.FieldFor(m => Model.Parameters[i].Name).Readonly().HideRequiredHint()
+                </div>
+                <div class="col-md-6">
+                    @s.FieldFor(m => Model.Parameters[i].Value)
+                </div>
+            </div>
+        }
+
+        using (var n = f.BeginNavigation())
+        {
+            @n.Submit(StringResources.Save)
+        }
+    }
+}
+
+@Html.GuardedActionLink(StringResources.BackToList, MVC.Deployment.Servers.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(StringResources.BackToDetail, MVC.Deployment.Servers.Detail(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))

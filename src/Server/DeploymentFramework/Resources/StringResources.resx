@@ -123,6 +123,15 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Active to</value>
   </data>
+  <data name="AddNewServer" xml:space="preserve">
+    <value>Add new server</value>
+  </data>
+  <data name="AgentUrl" xml:space="preserve">
+    <value>Agent URL</value>
+  </data>
+  <data name="BackToDetail" xml:space="preserve">
+    <value>Back to detail</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Back to list</value>
   </data>
@@ -136,7 +145,13 @@
     <value>Edit</value>
   </data>
   <data name="EditName" xml:space="preserve">
-    <value>Edit Name</value>
+    <value>Edit name</value>
+  </data>
+  <data name="EditParameters" xml:space="preserve">
+    <value>Edit parameters</value>
+  </data>
+  <data name="EditParametersFor" xml:space="preserve">
+    <value>Edit parameters for</value>
   </data>
   <data name="Enable" xml:space="preserve">
     <value>Enable</value>
@@ -162,17 +177,23 @@
   <data name="LastName" xml:space="preserve">
     <value>Last name</value>
   </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="Neither_Filter" xml:space="preserve">
     <value>Neither</value>
   </data>
+  <data name="NewServer" xml:space="preserve">
+    <value>New server</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="NoData" xml:space="preserve">
-    <value>No Data</value>
+    <value>No data</value>
   </data>
   <data name="Packages" xml:space="preserve">
     <value>Packages</value>
@@ -180,8 +201,11 @@
   <data name="PackagesUploadInfo" xml:space="preserve">
     <value>You can upload packages to </value>
   </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
   <data name="PositionDetail" xml:space="preserve">
-    <value>Position Detail</value>
+    <value>Position detail</value>
   </data>
   <data name="Positions" xml:space="preserve">
     <value>Positions</value>
@@ -190,7 +214,7 @@
     <value>Products</value>
   </data>
   <data name="RoleDetail" xml:space="preserve">
-    <value>Role Detail</value>
+    <value>Role detail</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Roles</value>
@@ -204,17 +228,29 @@
   <data name="Security" xml:space="preserve">
     <value>Security</value>
   </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="ServerDetail" xml:space="preserve">
+    <value>Server detail</value>
+  </data>
   <data name="Servers" xml:space="preserve">
     <value>Servers</value>
+  </data>
+  <data name="Sites" xml:space="preserve">
+    <value>Sites</value>
   </data>
   <data name="True" xml:space="preserve">
     <value>Yes</value>
   </data>
   <data name="UserDetail" xml:space="preserve">
-    <value>User Detail</value>
+    <value>User detail</value>
   </data>
   <data name="Users" xml:space="preserve">
     <value>Users</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>

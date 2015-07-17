@@ -79,6 +79,33 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new server.
+        /// </summary>
+        public static string AddNewServer {
+            get {
+                return ResourceManager.GetString("AddNewServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agent URL.
+        /// </summary>
+        public static string AgentUrl {
+            get {
+                return ResourceManager.GetString("AgentUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to detail.
+        /// </summary>
+        public static string BackToDetail {
+            get {
+                return ResourceManager.GetString("BackToDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back to list.
         /// </summary>
         public static string BackToList {
@@ -115,11 +142,29 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit Name.
+        ///   Looks up a localized string similar to Edit name.
         /// </summary>
         public static string EditName {
             get {
                 return ResourceManager.GetString("EditName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit parameters.
+        /// </summary>
+        public static string EditParameters {
+            get {
+                return ResourceManager.GetString("EditParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit parameters for.
+        /// </summary>
+        public static string EditParametersFor {
+            get {
+                return ResourceManager.GetString("EditParametersFor", resourceCulture);
             }
         }
         
@@ -196,6 +241,15 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logs.
+        /// </summary>
+        public static string Logs {
+            get {
+                return ResourceManager.GetString("Logs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -214,6 +268,15 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New server.
+        /// </summary>
+        public static string NewServer {
+            get {
+                return ResourceManager.GetString("NewServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
@@ -223,7 +286,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No Data.
+        ///   Looks up a localized string similar to No data.
         /// </summary>
         public static string NoData {
             get {
@@ -250,7 +313,16 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Position Detail.
+        ///   Looks up a localized string similar to Parameters.
+        /// </summary>
+        public static string Parameters {
+            get {
+                return ResourceManager.GetString("Parameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position detail.
         /// </summary>
         public static string PositionDetail {
             get {
@@ -277,7 +349,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Role Detail.
+        ///   Looks up a localized string similar to Role detail.
         /// </summary>
         public static string RoleDetail {
             get {
@@ -322,11 +394,38 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Server.
+        /// </summary>
+        public static string Server {
+            get {
+                return ResourceManager.GetString("Server", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server detail.
+        /// </summary>
+        public static string ServerDetail {
+            get {
+                return ResourceManager.GetString("ServerDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Servers.
         /// </summary>
         public static string Servers {
             get {
                 return ResourceManager.GetString("Servers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sites.
+        /// </summary>
+        public static string Sites {
+            get {
+                return ResourceManager.GetString("Sites", resourceCulture);
             }
         }
         
@@ -340,7 +439,7 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Detail.
+        ///   Looks up a localized string similar to User detail.
         /// </summary>
         public static string UserDetail {
             get {
@@ -354,6 +453,15 @@ namespace Baud.Deployment.Resources {
         public static string Users {
             get {
                 return ResourceManager.GetString("Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
             }
         }
         

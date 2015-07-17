@@ -26,6 +26,8 @@ using Baud.Deployment.Web.Framework.Security;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    static readonly DeploymentClass s_Deployment = new DeploymentClass();
+    public static DeploymentClass Deployment { get { return s_Deployment; } }
     static readonly SecurityClass s_Security = new SecurityClass();
     public static SecurityClass Security { get { return s_Security; } }
     public static Baud.Deployment.Web.Controllers.AccountController Account = new Baud.Deployment.Web.Controllers.T4MVC_AccountController();
@@ -33,12 +35,17 @@ public static partial class MVC
     public static Baud.Deployment.Web.Controllers.ManageController Manage = new Baud.Deployment.Web.Controllers.T4MVC_ManageController();
     public static Baud.Deployment.Web.Controllers.PackagesController Packages = new Baud.Deployment.Web.Controllers.T4MVC_PackagesController();
     public static Baud.Deployment.Web.Controllers.ProductsController Products = new Baud.Deployment.Web.Controllers.T4MVC_ProductsController();
-    public static Baud.Deployment.Web.Controllers.ServersController Servers = new Baud.Deployment.Web.Controllers.T4MVC_ServersController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
 namespace T4MVC
 {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public class DeploymentClass
+    {
+        public readonly string Name = "Deployment";
+        public Baud.Deployment.Web.Areas.Deployment.Controllers.ServersController Servers = new Baud.Deployment.Web.Areas.Deployment.Controllers.T4MVC_ServersController();
+    }
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class SecurityClass
     {

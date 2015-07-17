@@ -313,6 +313,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Areas\Deployment\Controllers\ServersController.cs" />
+    <Compile Include="Areas\Deployment\Models\Servers\IndexFilter.cs" />
+    <Compile Include="Areas\Deployment\DeploymentAreaRegistration.cs" />
     <Compile Include="Areas\Security\Controllers\PositionsController.cs" />
     <Compile Include="Areas\Security\Controllers\RolesController.cs" />
     <Compile Include="Areas\Security\Controllers\UsersController.cs" />
@@ -325,8 +328,10 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\ServersController.cs" />
     <Compile Include="DataServices\Routes.cs" />
+    <Compile Include="Deployment.ServersController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Framework\Data\UnityRepositoryProvider.cs" />
     <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\Security\DatabaseUserStore.cs" />
@@ -387,9 +392,6 @@
     <Compile Include="Security.UsersController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="ServersController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -413,6 +415,13 @@
     <Content Include="bower.json" />
     <Content Include="package.json" />
     <Content Include="Scripts\bootstrap-bundle.min.js" />
+    <Content Include="Areas\Deployment\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Deployment\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Deployment\Views\Servers\Index.cshtml" />
+    <Content Include="Areas\Deployment\Views\Servers\Detail.cshtml" />
+    <Content Include="Areas\Deployment\Views\Servers\Edit.cshtml" />
     <Content Include="Scripts\jquery-bundle.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.chameleon.js" />
@@ -429,6 +438,8 @@
     <Content Include="Areas\Security\Views\Roles\Index.cshtml" />
     <Content Include="Areas\Security\Views\Positions\Index.cshtml" />
     <Content Include="Areas\Security\Views\Positions\UpdateName.cshtml" />
+    <Content Include="Areas\Deployment\Views\Servers\Add.cshtml" />
+    <Content Include="Areas\Deployment\Views\Servers\EditParameters.cshtml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -462,7 +473,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Servers\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
   </ItemGroup>

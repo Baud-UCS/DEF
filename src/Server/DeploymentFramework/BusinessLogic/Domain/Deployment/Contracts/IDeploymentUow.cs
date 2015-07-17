@@ -10,5 +10,6 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Contracts
     {
         IProjectsRepository Projects { get; }
         IInstallationsRepository Installations { get; }
+        IServersRepository Servers { get; }
     }
 }
