@@ -13,5 +13,9 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Contracts
         IRolesRepository Roles { get; }
 
         IPositionsRepository Positions { get; }
+
+        IRolePositionLinkRepository RolePositionLinks { get; }
+
+        IUserPositionLinkRepository UserPositionLinks { get; }
     }
 }

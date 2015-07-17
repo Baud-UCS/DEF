@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Baud.Deployment.BusinessLogic.Domain.Security.Contracts;
+using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
 using Baud.Deployment.Web.Areas.Security.Models.Users;
 using Baud.Deployment.Web.Framework.Security;
 using Baud.Deployment.Web.Framework.Web;
@@ -22,7 +23,7 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
         ////[RequirePermission(Permissions.Security.UserRead)]
         public virtual ActionResult Index(IndexFilter filter, PagingData paging)
         {
-            paging.PageSize = 2; // only for testing
+            paging.PageSize = 10; // only for testing
 
             ViewBag.Filter = filter;
 
@@ -89,6 +90,36 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
 
                 // TODO add confirmation toast message
                 return RedirectToAction(Actions.Detail(id));
+            }
+        }
+
+        public virtual ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual ActionResult Add(FormCollection form)
+        {
+            using (var uow = _securityUow())
+            {
+                var user = new User();
+                
+                // TODO Following two lines need fixing (we shouldn't have to type these properties in manually).
+                user.Created = DateTime.Now;
+                user.CreatedBy = -2;
+
+                if (!TryUpdateModel(user))
+                {
+                    return View(user);
+                }
+
+                uow.Users.AddUser(user);
+                uow.Commit();
+
+                // TODO add confirmation toast message
+                return RedirectToAction(Actions.Detail(user.ID));
             }
         }
     }

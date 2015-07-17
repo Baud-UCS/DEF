@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,13 @@ namespace Baud.Deployment.Database.Security
 
         public Position GetPositionDetail(short id)
         {
-            return Context.Positions.FilterByID(id).FirstOrDefault();
+            return Context.Positions
+                .FilterByID(id)
+                .Include(x => x.RoleLinks)
+                .Include("RoleLinks.Role")
+                .Include(x => x.UserLinks)
+                .Include("UserLinks.User")
+                .FirstOrDefault();
         }
 
         public void Enable(short id)
@@ -44,13 +51,17 @@ namespace Baud.Deployment.Database.Security
                 x => x.IsActive);
         }
 
-        public void UpdateName(short id, string name)
+        public void UpdateName(short id)
         {
             Position position = GetPositionDetail(id);
-            position.Name = name;
 
             Context.AttachAsModified(position,
                 x => x.Name);
+        }
+
+        public void AddPosition(Position position)
+        {
+            Context.Positions.Add(position);
         }
     }
 }

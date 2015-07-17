@@ -26,6 +26,16 @@ namespace Baud.Deployment.Database.Security
             get { return GetRepository<IPositionsRepository>(); }
         }
 
+        public IRolePositionLinkRepository RolePositionLinks
+        {
+            get { return GetRepository<IRolePositionLinkRepository>(); }
+        }
+
+        public IUserPositionLinkRepository UserPositionLinks 
+        {
+            get { return GetRepository<IUserPositionLinkRepository>(); } 
+        }
+
         public SecurityUow(IDbContextProvider<SecurityDbContext> contextProvider, IRepositoryProvider<SecurityDbContext> repositoryProvider, ICurrentUserProvider currentUserProvider, IDateTimeProvider dateTimeProvider)
             : base(contextProvider, repositoryProvider, currentUserProvider, dateTimeProvider)
         {

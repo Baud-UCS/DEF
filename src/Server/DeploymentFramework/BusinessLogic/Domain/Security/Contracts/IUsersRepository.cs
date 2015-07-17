@@ -14,5 +14,7 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Contracts
         User GetUserDetail(short id);
 
         void UpdateUser(short id, User user);
+
+        void AddUser(User user);
     }
 }

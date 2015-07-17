@@ -132,6 +132,15 @@
   <data name="BackToDetail" xml:space="preserve">
     <value>Zpět na detail</value>
   </data>
+  <data name="AddNewPosition" xml:space="preserve">
+    <value>Přidat novou pozici</value>
+  </data>
+  <data name="AddNewRole" xml:space="preserve">
+    <value>Přidat novou roli</value>
+  </data>
+  <data name="AddNewUser" xml:space="preserve">
+    <value>Přidat nového uživatele</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Zpět na seznam</value>
   </data>

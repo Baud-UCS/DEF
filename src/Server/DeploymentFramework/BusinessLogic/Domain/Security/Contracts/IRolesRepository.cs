@@ -17,6 +17,8 @@ namespace Baud.Deployment.BusinessLogic.Domain.Security.Contracts
 
         void Disable(short id);
 
-        void UpdateName(short id, string name);
+        void UpdateName(short id);
+
+        void AddRole(Role role);
     }
 }

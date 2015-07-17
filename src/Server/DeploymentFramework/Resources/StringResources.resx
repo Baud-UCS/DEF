@@ -132,6 +132,15 @@
   <data name="BackToDetail" xml:space="preserve">
     <value>Back to detail</value>
   </data>
+  <data name="AddNewPosition" xml:space="preserve">
+    <value>Add new position</value>
+  </data>
+  <data name="AddNewRole" xml:space="preserve">
+    <value>Add new role</value>
+  </data>
+  <data name="AddNewUser" xml:space="preserve">
+    <value>Add new user</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Back to list</value>
   </data>

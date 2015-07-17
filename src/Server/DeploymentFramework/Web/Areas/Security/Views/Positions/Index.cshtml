@@ -24,6 +24,8 @@
     }
 </div>
 
+@Html.GuardedActionLink(StringResources.AddNewPosition, MVC.Security.Positions.Add())
+
 @if (Model.Any())
 {
     <table class="table table-striped">
@@ -31,6 +33,7 @@
             <tr>
                 <th>@Html.SortingLink(m => m[0].Name)</th>
                 <th>@Html.SortingLink(m => m[0].IsActive)</th>
+                <th></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -50,6 +53,7 @@
                     {
                         <td>@Html.GuardedActionLink(StringResources.Enable, MVC.Security.Positions.Enable(position.ID))</td>
                     }
+                    <td>@Html.GuardedActionLink(StringResources.Detail, MVC.Security.Positions.Detail(position.ID))</td>
                 </tr>
             }
         </tbody>

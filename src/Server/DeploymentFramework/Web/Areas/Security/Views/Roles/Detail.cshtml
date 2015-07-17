@@ -1,8 +1,8 @@
-﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.User
+﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.Role
 @using Baud.Deployment.Resources
 
 @{
-    ViewBag.Title = StringResources.UserDetail;
+    ViewBag.Title = StringResources.RoleDetail;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -11,13 +11,8 @@
 {
     using (var s = f.BeginSection())
     {
-        @s.FieldFor(m => m.Login)
-        @s.FieldFor(m => m.FirstName)
-        @s.FieldFor(m => m.LastName)
-        @s.FieldFor(m => m.Email)
-        @s.FieldFor(m => m.ActiveFrom)
-        @s.FieldFor(m => m.ActiveTo)
-        @s.FieldFor(m => m.Note)
+        @s.FieldFor(m => m.Name)
+        @s.FieldFor(m => m.IsActive)
 
         <div class="row">
             <div class="col-md-12">
@@ -37,5 +32,6 @@
     }
 }
 
-@Html.GuardedActionLink(StringResources.BackToList, MVC.Security.Users.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
-@Html.GuardedActionLink(StringResources.Edit, MVC.Security.Users.Edit(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(StringResources.BackToList, MVC.Security.Roles.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
+
+

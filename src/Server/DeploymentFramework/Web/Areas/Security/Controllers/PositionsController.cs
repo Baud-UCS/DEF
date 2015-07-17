@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Baud.Deployment.BusinessLogic.Domain.Security.Contracts;
+using Baud.Deployment.BusinessLogic.Domain.Security.Entities;
 using Baud.Deployment.Web.Areas.Security.Models.Positions;
 using Baud.Deployment.Web.Framework.Web;
 
@@ -60,11 +61,6 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
                     return HttpNotFound();
                 }
 
-                if (!TryUpdateModel(position))
-                {
-                    return View(position);
-                }
-
                 uow.Positions.Disable(id);
                 uow.Commit();
 
@@ -82,11 +78,6 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
                 if (position == null)
                 {
                     return HttpNotFound();
-                }
-
-                if (!TryUpdateModel(position))
-                {
-                    return View(position);
                 }
 
                 uow.Positions.Enable(id);
@@ -115,7 +106,7 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
                     return View(position);
                 }
 
-                uow.Positions.UpdateName(id, name);
+                uow.Positions.UpdateName(id);
                 uow.Commit();
 
                 // TODO add confirmation toast message
@@ -135,6 +126,36 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
                 }
 
                 return View(position);
+            }
+        }
+
+        public virtual ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual ActionResult Add(FormCollection form)
+        {
+            using (var uow = _securityUow())
+            {
+                var position = new Position();
+
+                // TODO Following two lines need fixing (we shouldn't have to type these properties in manually).
+                position.Created = DateTime.Now;
+                position.CreatedBy = -2;
+
+                if (!TryUpdateModel(position))
+                {
+                    return View(position);
+                }
+
+                uow.Positions.AddPosition(position);
+                uow.Commit();
+
+                // TODO add confirmation toast message
+                return RedirectToAction(Actions.Index());
             }
         }
     }
