@@ -83,8 +83,10 @@
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IUow.cs" />
     <Compile Include="Domain\Security\Contracts\IPositionsRepository.cs" />
+    <Compile Include="Domain\Security\Contracts\IRolePositionLinkRepository.cs" />
     <Compile Include="Domain\Security\Contracts\IRolesRepository.cs" />
     <Compile Include="Domain\Security\Contracts\ISecurityUow.cs" />
+    <Compile Include="Domain\Security\Contracts\IUserPositionLinkRepository.cs" />
     <Compile Include="Domain\Security\Contracts\IUsersRepository.cs" />
     <Compile Include="Domain\Security\Entities\Position.cs" />
     <Compile Include="Domain\Security\Entities\Role.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,13 @@ namespace Baud.Deployment.Database.Security
 
         public Position GetPositionDetail(short id)
         {
-            return Context.Positions.FilterByID(id).FirstOrDefault();
+            return Context.Positions
+                .FilterByID(id)
+                .Include(x => x.RoleLinks)
+                .Include("RoleLinks.Role")
+                .Include(x => x.UserLinks)
+                .Include("UserLinks.User")
+                .FirstOrDefault();
         }
 
         public void Enable(short id)

@@ -64,9 +64,11 @@
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="RepositoryProviderBase.cs" />
     <Compile Include="Security\PositionsRepository.cs" />
+    <Compile Include="Security\RolePositionLinkRepository.cs" />
     <Compile Include="Security\RolesRepository.cs" />
     <Compile Include="Security\SecurityDbContext.cs" />
     <Compile Include="Security\SecurityUow.cs" />
+    <Compile Include="Security\UserPositionLinkRepository.cs" />
     <Compile Include="Security\UsersRepository.cs" />
     <Compile Include="UowBase.cs" />
   </ItemGroup>

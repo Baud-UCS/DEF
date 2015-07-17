@@ -1,0 +1,46 @@
+﻿@model Baud.Deployment.BusinessLogic.Domain.Security.Entities.Position
+@using Baud.Deployment.Resources
+
+@{
+    ViewBag.Title = StringResources.PositionDetail;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (var f = Html.BeginReadOnlyForm())
+{
+    using (var s = f.BeginSection())
+    {
+        @s.FieldFor(m => m.Name)
+        @s.FieldFor(m => m.IsActive)
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="well">
+                    <h3>@StringResources.Users</h3>
+                    <div class="form-group">
+                        @foreach (var user in Model.UserLinks)
+                        {
+                            @s.FieldFor(m => user.User.Login).Label("")
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="well">
+                    <h3>@StringResources.Roles</h3>
+                    <div class="form-group">
+                        @foreach (var role in Model.RoleLinks)
+                        {
+                            @s.FieldFor(m => role.Role.Name).Label("")
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    }
+}
+
+@Html.GuardedActionLink(StringResources.BackToList, MVC.Security.Positions.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))

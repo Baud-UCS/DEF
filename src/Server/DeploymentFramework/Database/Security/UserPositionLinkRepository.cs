@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Baud.Deployment.BusinessLogic.Domain.Security.Contracts;
+
+namespace Baud.Deployment.Database.Security
+{
+    public class UserPositionLinkRepository : RepositoryBase<SecurityDbContext>, IUserPositionLinkRepository
+    {
+        public UserPositionLinkRepository(SecurityDbContext context)
+            : base(context)
+        {
+        }
+    }
+}

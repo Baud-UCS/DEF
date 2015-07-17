@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,11 @@ namespace Baud.Deployment.Database.Security
 
         public Role GetRoleDetail(short id)
         {
-            return Context.Roles.FilterByID(id).FirstOrDefault();
+            return Context.Roles
+                .FilterByID(id)
+                .Include(x => x.PositionLinks)
+                .Include("PositionLinks.Position")
+                .FirstOrDefault();
         }
 
         public void Enable(short id)
