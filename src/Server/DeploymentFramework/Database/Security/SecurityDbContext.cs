@@ -18,6 +18,8 @@ namespace Baud.Deployment.Database.Security
         public IDbSet<User> Users { get; set; }
         public IDbSet<Role> Roles { get; set; }
         public IDbSet<Position> Positions { get; set; }
+        public IDbSet<RolePositionLink> RolePositionLinks { get; set; }
+        public IDbSet<UserPositionLink> UserPositionLinks { get; set; }
 
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         {
