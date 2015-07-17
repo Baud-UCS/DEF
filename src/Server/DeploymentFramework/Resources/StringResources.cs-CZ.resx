@@ -123,6 +123,12 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Aktivní do</value>
   </data>
+  <data name="AddNewPosition" xml:space="preserve">
+    <value>Přidat novou pozici</value>
+  </data>
+  <data name="AddNewRole" xml:space="preserve">
+    <value>Přidat novou roli</value>
+  </data>
   <data name="AddNewUser" xml:space="preserve">
     <value>Přidat nového uživatele</value>
   </data>

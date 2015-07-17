@@ -44,13 +44,17 @@ namespace Baud.Deployment.Database.Security
                 x => x.IsActive);
         }
 
-        public void UpdateName(short id, string name)
+        public void UpdateName(short id)
         {
             Role role = GetRoleDetail(id);
-            role.Name = name;
 
             Context.AttachAsModified(role,
                 x => x.Name);
+        }
+
+        public void AddRole(Role role)
+        {
+            Context.Roles.Add(role);
         }
     }
 }

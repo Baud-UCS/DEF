@@ -24,6 +24,8 @@
     }
 </div>
 
+@Html.GuardedActionLink(StringResources.AddNewRole, MVC.Security.Roles.Add())
+
 @if (Model.Any())
 {
     <table class="table table-striped">

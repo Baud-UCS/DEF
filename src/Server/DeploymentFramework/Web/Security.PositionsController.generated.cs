@@ -106,6 +106,7 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             public readonly string Disable = "Disable";
             public readonly string Enable = "Enable";
             public readonly string UpdateName = "UpdateName";
+            public readonly string Add = "Add";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -116,6 +117,7 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             public const string Disable = "Disable";
             public const string Enable = "Enable";
             public const string UpdateName = "UpdateName";
+            public const string Add = "Add";
         }
 
 
@@ -129,9 +131,11 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Add = "Add";
                 public readonly string Index = "Index";
                 public readonly string UpdateName = "UpdateName";
             }
+            public readonly string Add = "~/Areas/Security/Views/Positions/Add.cshtml";
             public readonly string Index = "~/Areas/Security/Views/Positions/Index.cshtml";
             public readonly string UpdateName = "~/Areas/Security/Views/Positions/UpdateName.cshtml";
         }
@@ -213,6 +217,29 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateName);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             UpdateNameOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Add()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
+            AddOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Web.Mvc.FormCollection form);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Add(System.Web.Mvc.FormCollection form)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
+            AddOverride(callInfo, form);
             return callInfo;
         }
 

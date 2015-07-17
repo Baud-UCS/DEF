@@ -123,6 +123,12 @@
   <data name="ActiveTo" xml:space="preserve">
     <value>Active to</value>
   </data>
+  <data name="AddNewPosition" xml:space="preserve">
+    <value>Add new position</value>
+  </data>
+  <data name="AddNewRole" xml:space="preserve">
+    <value>Add new role</value>
+  </data>
   <data name="AddNewUser" xml:space="preserve">
     <value>Add new user</value>
   </data>

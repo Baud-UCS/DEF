@@ -24,6 +24,8 @@
     }
 </div>
 
+@Html.GuardedActionLink(StringResources.AddNewPosition, MVC.Security.Positions.Add())
+
 @if (Model.Any())
 {
     <table class="table table-striped">

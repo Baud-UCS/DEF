@@ -79,6 +79,24 @@ namespace Baud.Deployment.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new position.
+        /// </summary>
+        public static string AddNewPosition {
+            get {
+                return ResourceManager.GetString("AddNewPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new role.
+        /// </summary>
+        public static string AddNewRole {
+            get {
+                return ResourceManager.GetString("AddNewRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add new user.
         /// </summary>
         public static string AddNewUser {
