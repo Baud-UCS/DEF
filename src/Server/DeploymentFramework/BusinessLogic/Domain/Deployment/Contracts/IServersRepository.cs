@@ -20,5 +20,7 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Contracts
         void AddServer(Server server);
 
         void UpdateParameters(ServerParameter parameter);
+
+        void AddParameter(ServerParameter parameter);
     }
 }
