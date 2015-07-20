@@ -133,8 +133,8 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
                 // Three items (ID, Name, Value) for each Parameter passed, hence / 3.
                 for (int i = 0; i < form.Count / 3; i++)
                 {
-                    var id = Int32.Parse(form.Get("Parameters[" + i + "].ID"));
-                    var value = form.Get("Parameters[" + i + "].Value");
+                    var id = int.Parse(form.Get("Server.Parameters[" + i + "].ID"));
+                    var value = form.Get("Server.Parameters[" + i + "].Value");
 
                     var parameter = uow.Servers.GetParameterByID(id);
                     parameter.Value = value;
@@ -144,7 +144,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
 
                 uow.Commit();
                 var server = uow.Servers.GetServerDetail(serverID);
-                return View(server);
+                return View(new ServerServerParameter { Server = server, ServerParameter = new ServerParameter() });
             }
         }
 
@@ -159,7 +159,37 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
                     return HttpNotFound();
                 }
 
-                return View(server);
+                return View(new ServerServerParameter { Server = server, ServerParameter = new ServerParameter() });
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual ActionResult AddParameter(int serverID, FormCollection form)
+        {
+            using (var uow = _deploymentUow())
+            {
+                var server = uow.Servers.GetServerDetail(serverID);
+
+                if (server == null)
+                {
+                    return HttpNotFound();
+                }
+
+                var parameter = new ServerParameter
+                {
+                    Name = form.Get("ServerParameter.Name"),
+                    Value = form.Get("ServerParameter.Value"),
+                    ServerID = serverID,
+                    Created = DateTime.Now,
+                    CreatedBy = -2
+                };
+
+                uow.Servers.AddParameter(parameter);
+                uow.Commit();
+
+                // TODO add confirmation toast message
+                return RedirectToAction(Actions.EditParameters(serverID));
             }
         }
     }

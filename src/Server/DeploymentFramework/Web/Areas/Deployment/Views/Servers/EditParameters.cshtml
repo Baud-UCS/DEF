@@ -1,24 +1,27 @@
-﻿@model Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.Server
+﻿@model Baud.Deployment.BusinessLogic.Domain.Deployment.Entities.ServerServerParameter
 @using Baud.Deployment.Resources
 
 @{
     ViewBag.Title = StringResources.EditParameters;
 }
 
-<h2>@StringResources.EditParametersFor @Model.Name</h2>
+<h2>@StringResources.EditParametersFor @Model.Server.Name</h2>
+
+<!-- Edit Parameters -->
+
 @using (var f = Html.BeginCustomForm())
 {
     using (var s = f.BeginSection())
     {
-        for (int i = 0; i < Model.Parameters.Count(); i++)
+        for (int i = 0; i < Model.Server.Parameters.Count(); i++)
         {
-            @Html.HiddenFor(m => Model.Parameters[i].ID)
+            @Html.HiddenFor(m => Model.Server.Parameters[i].ID)
             <div class="row">
                 <div class="col-md-6">
-                    @s.FieldFor(m => Model.Parameters[i].Name).Readonly().HideRequiredHint()
+                    @s.FieldFor(m => Model.Server.Parameters[i].Name).Readonly().HideRequiredHint()
                 </div>
                 <div class="col-md-6">
-                    @s.FieldFor(m => Model.Parameters[i].Value)
+                    @s.FieldFor(m => Model.Server.Parameters[i].Value)
                 </div>
             </div>
         }
@@ -30,5 +33,27 @@
     }
 }
 
+<!-- Add new Parameter -->
+
+@using (var f = Html.BeginCustomForm("AddParameter?serverID=" + Model.Server.ID))
+{
+    using (var s = f.BeginSection())
+    {
+        <div class="row">
+            <div class="col-md-6">
+                @s.FieldFor(m => Model.ServerParameter.Name)
+            </div>
+            <div class="col-md-6">
+                @s.FieldFor(m => Model.ServerParameter.Value)
+            </div>
+        </div>
+
+        using (var n = f.BeginNavigation())
+        {
+            @n.Submit(StringResources.Save)
+        }
+    }
+}
+
 @Html.GuardedActionLink(StringResources.BackToList, MVC.Deployment.Servers.Index(), new SimpleHtmlAttributes("class", "btn btn-default"))
-@Html.GuardedActionLink(StringResources.BackToDetail, MVC.Deployment.Servers.Detail(Model.ID), new SimpleHtmlAttributes("class", "btn btn-default"))
+@Html.GuardedActionLink(StringResources.BackToDetail, MVC.Deployment.Servers.Detail(Model.Server.ID), new SimpleHtmlAttributes("class", "btn btn-default"))

@@ -79,6 +79,12 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditParameters);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddParameter()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddParameter);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ServersController Actions { get { return MVC.Deployment.Servers; } }
@@ -100,6 +106,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             public readonly string Edit = "Edit";
             public readonly string Add = "Add";
             public readonly string EditParameters = "EditParameters";
+            public readonly string AddParameter = "AddParameter";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -110,6 +117,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             public const string Edit = "Edit";
             public const string Add = "Add";
             public const string EditParameters = "EditParameters";
+            public const string AddParameter = "AddParameter";
         }
 
 
@@ -237,6 +245,19 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditParameters);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "serverID", serverID);
             EditParametersOverride(callInfo, serverID);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddParameterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int serverID, System.Web.Mvc.FormCollection form);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddParameter(int serverID, System.Web.Mvc.FormCollection form)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddParameter);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "serverID", serverID);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
+            AddParameterOverride(callInfo, serverID, form);
             return callInfo;
         }
 

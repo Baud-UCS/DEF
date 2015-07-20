@@ -55,5 +55,10 @@ namespace Baud.Deployment.Database.Deployment
             Context.AttachAsModified(parameter,
                 x => x.Value);
         }
+
+        public void AddParameter(ServerParameter parameter)
+        {
+            Context.ServerParameters.Add(parameter);
+        }
     }
 }
