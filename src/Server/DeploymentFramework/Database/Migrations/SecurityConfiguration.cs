@@ -15,6 +15,8 @@ namespace Baud.Deployment.Database.Migrations
 
         protected override void Seed(Baud.Deployment.Database.Security.SecurityDbContext context)
         {
+            context.CurrentUserProvider = new SeedCurrentUserProvider();
+
             var now = DateTime.Now;
 
             context.Users.AddOrUpdate(

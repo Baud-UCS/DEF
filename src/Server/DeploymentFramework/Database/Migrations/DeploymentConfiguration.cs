@@ -17,6 +17,8 @@ namespace Baud.Deployment.Database.Migrations
 
         protected override void Seed(Baud.Deployment.Database.Deployment.DeploymentDbContext context)
         {
+            context.CurrentUserProvider = new SeedCurrentUserProvider();
+
             var now = DateTime.Now;
 
             context.Servers.AddOrUpdate(

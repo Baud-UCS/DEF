@@ -59,6 +59,7 @@
     <Compile Include="Deployment\ServersRepository.cs" />
     <Compile Include="Migrations\DeploymentConfiguration.cs" />
     <Compile Include="Migrations\SecurityConfiguration.cs" />
+    <Compile Include="Migrations\SeedCurrentUserProvider.cs" />
     <Compile Include="NoChangeTrackingDbContextProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionDbContextProvider.cs" />
