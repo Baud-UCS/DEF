@@ -22,7 +22,7 @@ using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
 using Baud.Deployment.Web.Framework.Security;
-namespace Baud.Deployment.Web.Controllers
+namespace Baud.Deployment.Web.Areas.Deployment.Controllers
 {
     public partial class PackagesController
     {
@@ -60,9 +60,9 @@ namespace Baud.Deployment.Web.Controllers
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public PackagesController Actions { get { return MVC.Packages; } }
+        public PackagesController Actions { get { return MVC.Deployment.Packages; } }
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Area = "";
+        public readonly string Area = "Deployment";
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Name = "Packages";
         [GeneratedCode("T4MVC", "2.0")]
@@ -96,12 +96,12 @@ namespace Baud.Deployment.Web.Controllers
             {
                 public readonly string Index = "Index";
             }
-            public readonly string Index = "~/Views/Packages/Index.cshtml";
+            public readonly string Index = "~/Areas/Deployment/Views/Packages/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_PackagesController : Baud.Deployment.Web.Controllers.PackagesController
+    public partial class T4MVC_PackagesController : Baud.Deployment.Web.Areas.Deployment.Controllers.PackagesController
     {
         public T4MVC_PackagesController() : base(Dummy.Instance) { }
 

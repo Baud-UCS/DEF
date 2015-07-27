@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Baud.Deployment.Web.Controllers
+namespace Baud.Deployment.Web.Areas.Deployment.Controllers
 {
     public partial class ProductsController : Controller
     {
