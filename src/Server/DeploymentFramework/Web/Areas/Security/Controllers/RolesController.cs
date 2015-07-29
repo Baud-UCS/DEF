@@ -143,10 +143,6 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             {
                 var role = new Role();
 
-                // TODO Following two lines need fixing (we shouldn't have to type these properties in manually).
-                role.Created = DateTime.Now;
-                role.CreatedBy = -2;
-
                 if (!TryUpdateModel(role))
                 {
                     return View(role);

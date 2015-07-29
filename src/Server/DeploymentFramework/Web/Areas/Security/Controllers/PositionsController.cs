@@ -142,10 +142,6 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             {
                 var position = new Position();
 
-                // TODO Following two lines need fixing (we shouldn't have to type these properties in manually).
-                position.Created = DateTime.Now;
-                position.CreatedBy = -2;
-
                 if (!TryUpdateModel(position))
                 {
                     return View(position);

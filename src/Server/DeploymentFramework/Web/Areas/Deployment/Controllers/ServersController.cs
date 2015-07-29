@@ -106,10 +106,6 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
             {
                 var server = new Server();
 
-                // TODO Fix
-                server.Created = DateTime.Now;
-                server.CreatedBy = -2;
-
                 if (!TryUpdateModel(server))
                 {
                     return View();
@@ -144,7 +140,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
 
                 uow.Commit();
                 var server = uow.Servers.GetServerDetail(serverID);
-                return View(new ServerServerParameter { Server = server, ServerParameter = new ServerParameter() });
+                return View(new ServerParameterModel { Server = server, ServerParameter = new ServerParameter() });
             }
         }
 
@@ -159,7 +155,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
                     return HttpNotFound();
                 }
 
-                return View(new ServerServerParameter { Server = server, ServerParameter = new ServerParameter() });
+                return View(new ServerParameterModel { Server = server, ServerParameter = new ServerParameter() });
             }
         }
 
@@ -180,9 +176,7 @@ namespace Baud.Deployment.Web.Areas.Deployment.Controllers
                 {
                     Name = form.Get("ServerParameter.Name"),
                     Value = form.Get("ServerParameter.Value"),
-                    ServerID = serverID,
-                    Created = DateTime.Now,
-                    CreatedBy = -2
+                    ServerID = serverID
                 };
 
                 uow.Servers.AddParameter(parameter);
