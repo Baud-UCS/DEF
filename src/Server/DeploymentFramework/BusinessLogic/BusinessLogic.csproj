@@ -76,7 +76,7 @@
     <Compile Include="Domain\Deployment\Entities\Project.cs" />
     <Compile Include="Domain\Deployment\Entities\Server.cs" />
     <Compile Include="Domain\Deployment\Entities\ServerParameter.cs" />
-    <Compile Include="Domain\Deployment\Entities\ServerServerParameter.cs" />
+    <Compile Include="Domain\Deployment\Entities\ServerParameterModel.cs" />
     <Compile Include="Domain\Deployment\Entities\ServerSite.cs" />
     <Compile Include="Domain\Deployment\Enums\InstallationState.cs" />
     <Compile Include="Domain\Deployment\Enums\LogSeverity.cs" />

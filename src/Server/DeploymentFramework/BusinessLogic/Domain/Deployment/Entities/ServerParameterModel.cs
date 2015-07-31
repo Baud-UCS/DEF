@@ -9,7 +9,7 @@ namespace Baud.Deployment.BusinessLogic.Domain.Deployment.Entities
     /// <summary>
     /// A helper class used in Server Parameters editor.
     /// </summary>
-    public class ServerServerParameter : EntityBase
+    public class ServerParameterModel : EntityBase
     {
         public Server Server { get; set; }
         public ServerParameter ServerParameter { get; set; }

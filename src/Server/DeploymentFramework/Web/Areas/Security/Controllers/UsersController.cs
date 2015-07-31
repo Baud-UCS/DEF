@@ -105,10 +105,6 @@ namespace Baud.Deployment.Web.Areas.Security.Controllers
             using (var uow = _securityUow())
             {
                 var user = new User();
-                
-                // TODO Following two lines need fixing (we shouldn't have to type these properties in manually).
-                user.Created = DateTime.Now;
-                user.CreatedBy = -2;
 
                 if (!TryUpdateModel(user))
                 {
